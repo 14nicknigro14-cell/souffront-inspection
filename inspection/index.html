@@ -6,12 +6,13 @@
 <title>Souffront Construction & Engineering — Check What Your Building Actually Needs</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
-<!-- Google Ads Global Site Tag (gtag.js) - replace AW-973857509 with your actual tag if needed -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973857509"></script>
+<!-- Google tag (gtag.js) — GA4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJN4F7NE1Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-ZJN4F7NE1Y');
   gtag('config', 'AW-973857509');
 </script>
 
@@ -532,6 +533,10 @@
             <div class="chip" data-area="Pool Deck"><span class="chip-icon">🏊</span><span class="chip-label">Pool Deck</span></div>
             <div class="chip" data-area="Common Areas"><span class="chip-icon">🏢</span><span class="chip-label">Common Areas</span></div>
             <div class="chip" data-area="Not sure"><span class="chip-icon">❓</span><span class="chip-label">Not Sure</span></div>
+            <div class="chip" data-area="Something Else"><span class="chip-icon">✏️</span><span class="chip-label">Something Else</span></div>
+          </div>
+          <div id="somethingElseWrap" style="display:none;margin-top:12px;">
+            <input type="text" class="form-input" id="somethingElseInput" placeholder="Describe what concerns you most..." />
           </div>
           <div class="field-error" id="areaError" style="margin-top:10px">Please select at least one area to continue.</div>
           <button class="btn-step" id="step5Next" style="margin-top:20px">Continue →</button>
@@ -751,7 +756,7 @@
     </button>
     <div class="final-contact">
       <a href="tel:5617281106">📞 (561) 728-1106</a>
-      <a href="mailto:Estimates@Souffronts.com">✉ Estimates@Souffronts.com</a>
+      <a href="/cdn-cgi/l/email-protection#80c5f3f4e9ede1f4e5f3c0d3eff5e6e6f2efeef4f3aee3efed">✉ <span class="__cf_email__" data-cfemail="8acff9fee3e7ebfeeff9cad9e5ffececf8e5e4fef9a4e9e5e7">[email&#160;protected]</span></a>
     </div>
   </div>
 </section>
@@ -822,7 +827,7 @@
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
 
 var S = { propType:'', year:'', stories:'', county:'', areas:[], prompt:'', inspection:'', notice:'', address:'', currentStep:1, exitShown:false };
@@ -932,7 +937,12 @@ function validate(checks) {
 function goStep(n) {
   collectAll();
   if (n === 10) { buildDiagnosis(); document.getElementById('diagAddress').textContent = S.address || S.county + ' County'; }
-  if (n === 11) { document.getElementById('leadAddressText').textContent = S.address || S.county + ' County'; }
+  if (n === 11) {
+    document.getElementById('leadAddressText').textContent = S.address || S.county + ' County';
+    var someElse = document.getElementById('somethingElseInput');
+    var concern = document.getElementById('leadConcern');
+    if (someElse && concern && someElse.value.trim()) concern.value = someElse.value.trim();
+  }
   showStep(n);
 }
 
@@ -1063,7 +1073,12 @@ function wireOptionList(listId, nextStep) {
 
 function wireChips() {
   document.querySelectorAll('#areaGrid .chip').forEach(function(chip) {
-    chip.addEventListener('click', function() { this.classList.toggle('selected'); });
+    chip.addEventListener('click', function() {
+      this.classList.toggle('selected');
+      var somethingElseChip = document.querySelector('#areaGrid .chip[data-area="Something Else"]');
+      var wrap = document.getElementById('somethingElseWrap');
+      if (wrap) wrap.style.display = somethingElseChip && somethingElseChip.classList.contains('selected') ? 'block' : 'none';
+    });
   });
 }
 
