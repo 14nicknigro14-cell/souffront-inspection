@@ -1,1 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Souffront Construction & Engineering — Check What Your Building Actually Needs</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
+<!-- Google Ads Global Site Tag (gtag.js) - replace AW-973857509 with your actual tag if needed -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973857509"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-973857509');
+</script>
+
+<!-- Conversion tracking functions -->
+<script>
+  // Quiz Funnel Lead conversion
+  function gtagConversionQuizLead(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-973857509/5KU9CJzyp5McEOXFr9AD',
+      'event_callback': callback
+    });
+    return false;
+  }
+
+  // Direct Engineer Contact conversion
+  function gtagConversionEngineerContact(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-973857509/EnzTCJ_yp5McEOXFr9AD',
+      'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
+<style>
+  :root {
+    --navy: #0b1e3d; --navy-mid: #122750; --navy-light: #1a3361;
+    --orange: #e8651a; --orange-light: #f07940; --orange-glow: rgba(232,101,26,0.15);
+    --white: #ffffff; --off-white: #f5f6f8; --gray-100: #e8eaed;
+    --gray-300: #b0b8c6; --gray-500: #6b7a8f; --gray-700: #3a4557;
+    --green: #1aad6e; --red-soft: #d94f3d; --text: #0b1e3d;
+    --radius: 12px; --radius-lg: 18px;
+    --shadow: 0 4px 24px rgba(11,30,61,0.10); --shadow-lg: 0 12px 48px rgba(11,30,61,0.16);
+    --transition: 0.32s cubic-bezier(0.4,0,0.2,1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 4vw; height: 60px; gap: 12px; background: rgba(11,30,61,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-logo { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.2; white-space: nowrap; }
+  .nav-logo span { color: var(--orange); }
+  .nav-logo-full { color: var(--white); }
+  @media(max-width:480px){.nav-logo-full{display:none}}
+  .nav-cta { background: var(--orange); color: var(--white); border: none; border-radius: 8px; padding: 9px 16px; font-family: 'DM Sans',sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background var(--transition); white-space: nowrap; }
+  .nav-cta:hover { background: var(--orange-light); }
+
+  .hero { min-height: 100vh; background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, #0e2a52 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 5vw 60px; position: relative; overflow: hidden; }
+  @media(max-width:640px){.hero{padding-top:76px;align-items:flex-start;}}
+  .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(232,101,26,0.11) 0%,transparent 70%); pointer-events:none; }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+  .hero-inner { position:relative; max-width:780px; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(232,101,26,0.14); border:1px solid rgba(232,101,26,0.32); border-radius:100px; padding:6px 16px; color:var(--orange-light); font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:28px; }
+  .hero-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:pulse 2s infinite; }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(2.1rem,5.5vw,3.7rem); color:var(--white); line-height:1.12; letter-spacing:-0.02em; margin-bottom:22px; }
+  .hero h1 em { font-style:italic; color:var(--orange-light); }
+  .hero-mirror { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:12px; padding:18px 22px; max-width:520px; margin:0 auto 32px; text-align:left; }
+  .hero-mirror p { font-size:0.88rem; color:var(--gray-300); line-height:1.7; }
+  .hero-mirror ul { list-style:none; margin-top:10px; display:flex; flex-direction:column; gap:6px; }
+  .hero-mirror ul li { font-size:0.85rem; color:var(--gray-300); display:flex; gap:8px; align-items:flex-start; }
+  .hero-mirror ul li::before { content:'->'; color:var(--orange); font-weight:700; flex-shrink:0; }
+  .hero-cta-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:20px; }
+  .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--orange); color:var(--white); border:none; border-radius:10px; padding:17px 36px; font-family:'DM Sans',sans-serif; font-size:1.05rem; font-weight:700; cursor:pointer; transition:all var(--transition); box-shadow:0 6px 28px rgba(232,101,26,0.38); text-decoration:none; }
+  .btn-primary:hover { background:var(--orange-light); transform:translateY(-2px); box-shadow:0 10px 36px rgba(232,101,26,0.48); }
+  .btn-primary svg { width:18px; height:18px; transition:transform var(--transition); }
+  .btn-primary:hover svg { transform:translateX(4px); }
+  .hero-trust { color:var(--gray-500); font-size:0.82rem; display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center; }
+  .hero-divider { display:flex; align-items:center; gap:12px; width:100%; max-width:340px; margin-top:4px; }
+  .hero-divider-line { flex:1; height:1px; background:rgba(255,255,255,0.1); }
+  .hero-divider-text { font-size:0.72rem; color:rgba(255,255,255,0.28); letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; }
+  .hero-engineer-link { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,0.55); font-size:0.87rem; background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; transition:color var(--transition); padding:4px 0; }
+  .hero-engineer-link:hover { color:var(--white); }
+  .hero-engineer-link svg { width:15px; height:15px; flex-shrink:0; }
+  .vsl-wrap { width:100%; max-width:620px; margin:0 auto; }
+  .vsl-inner { position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 16px 56px rgba(0,0,0,0.45); }
+  .vsl-inner video { width:100%; height:100%; display:block; object-fit:cover; }
+  .unmute-banner { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:10px; background:rgba(11,30,61,0.85); backdrop-filter:blur(8px); border:1px solid rgba(232,101,26,0.5); border-radius:100px; padding:10px 20px; cursor:pointer; transition:opacity 0.4s, transform 0.4s; white-space:nowrap; animation:bobble 2s ease-in-out infinite; }
+  .unmute-banner:hover { background:rgba(232,101,26,0.9); }
+  .unmute-banner.hidden { opacity:0; pointer-events:none; transform:translateX(-50%) translateY(10px); }
+  .unmute-icon { font-size:1.1rem; }
+  .unmute-text { font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:700; color:#fff; letter-spacing:0.02em; }
+  @keyframes bobble { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-5px)} }
+  .vsl-caption { text-align:center; margin-top:10px; font-size:0.75rem; color:rgba(255,255,255,0.28); }
+  .hero-stats { display:flex; justify-content:center; gap:clamp(24px,5vw,64px); margin-top:50px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); }
+  .hero-stat { text-align:center; }
+  .hero-stat-num { display:block; font-family:'DM Serif Display',serif; font-size:2rem; color:var(--white); line-height:1; }
+  .hero-stat-label { display:block; font-size:0.75rem; color:var(--gray-500); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; }
+
+  .mirror-section { background:var(--off-white); padding:70px 5vw; }
+  .mirror-inner { max-width:960px; margin:0 auto; }
+  .section-label { font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
+  .section-title { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,3.5vw,2.5rem); color:var(--navy); margin-bottom:14px; letter-spacing:-0.02em; }
+  .section-sub { color:var(--gray-500); font-size:1rem; max-width:560px; line-height:1.68; }
+  .mirror-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:40px; }
+  .mirror-card { background:var(--white); border:1.5px solid var(--gray-100); border-radius:14px; padding:24px 20px; box-shadow:var(--shadow); transition:box-shadow var(--transition); }
+  .mirror-card:hover { box-shadow:var(--shadow-lg); }
+  .mirror-card-icon { font-size:1.5rem; margin-bottom:12px; display:block; }
+  .mirror-card h3 { font-weight:700; font-size:0.95rem; color:var(--navy); margin-bottom:7px; line-height:1.35; }
+  .mirror-card p { font-size:0.84rem; color:var(--gray-500); line-height:1.65; }
+
+  .tool-section { background:var(--white); padding:80px 5vw; }
+  .tool-wrap { max-width:640px; margin:0 auto; }
+  .tool-header { text-align:center; margin-bottom:34px; }
+  .progress-wrap { margin-bottom:24px; }
+  .progress-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .progress-label { font-size:0.78rem; font-weight:600; color:var(--gray-700); }
+  .progress-pct { font-size:0.78rem; color:var(--orange); font-weight:700; }
+  .progress-bar-bg { height:5px; background:var(--gray-100); border-radius:100px; overflow:hidden; }
+  .progress-bar-fill { height:100%; background:linear-gradient(90deg,var(--orange),var(--orange-light)); border-radius:100px; transition:width 0.5s cubic-bezier(0.4,0,0.2,1); }
+  .progress-dots { display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
+  .progress-dot { width:6px; height:6px; border-radius:50%; background:var(--gray-100); transition:background 0.3s,transform 0.3s; }
+  .progress-dot.done { background:var(--orange); }
+  .progress-dot.active { background:var(--orange); transform:scale(1.5); }
+
+  .wizard-card { background:var(--white); border:1.5px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); overflow:hidden; }
+  .wizard-step { display:none; }
+  .wizard-step.active { display:block; animation:fadeSlideIn 0.3s cubic-bezier(0.4,0,0.2,1); }
+  @keyframes fadeSlideIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+  .step-inner { padding:36px 36px 30px; }
+  @media(max-width:520px){.step-inner{padding:24px 18px 20px}}
+  .step-eyebrow { display:flex; align-items:center; gap:8px; margin-bottom:14px; }
+  .step-num-badge { width:24px; height:24px; border-radius:50%; background:var(--orange-glow); border:1.5px solid rgba(232,101,26,0.3); display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:var(--orange); flex-shrink:0; }
+  .step-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange); }
+  .step-title { font-family:'DM Serif Display',serif; font-size:clamp(1.35rem,3vw,1.7rem); color:var(--navy); margin-bottom:6px; letter-spacing:-0.02em; line-height:1.25; }
+  .step-desc { color:var(--gray-500); font-size:0.88rem; margin-bottom:24px; line-height:1.62; }
+
+  .option-list { display:flex; flex-direction:column; gap:10px; margin-bottom:4px; }
+  .option-item { display:flex; align-items:center; gap:14px; border:1.5px solid var(--gray-100); border-radius:12px; padding:14px 18px; cursor:pointer; transition:all var(--transition); user-select:none; }
+  .option-item:hover { border-color:var(--orange); background:var(--orange-glow); }
+  .option-item.selected { border-color:var(--orange); background:var(--orange-glow); box-shadow:0 0 0 2px rgba(232,101,26,0.18); }
+  .option-icon { font-size:1.3rem; flex-shrink:0; width:28px; text-align:center; }
+  .option-text { flex:1; }
+  .option-label { font-size:0.92rem; font-weight:600; color:var(--navy); display:block; line-height:1.3; }
+  .option-sub { font-size:0.78rem; color:var(--gray-500); display:block; margin-top:2px; line-height:1.4; }
+  .option-check { width:20px; height:20px; border-radius:50%; border:2px solid var(--gray-300); flex-shrink:0; transition:all var(--transition); display:flex; align-items:center; justify-content:center; }
+  .option-item.selected .option-check { border-color:var(--orange); background:var(--orange); }
+  .option-item.selected .option-check::after { content:''; width:6px; height:6px; background:white; border-radius:50%; display:block; }
+
+  .chip-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; margin-bottom:6px; }
+  .chip { border:1.5px solid var(--gray-100); border-radius:10px; padding:14px 12px; cursor:pointer; transition:all var(--transition); text-align:center; background:var(--white); user-select:none; }
+  .chip:hover { border-color:var(--orange); background:var(--orange-glow); }
+  .chip.selected { border-color:var(--orange); background:var(--orange-glow); box-shadow:0 0 0 2px rgba(232,101,26,0.18); }
+  .chip-icon { font-size:1.4rem; margin-bottom:6px; display:block; }
+  .chip-label { font-size:0.8rem; font-weight:600; color:var(--navy); display:block; }
+
+  .btn-step { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--orange); color:var(--white); border:none; border-radius:10px; padding:14px 28px; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:all var(--transition); box-shadow:0 4px 18px rgba(232,101,26,0.3); width:100%; margin-top:16px; }
+  .btn-step:hover { background:var(--orange-light); transform:translateY(-1px); }
+  .btn-back { background:none; color:var(--gray-500); border:1.5px solid var(--gray-100); box-shadow:none; margin-top:10px; }
+  .btn-back:hover { background:var(--off-white); color:var(--navy); transform:none; box-shadow:none; }
+
+  .wizard-engineer-shortcut { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:20px; padding-top:18px; border-top:1px solid var(--gray-100); }
+  .wizard-engineer-shortcut-btn { background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.84rem; color:var(--gray-500); display:inline-flex; align-items:center; gap:7px; transition:color var(--transition); padding:0; }
+  .wizard-engineer-shortcut-btn:hover { color:var(--orange); }
+  .wizard-engineer-shortcut-btn svg { width:14px; height:14px; }
+  .wizard-engineer-shortcut-label { font-size:0.72rem; color:var(--gray-300); }
+
+  .form-group { margin-bottom:14px; }
+  .form-label { display:block; font-size:0.82rem; font-weight:600; color:var(--navy); margin-bottom:7px; }
+  .form-input { width:100%; border:1.5px solid var(--gray-100); border-radius:var(--radius); padding:13px 16px; font-family:'DM Sans',sans-serif; font-size:0.97rem; color:var(--text); transition:border-color var(--transition),box-shadow var(--transition); outline:none; background:var(--white); }
+  .form-input:focus { border-color:var(--orange); box-shadow:0 0 0 3px var(--orange-glow); }
+  .form-input::placeholder { color:var(--gray-300); }
+  .form-input.error { border-color:var(--red-soft); }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:480px){.form-row{grid-template-columns:1fr}}
+  .field-error { font-size:0.78rem; color:var(--red-soft); margin-top:5px; display:none; }
+  .input-micro { font-size:0.78rem; color:var(--gray-500); margin-top:6px; }
+
+  .map-frame-wrap { border-radius:10px; overflow:hidden; border:1.5px solid var(--gray-100); margin-bottom:14px; }
+  .map-frame-wrap iframe { width:100%; height:240px; display:block; border:none; }
+  .map-confirm-card { background:var(--off-white); border:1.5px solid var(--gray-100); border-radius:10px; padding:12px 16px; margin-bottom:14px; display:flex; align-items:flex-start; gap:10px; }
+  .map-confirm-icon { font-size:1.1rem; margin-top:2px; }
+  .map-confirm-address { font-size:0.9rem; color:var(--navy); font-weight:500; }
+  .map-confirm-sub { font-size:0.76rem; color:var(--gray-500); margin-top:2px; }
+
+  .diag-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:28px 36px; }
+  @media(max-width:520px){.diag-header{padding:22px 18px}}
+  .diag-property-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(232,101,26,0.2); border:1px solid rgba(232,101,26,0.3); border-radius:100px; padding:4px 12px; color:var(--orange-light); font-size:0.75rem; font-weight:600; margin-bottom:16px; }
+  .diag-status-banner { border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px; }
+  .diag-status-banner.action { background:rgba(217,79,61,0.12); border:1.5px solid rgba(217,79,61,0.35); }
+  .diag-status-banner.monitor { background:rgba(232,192,26,0.12); border:1.5px solid rgba(232,192,26,0.38); }
+  .diag-status-banner.clear { background:rgba(26,173,110,0.1); border:1.5px solid rgba(26,173,110,0.3); }
+  .diag-status-icon { font-size:2rem; flex-shrink:0; }
+  .diag-status-text h3 { font-weight:700; font-size:1rem; color:var(--white); margin-bottom:4px; line-height:1.3; }
+  .diag-status-text p { font-size:0.84rem; color:var(--gray-300); line-height:1.55; }
+  .diag-body { padding:28px 36px; }
+  @media(max-width:520px){.diag-body{padding:20px 18px}}
+  .scenario-card { background:var(--off-white); border-radius:12px; padding:18px 20px; margin-bottom:20px; border-left:4px solid var(--orange); }
+  .scenario-card h4 { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--orange); margin-bottom:10px; }
+  .scenario-tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .scenario-tag { background:var(--white); border:1px solid var(--gray-100); border-radius:100px; padding:4px 12px; font-size:0.78rem; color:var(--gray-700); font-weight:500; }
+  .diag-section { margin-bottom:20px; }
+  .diag-section-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--gray-500); margin-bottom:12px; }
+  .req-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .req-item { display:flex; gap:12px; align-items:flex-start; padding:14px 16px; background:var(--white); border:1.5px solid var(--gray-100); border-radius:10px; }
+  .req-item-dot { width:10px; height:10px; min-width:10px; border-radius:50%; margin-top:5px; }
+  .req-item-dot.urgent { background:var(--red-soft); }
+  .req-item-dot.likely { background:var(--orange); }
+  .req-item-dot.watch { background:#e0b817; }
+  .req-item-dot.ok { background:var(--green); }
+  .req-item-body { flex:1; }
+  .req-item-title { font-size:0.88rem; font-weight:700; color:var(--navy); margin-bottom:3px; line-height:1.3; }
+  .req-item-desc { font-size:0.8rem; color:var(--gray-500); line-height:1.55; }
+  .req-item-badge { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:2px 8px; border-radius:4px; margin-top:6px; display:inline-block; }
+  .req-item-badge.urgent { background:rgba(217,79,61,0.1); color:var(--red-soft); }
+  .req-item-badge.likely { background:rgba(232,101,26,0.1); color:var(--orange); }
+  .req-item-badge.watch { background:rgba(224,184,23,0.12); color:#a07d00; }
+  .req-item-badge.ok { background:rgba(26,173,110,0.1); color:var(--green); }
+  .consequence-block { background:rgba(217,79,61,0.05); border:1px solid rgba(217,79,61,0.15); border-radius:12px; padding:16px 18px; margin-bottom:20px; }
+  .consequence-block h4 { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--red-soft); margin-bottom:10px; }
+  .consequence-block ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .consequence-block ul li { font-size:0.84rem; color:var(--gray-700); display:flex; gap:9px; line-height:1.5; align-items:flex-start; }
+  .consequence-block ul li::before { content:''; width:7px; height:7px; min-width:7px; background:var(--red-soft); border-radius:2px; margin-top:6px; flex-shrink:0; }
+  .next-step-card { border:1.5px solid var(--orange); border-radius:12px; padding:18px 20px; margin-bottom:20px; background:var(--orange-glow); }
+  .next-step-card h4 { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--orange); margin-bottom:6px; }
+  .next-step-card p { font-size:0.9rem; color:var(--navy); line-height:1.6; }
+  .diag-disclaimer { font-size:0.7rem; color:var(--gray-300); line-height:1.6; border-top:1px solid var(--gray-100); padding-top:14px; }
+
+  .lead-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:26px 36px; text-align:center; }
+  @media(max-width:520px){.lead-header{padding:20px 18px}}
+  .lead-header h2 { font-family:'DM Serif Display',serif; color:var(--white); font-size:clamp(1.2rem,3vw,1.6rem); margin-bottom:8px; }
+  .lead-header p { color:var(--gray-300); font-size:0.85rem; line-height:1.6; }
+  .lead-address-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(232,101,26,0.2); border:1px solid rgba(232,101,26,0.3); border-radius:100px; padding:4px 12px; color:var(--orange-light); font-size:0.76rem; font-weight:600; margin-top:10px; }
+  .value-stack { background:var(--off-white); border-radius:12px; padding:16px 18px; margin-bottom:16px; }
+  .value-stack h4 { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--navy); margin-bottom:10px; }
+  .value-stack ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .value-stack ul li { font-size:0.86rem; color:var(--gray-700); display:flex; gap:10px; line-height:1.5; align-items:flex-start; }
+  .value-stack ul li::before { content:''; width:16px; height:16px; min-width:16px; background:rgba(26,173,110,0.15); border-radius:50%; border:1.5px solid rgba(26,173,110,0.4); margin-top:1px; flex-shrink:0; }
+  .risk-reversal { font-size:0.8rem; color:var(--gray-500); text-align:center; margin-top:10px; font-style:italic; }
+
+  .thank-you { text-align:center; padding:56px 36px; }
+  .thank-you-icon { width:72px; height:72px; background:rgba(26,173,110,0.12); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 22px; border:2px solid rgba(26,173,110,0.28); }
+  .thank-you h2 { font-family:'DM Serif Display',serif; font-size:1.75rem; color:var(--navy); margin-bottom:12px; }
+  .thank-you p { color:var(--gray-500); font-size:0.93rem; line-height:1.65; max-width:400px; margin:0 auto; }
+
+  .eng-modal-overlay { position:fixed; inset:0; z-index:200; background:rgba(11,30,61,0.75); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s; }
+  .eng-modal-overlay.visible { opacity:1; pointer-events:all; }
+  .eng-modal-card { background:var(--white); border-radius:20px; width:100%; max-width:480px; overflow:hidden; box-shadow:0 24px 80px rgba(11,30,61,0.28); transform:translateY(24px) scale(0.98); transition:transform 0.35s cubic-bezier(0.4,0,0.2,1); position:relative; }
+  .eng-modal-overlay.visible .eng-modal-card { transform:translateY(0) scale(1); }
+  .eng-modal-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:28px 30px 24px; position:relative; }
+  .eng-modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.1); border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-size:1rem; color:rgba(255,255,255,0.7); display:flex; align-items:center; justify-content:center; transition:background var(--transition); line-height:1; }
+  .eng-modal-close:hover { background:rgba(255,255,255,0.2); color:var(--white); }
+  .eng-modal-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(232,101,26,0.2); border:1px solid rgba(232,101,26,0.35); border-radius:100px; padding:5px 14px; color:var(--orange-light); font-size:0.74rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:14px; }
+  .eng-modal-badge::before { content:''; width:6px; height:6px; background:var(--orange); border-radius:50%; animation:pulse 2s infinite; }
+  .eng-modal-header h3 { font-family:'DM Serif Display',serif; color:var(--white); font-size:1.45rem; margin-bottom:6px; letter-spacing:-0.02em; line-height:1.25; }
+  .eng-modal-header p { color:var(--gray-300); font-size:0.84rem; line-height:1.6; }
+  .eng-modal-body { padding:24px 30px 28px; }
+  .eng-trust-row { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+  .eng-trust-pill { display:inline-flex; align-items:center; gap:6px; background:var(--off-white); border:1px solid var(--gray-100); border-radius:100px; padding:5px 12px; font-size:0.76rem; color:var(--gray-700); font-weight:500; }
+  .eng-trust-pill::before { content:'✓'; color:var(--green); font-weight:700; font-size:0.7rem; }
+  .eng-modal-body .form-group { margin-bottom:12px; }
+  .eng-situation-textarea { width:100%; border:1.5px solid var(--gray-100); border-radius:var(--radius); padding:13px 16px; font-family:'DM Sans',sans-serif; font-size:0.92rem; color:var(--text); resize:vertical; min-height:90px; outline:none; transition:border-color var(--transition),box-shadow var(--transition); background:var(--white); }
+  .eng-situation-textarea:focus { border-color:var(--orange); box-shadow:0 0 0 3px var(--orange-glow); }
+  .eng-situation-textarea::placeholder { color:var(--gray-300); }
+  .eng-modal-submit { width:100%; background:var(--orange); color:var(--white); border:none; border-radius:10px; padding:15px 24px; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:all var(--transition); box-shadow:0 4px 18px rgba(232,101,26,0.3); margin-top:16px; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .eng-modal-submit:hover { background:var(--orange-light); transform:translateY(-1px); }
+  .eng-modal-disclaimer { font-size:0.74rem; color:var(--gray-500); text-align:center; margin-top:10px; line-height:1.5; }
+  .eng-modal-thanks { text-align:center; padding:40px 30px 44px; }
+  .eng-modal-thanks-icon { width:64px; height:64px; background:rgba(26,173,110,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem; margin:0 auto 18px; border:2px solid rgba(26,173,110,0.25); }
+  .eng-modal-thanks h3 { font-family:'DM Serif Display',serif; font-size:1.5rem; color:var(--navy); margin-bottom:10px; }
+  .eng-modal-thanks p { font-size:0.9rem; color:var(--gray-500); line-height:1.65; max-width:340px; margin:0 auto; }
+
+  .process-section { background:var(--navy); padding:80px 5vw; color:var(--white); }
+  .process-inner { max-width:960px; margin:0 auto; }
+  .process-section .section-label { color:var(--orange-light); }
+  .process-section .section-title { color:var(--white); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:48px; }
+  .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0; }
+  .process-step { padding:28px 22px; position:relative; }
+  .process-step:not(:last-child)::after { content:''; position:absolute; top:40px; right:0; width:1px; height:40px; background:rgba(255,255,255,0.1); }
+  @media(max-width:640px){.process-step:not(:last-child)::after{display:none}.process-steps{grid-template-columns:1fr}}
+  .process-num { font-family:'DM Serif Display',serif; font-size:2.2rem; color:var(--orange); line-height:1; margin-bottom:14px; }
+  .process-step h3 { font-weight:700; font-size:0.97rem; color:var(--white); margin-bottom:7px; }
+  .process-step p { font-size:0.84rem; color:var(--gray-300); line-height:1.62; }
+
+  .authority-section { background:var(--off-white); padding:80px 5vw; }
+  .authority-inner { max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+  @media(max-width:640px){.authority-inner{grid-template-columns:1fr;gap:32px}}
+  .authority-left p { color:var(--gray-500); font-size:0.93rem; line-height:1.75; margin-top:16px; }
+  .differentiator { margin-top:22px; background:rgba(232,101,26,0.08); border:1px solid rgba(232,101,26,0.2); border-radius:12px; padding:18px 20px; }
+  .differentiator p { font-size:0.9rem; color:var(--navy); line-height:1.65; font-weight:500; font-style:italic; margin-top:0; }
+  .compliance-banner { margin-top:22px; background:var(--navy); border-radius:12px; padding:22px; }
+  .compliance-banner h4 { font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-light); margin-bottom:8px; }
+  .compliance-banner p { font-size:0.85rem; color:var(--gray-300); line-height:1.65; }
+  .authority-cards { display:flex; flex-direction:column; gap:14px; }
+  .auth-card { background:var(--white); border:1.5px solid var(--gray-100); border-radius:12px; padding:20px 22px; box-shadow:var(--shadow); }
+  .auth-card-top { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  .auth-card-icon { width:38px; height:38px; background:var(--orange-glow); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; border:1px solid rgba(232,101,26,0.2); }
+  .auth-card h4 { font-weight:700; font-size:0.95rem; color:var(--navy); }
+  .auth-card p { font-size:0.84rem; color:var(--gray-500); line-height:1.6; }
+  .proof-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px; }
+  .proof-card { background:var(--white); border:1.5px solid var(--gray-100); border-radius:12px; padding:22px; box-shadow:var(--shadow); }
+  .proof-stars { color:var(--orange); font-size:0.88rem; margin-bottom:10px; }
+  .proof-quote { font-size:0.9rem; color:var(--gray-700); line-height:1.65; font-style:italic; margin-bottom:12px; }
+  .proof-attr { font-size:0.78rem; color:var(--gray-500); font-weight:600; }
+
+  .faq { background:var(--white); padding:80px 5vw; }
+  .faq-inner { max-width:680px; margin:0 auto; }
+  .faq-header { text-align:center; margin-bottom:42px; }
+  .faq-item { border:1.5px solid var(--gray-100); border-radius:12px; background:var(--white); margin-bottom:10px; overflow:hidden; transition:box-shadow var(--transition); cursor:pointer; }
+  .faq-item:hover { box-shadow:var(--shadow); }
+  .faq-q { width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 22px; background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:600; color:var(--navy); text-align:left; pointer-events:none; }
+  .faq-arrow { width:28px; height:28px; min-width:28px; background:var(--off-white); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:transform var(--transition),background var(--transition); font-size:0.75rem; }
+  .faq-item.open .faq-arrow { transform:rotate(180deg); background:var(--orange-glow); color:var(--orange); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
+  .faq-item.open .faq-a { max-height:320px; }
+  .faq-a-inner { padding:16px 22px 18px; font-size:0.9rem; color:var(--gray-500); line-height:1.7; border-top:1px solid var(--gray-100); }
+
+  .final-cta { background:linear-gradient(135deg,var(--navy) 0%,#0e2a52 100%); padding:80px 5vw; text-align:center; position:relative; overflow:hidden; }
+  .final-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(232,101,26,0.13) 0%,transparent 70%); pointer-events:none; }
+  .final-cta-inner { position:relative; max-width:580px; margin:0 auto; }
+  .final-cta h2 { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,4vw,2.5rem); color:var(--white); margin-bottom:14px; letter-spacing:-0.02em; }
+  .final-cta p { color:var(--gray-300); font-size:0.95rem; line-height:1.65; margin-bottom:30px; }
+  .spike-pill { display:inline-block; background:rgba(232,101,26,0.16); border:1px solid rgba(232,101,26,0.32); border-radius:100px; padding:5px 16px; font-size:0.78rem; color:var(--orange-light); font-weight:600; margin-bottom:22px; }
+  .final-contact { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-top:26px; }
+  .final-contact a { display:flex; align-items:center; gap:8px; color:var(--gray-300); text-decoration:none; font-size:0.88rem; transition:color var(--transition); }
+  .final-contact a:hover { color:var(--white); }
+
+  footer { background:#07152b; padding:26px 5vw; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  footer p { font-size:0.77rem; color:var(--gray-500); }
+
+  .modal-overlay { position:fixed; inset:0; z-index:999; background:rgba(11,30,61,0.72); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity var(--transition); }
+  .modal-overlay.visible { opacity:1; pointer-events:all; }
+  .modal-card { background:var(--white); border-radius:var(--radius-lg); padding:38px 34px; max-width:430px; width:100%; text-align:center; box-shadow:var(--shadow-lg); transform:translateY(20px); transition:transform var(--transition); position:relative; }
+  .modal-overlay.visible .modal-card { transform:translateY(0); }
+  .modal-close { position:absolute; top:14px; right:16px; background:none; border:none; cursor:pointer; font-size:1.2rem; color:var(--gray-300); line-height:1; }
+  .modal-card h3 { font-family:'DM Serif Display',serif; font-size:1.55rem; color:var(--navy); margin-bottom:10px; }
+  .modal-card p { color:var(--gray-500); font-size:0.9rem; line-height:1.65; margin-bottom:24px; }
+  .modal-btn-row { display:flex; flex-direction:column; gap:10px; }
+  @media(max-width:480px){.chip-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Souffront <span>C&amp;E</span><span class="nav-logo-full"> Construction &amp; Engineering</span></div>
+  <button class="nav-cta" id="navCta">Check My Building</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Free Engineer Review — No Obligation</div>
+    <h1>Not Sure What Your Building <em>Actually Requires?</em></h1>
+    <div class="hero-mirror">
+      <p>Most property owners in your situation already know they need to deal with this. What they don't fully know:</p>
+      <ul>
+        <li>Exactly what their building is required to do</li>
+        <li>Which type of firm can actually handle it correctly</li>
+        <li>How to get it done without creating more problems</li>
+      </ul>
+    </div>
+    <div class="hero-cta-wrap">
+      <button class="btn-primary" id="heroCta">
+        Check My Building Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <span class="hero-trust">Used by 200+ Florida HOAs &nbsp;&middot;&nbsp; Free &nbsp;&middot;&nbsp; 2 minutes</span>
+      <div class="hero-divider">
+        <div class="hero-divider-line"></div>
+        <span class="hero-divider-text">or</span>
+        <div class="hero-divider-line"></div>
+      </div>
+      <button class="hero-engineer-link" id="heroEngLink">
+        Already know what you need? Talk to an engineer directly
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="vsl-wrap">
+      <div class="vsl-inner">
+        <video id="heroVideo" controls playsinline autoplay muted preload="auto">
+          <source src="https://assets.cdn.filesafe.space/w5kqWGQyZuYMfhSvAQcT/media/69ab9e99618c8d4ae6425e64.mp4" type="video/mp4" />
+        </video>
+        <div class="unmute-banner" id="unmuteBanner">
+          <span class="unmute-icon">🔇</span>
+          <span class="unmute-text">I'm playing — tap to unmute</span>
+        </div>
+      </div>
+      <div class="vsl-caption">Free &middot; No obligation &middot; 3 minutes</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">200+</span><span class="hero-stat-label">HOAs Served</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">15+</span><span class="hero-stat-label">Years in Florida</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">1 Day</span><span class="hero-stat-label">Engineer Follow-Up</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="mirror-section">
+  <div class="mirror-inner">
+    <div class="section-label">Who This Is For</div>
+    <h2 class="section-title">You don't need more confusion. You need clarity.</h2>
+    <p class="section-sub">If any of this sounds familiar, you're in exactly the right place.</p>
+    <div class="mirror-grid">
+      <div class="mirror-card"><span class="mirror-card-icon">📋</span><h3>"I know it needs to get done — I just don't know exactly what."</h3><p>Milestone inspection? Recertification? Structural report? We'll tell you exactly which applies to your building and why.</p></div>
+      <div class="mirror-card"><span class="mirror-card-icon">🔍</span><h3>"I don't want to pick the wrong firm and create more problems."</h3><p>We're a licensed engineering firm — not just an inspection company. That distinction matters when your building's compliance is on the line.</p></div>
+      <div class="mirror-card"><span class="mirror-card-icon">🗂️</span><h3>"I don't want to manage another complicated process."</h3><p>We handle everything — identifying what's required, performing inspections, and submitting to the city. You just get the outcome.</p></div>
+      <div class="mirror-card"><span class="mirror-card-icon">✅</span><h3>"I just want this off my plate and done correctly."</h3><p>That's exactly what we deliver. The hardest part is usually finding the right firm. Once you do, the rest is handled.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tool-section" id="tool">
+  <div class="tool-wrap">
+    <div class="tool-header">
+      <div class="section-label">Free Building Check</div>
+      <h2 class="section-title">Tell us about your building</h2>
+      <p class="section-sub" style="margin:0 auto">Answer a few quick questions — we'll tell you exactly what applies and what to do next.</p>
+    </div>
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-meta">
+        <span class="progress-label" id="progressLabel">Step 1 of 10</span>
+        <span class="progress-pct" id="progressPct">10%</span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:10%"></div></div>
+      <div class="progress-dots" id="progressDots"></div>
+    </div>
+
+    <div class="wizard-card">
+
+      <!-- STEP 1 -->
+      <div class="wizard-step active" id="step1">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">1</div><div class="step-tag">Property Type</div></div>
+          <h2 class="step-title">What type of property is this?</h2>
+          <p class="step-desc">This shapes everything — Florida's requirements vary significantly by property type.</p>
+          <div class="option-list" id="propTypeList">
+            <div class="option-item" data-val="Condominium"><div class="option-icon">🏢</div><div class="option-text"><span class="option-label">Condominium</span><span class="option-sub">Condo association, co-op, or multi-unit residential building</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="HOA / Residential"><div class="option-icon">🏘️</div><div class="option-text"><span class="option-label">HOA / Residential Community</span><span class="option-sub">Townhomes, single-family community, or planned development</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Commercial"><div class="option-icon">🏗️</div><div class="option-text"><span class="option-label">Commercial</span><span class="option-sub">Office, retail, industrial, or mixed commercial use</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Mixed-Use"><div class="option-icon">🔀</div><div class="option-text"><span class="option-label">Mixed-Use</span><span class="option-sub">Residential units above or alongside commercial space</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="propTypeError">Please select a property type to continue.</div>
+          <div class="wizard-engineer-shortcut">
+            <span class="wizard-engineer-shortcut-label">Already know what you need?</span>
+            <button class="wizard-engineer-shortcut-btn" id="step1EngLink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              Skip the quiz — talk to an engineer
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="wizard-step" id="step2">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">2</div><div class="step-tag">Building Age</div></div>
+          <h2 class="step-title">When was the building built?</h2>
+          <p class="step-desc">Florida's milestone inspection law is triggered by building age — this is one of the most important factors.</p>
+          <div class="option-list" id="yearList">
+            <div class="option-item" data-val="before1980"><div class="option-icon">🕰️</div><div class="option-text"><span class="option-label">Before 1980</span><span class="option-sub">45+ years old — highest compliance risk profile</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="1980-1994"><div class="option-icon">📅</div><div class="option-text"><span class="option-label">1980 – 1994</span><span class="option-sub">30–45 years old — milestone deadlines are active or imminent</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="1995-2004"><div class="option-icon">📅</div><div class="option-text"><span class="option-label">1995 – 2004</span><span class="option-sub">20–30 years old — approaching milestone thresholds</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="2005-2015"><div class="option-icon">🏗️</div><div class="option-text"><span class="option-label">2005 – 2015</span><span class="option-sub">10–20 years old — typically below milestone age</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="2016plus"><div class="option-icon">✨</div><div class="option-text"><span class="option-label">2016 or newer</span><span class="option-sub">Under 10 years old — milestone not yet applicable</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="yearError">Please select a year range to continue.</div>
+          <button class="btn-step" id="step2Next">Continue →</button>
+          <button class="btn-step btn-back" id="step2Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="wizard-step" id="step3">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">3</div><div class="step-tag">Building Height</div></div>
+          <h2 class="step-title">How many stories is the building?</h2>
+          <p class="step-desc">Florida's milestone inspection law applies specifically to buildings 3 stories or taller.</p>
+          <div class="option-list" id="storiesList">
+            <div class="option-item" data-val="1-2"><div class="option-icon">🏠</div><div class="option-text"><span class="option-label">1 – 2 stories</span><span class="option-sub">Below the milestone inspection height threshold</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="3-5"><div class="option-icon">🏢</div><div class="option-text"><span class="option-label">3 – 5 stories</span><span class="option-sub">Milestone inspection threshold — SB 4-D applies</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="6-10"><div class="option-icon">🏙️</div><div class="option-text"><span class="option-label">6 – 10 stories</span><span class="option-sub">High-rise requirements — Phase 1 &amp; Phase 2 inspections likely</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="11plus"><div class="option-icon">🌆</div><div class="option-text"><span class="option-label">11+ stories</span><span class="option-sub">High-rise — full structural engineering scope typically required</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="storiesError">Please select the number of stories to continue.</div>
+          <button class="btn-step" id="step3Next">Continue →</button>
+          <button class="btn-step btn-back" id="step3Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="wizard-step" id="step4">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">4</div><div class="step-tag">Location</div></div>
+          <h2 class="step-title">Which county is the property in?</h2>
+          <p class="step-desc">Inspection deadlines, coastal rules, and submission requirements vary by county.</p>
+          <div class="option-list" id="countyList">
+            <div class="option-item" data-val="Miami-Dade"><div class="option-icon">📍</div><div class="option-text"><span class="option-label">Miami-Dade County</span><span class="option-sub">40-year recertification + SB 4-D milestone requirements active</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Broward"><div class="option-icon">📍</div><div class="option-text"><span class="option-label">Broward County</span><span class="option-sub">40-year recertification + milestone inspection deadlines active</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Palm Beach"><div class="option-icon">📍</div><div class="option-text"><span class="option-label">Palm Beach County</span><span class="option-sub">SB 4-D milestone requirements apply — county recertification varies by city</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Other South Florida"><div class="option-icon">📍</div><div class="option-text"><span class="option-label">Other South Florida County</span><span class="option-sub">Monroe, Collier, Lee, St. Lucie, etc.</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Central / North Florida"><div class="option-icon">📍</div><div class="option-text"><span class="option-label">Central / North Florida</span><span class="option-sub">Orlando, Tampa, Jacksonville area, etc.</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="countyError">Please select a county to continue.</div>
+          <button class="btn-step" id="step4Next">Continue →</button>
+          <button class="btn-step btn-back" id="step4Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="wizard-step" id="step5">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">5</div><div class="step-tag">Areas of Concern</div></div>
+          <h2 class="step-title">Which areas concern you most?</h2>
+          <p class="step-desc">Select all that apply. If you're not sure, choose "Not sure."</p>
+          <div class="chip-grid" id="areaGrid">
+            <div class="chip" data-area="Roof"><span class="chip-icon">🏚️</span><span class="chip-label">Roof</span></div>
+            <div class="chip" data-area="Balcony / Railings"><span class="chip-icon">🏗️</span><span class="chip-label">Balcony / Railings</span></div>
+            <div class="chip" data-area="Facade / Exterior"><span class="chip-icon">🧱</span><span class="chip-label">Facade / Exterior</span></div>
+            <div class="chip" data-area="Foundation"><span class="chip-icon">⬇️</span><span class="chip-label">Foundation</span></div>
+            <div class="chip" data-area="Parking Structure"><span class="chip-icon">🅿️</span><span class="chip-label">Parking Structure</span></div>
+            <div class="chip" data-area="Electrical / Plumbing"><span class="chip-icon">⚡</span><span class="chip-label">Electrical / Plumbing</span></div>
+            <div class="chip" data-area="Pool Deck"><span class="chip-icon">🏊</span><span class="chip-label">Pool Deck</span></div>
+            <div class="chip" data-area="Common Areas"><span class="chip-icon">🏢</span><span class="chip-label">Common Areas</span></div>
+            <div class="chip" data-area="Not sure"><span class="chip-icon">❓</span><span class="chip-label">Not Sure</span></div>
+          </div>
+          <div class="field-error" id="areaError" style="margin-top:10px">Please select at least one area to continue.</div>
+          <button class="btn-step" id="step5Next" style="margin-top:20px">Continue →</button>
+          <button class="btn-step btn-back" id="step5Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="wizard-step" id="step6">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">6</div><div class="step-tag">Situation</div></div>
+          <h2 class="step-title">What's prompting this check?</h2>
+          <p class="step-desc">This helps us understand your timeline and give you the most relevant next steps.</p>
+          <div class="option-list" id="promptList">
+            <div class="option-item" data-val="Notice"><div class="option-icon">📬</div><div class="option-text"><span class="option-label">Received a notice or have a deadline</span><span class="option-sub">City, county, or attorney has flagged a requirement</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Visible damage"><div class="option-icon">🔍</div><div class="option-text"><span class="option-label">Noticed visible damage or deterioration</span><span class="option-sub">Cracks, spalling, rust stains, water intrusion, or structural concern</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Planning ahead"><div class="option-icon">📋</div><div class="option-text"><span class="option-label">Planning ahead — want to stay proactive</span><span class="option-sub">No immediate issue, but want to know where we stand</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="New role"><div class="option-icon">🤝</div><div class="option-text"><span class="option-label">New to the role — getting up to speed</span><span class="option-sub">Recently joined the board, took over management, or just acquired the building</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Not sure"><div class="option-icon">❓</div><div class="option-text"><span class="option-label">Not sure — just checking</span><span class="option-sub">Someone told us we should look into this</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="promptError">Please select an option to continue.</div>
+          <button class="btn-step" id="step6Next">Continue →</button>
+          <button class="btn-step btn-back" id="step6Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 7 -->
+      <div class="wizard-step" id="step7">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">7</div><div class="step-tag">Inspection History</div></div>
+          <h2 class="step-title">Has this building had a structural inspection recently?</h2>
+          <p class="step-desc">Recent inspections affect what's still required and how urgent your timeline is.</p>
+          <div class="option-list" id="inspectionList">
+            <div class="option-item" data-val="Yes, within 5 years"><div class="option-icon">✅</div><div class="option-text"><span class="option-label">Yes — within the last 5 years</span><span class="option-sub">We have a recent inspection report on file</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Yes, more than 5 years ago"><div class="option-icon">📁</div><div class="option-text"><span class="option-label">Yes — but more than 5 years ago</span><span class="option-sub">We have an older report but nothing recent</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="No"><div class="option-icon">❌</div><div class="option-text"><span class="option-label">No — not to my knowledge</span><span class="option-sub">No formal structural inspection has been done</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Unknown"><div class="option-icon">❓</div><div class="option-text"><span class="option-label">I'm not sure</span><span class="option-sub">I don't have access to the building's history</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="inspectionError">Please select an option to continue.</div>
+          <button class="btn-step" id="step7Next">Continue →</button>
+          <button class="btn-step btn-back" id="step7Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 8 -->
+      <div class="wizard-step" id="step8">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">8</div><div class="step-tag">Compliance Status</div></div>
+          <h2 class="step-title">Have you received any formal notices or violations?</h2>
+          <p class="step-desc">Formal notices from a city, county building department, or attorney change your urgency profile significantly.</p>
+          <div class="option-list" id="noticeList">
+            <div class="option-item" data-val="Yes - city/county"><div class="option-icon">🏛️</div><div class="option-text"><span class="option-label">Yes — from the city or county building department</span><span class="option-sub">Official notice, violation, or deadline letter</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Yes - attorney/insurance"><div class="option-icon">⚖️</div><div class="option-text"><span class="option-label">Yes — from an attorney or insurance carrier</span><span class="option-sub">Legal demand, policy review, or coverage concern</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="No"><div class="option-icon">👍</div><div class="option-text"><span class="option-label">No formal notices — we're being proactive</span><span class="option-sub">No official action has been taken yet</span></div><div class="option-check"></div></div>
+            <div class="option-item" data-val="Not sure"><div class="option-icon">❓</div><div class="option-text"><span class="option-label">Not sure — I'm new to this property</span></div><div class="option-check"></div></div>
+          </div>
+          <div class="field-error" id="noticeError">Please select an option to continue.</div>
+          <button class="btn-step" id="step8Next">Continue →</button>
+          <button class="btn-step btn-back" id="step8Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 9 -->
+      <div class="wizard-step" id="step9">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">9</div><div class="step-tag">Property Address</div></div>
+          <h2 class="step-title">What's the property address?</h2>
+          <p class="step-desc">This lets us confirm county-specific requirements and show your building on the map.</p>
+          <div class="form-group">
+            <label class="form-label" for="addressInput">Property Address</label>
+            <input type="text" class="form-input" id="addressInput" placeholder="e.g. 1234 Ocean Drive, Miami, FL 33139" autocomplete="street-address" />
+            <div class="input-micro">Used only to confirm your building's location and match county rules.</div>
+            <div class="field-error" id="addressError">Please enter a valid address to continue.</div>
+          </div>
+          <button class="btn-step" id="step9Next">Confirm My Building →</button>
+          <button class="btn-step btn-back" id="step9Back">← Back</button>
+        </div>
+      </div>
+
+      <!-- STEP 9B -->
+      <div class="wizard-step" id="step9b">
+        <div class="step-inner">
+          <div class="step-eyebrow"><div class="step-num-badge">9</div><div class="step-tag">Confirm Location</div></div>
+          <h2 class="step-title">Is this the right building?</h2>
+          <p class="step-desc">Confirm we're looking at the correct property.</p>
+          <div class="map-frame-wrap"><iframe id="mapFrame" src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="map-confirm-card">
+            <div class="map-confirm-icon">📍</div>
+            <div><div class="map-confirm-address" id="mapAddress"></div><div class="map-confirm-sub">Confirm this is the correct property</div></div>
+          </div>
+          <button class="btn-step" id="step9bConfirm">Yes, this is my building ✓</button>
+          <button class="btn-step btn-back" id="step9bBack">Try a different address</button>
+        </div>
+      </div>
+
+      <!-- STEP 10: Diagnosis -->
+      <div class="wizard-step" id="step10">
+        <div class="diag-header">
+          <div class="diag-property-badge">📍 <span id="diagAddress"></span></div>
+          <div class="diag-status-banner action" id="diagBanner">
+            <div class="diag-status-icon" id="diagIcon">⚠️</div>
+            <div class="diag-status-text"><h3 id="diagHeadline"></h3><p id="diagSub"></p></div>
+          </div>
+        </div>
+        <div class="diag-body">
+          <div class="scenario-card"><h4>Your Building Profile</h4><div class="scenario-tags" id="scenarioTags"></div></div>
+          <div class="diag-section"><div class="diag-section-label">What likely applies to your building</div><ul class="req-list" id="reqList"></ul></div>
+          <div class="consequence-block" id="consequenceBlock"><h4>What can happen if this is delayed</h4><ul id="consequenceList"></ul></div>
+          <div class="next-step-card"><h4>Recommended next step</h4><p id="diagNextStep"></p></div>
+          <p class="diag-disclaimer">This is a preliminary overview based on common patterns for Florida buildings matching your profile. It does not constitute a formal engineering assessment or professional opinion.</p>
+          <button class="btn-step" id="step10Next" style="margin-top:20px">Get My Free Engineer Review →</button>
+        </div>
+      </div>
+
+      <!-- STEP 11: Lead Capture -->
+      <div class="wizard-step" id="step11">
+        <div class="lead-header">
+          <h2>Free Engineer Review + Compliance Game Plan</h2>
+          <p>A licensed engineer will personally review your building and give you a clear picture of exactly what's required.</p>
+          <div class="lead-address-badge">📍 <span id="leadAddressText"></span></div>
+        </div>
+        <div class="step-inner">
+          <div class="value-stack">
+            <h4>What You're Getting — Free, No Obligation</h4>
+            <ul>
+              <li>Engineer review of your specific building and location</li>
+              <li>Clear breakdown of what's required (and what's not)</li>
+              <li>Your exact timeline and what happens if you wait</li>
+              <li>Common mistakes to avoid for your property type</li>
+            </ul>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="leadName">Your Name</label><input type="text" class="form-input" id="leadName" placeholder="Jane Smith" /><div class="field-error" id="nameError">Please enter your name.</div></div>
+            <div class="form-group"><label class="form-label" for="leadEmail">Email Address</label><input type="email" class="form-input" id="leadEmail" placeholder="jane@yourbuilding.com" /><div class="field-error" id="emailError">Please enter a valid email.</div></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="leadPhone">Phone <span style="color:var(--gray-300);font-weight:400">(optional)</span></label><input type="tel" class="form-input" id="leadPhone" placeholder="(561) 728-1106" /></div>
+            <div class="form-group"><label class="form-label" for="leadRole">Your Role</label><select class="form-input" id="leadRole"><option value="">Select...</option><option>HOA Board Member</option><option>Property Manager</option><option>Building Owner</option><option>Condo Association Member</option><option>Other</option></select></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="leadConcern">What concerns you most? <span style="color:var(--gray-300);font-weight:400">(optional)</span></label><input type="text" class="form-input" id="leadConcern" placeholder="e.g. upcoming deadline, visible damage..." /></div>
+          <button class="btn-step" id="submitLeadBtn">Send My Free Report Request</button>
+          <p class="risk-reversal">If your building doesn't need anything yet — we'll tell you. No unnecessary inspections, no pressure.</p>
+        </div>
+      </div>
+
+      <!-- Thank You -->
+      <div class="wizard-step" id="stepThanks">
+        <div class="thank-you">
+          <div class="thank-you-icon">✓</div>
+          <h2>You're All Set</h2>
+          <p>A licensed engineer from Souffront will review your building and reach out within one business day — with clear answers, not a pitch.</p>
+          <p style="margin-top:16px;font-size:0.82rem;color:var(--gray-300)">Prefer to talk now? Call us at <strong style="color:var(--navy)">(561) 728-1106</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">What happens after you submit</h2>
+    <div class="process-steps">
+      <div class="process-step"><div class="process-num">01</div><h3>Engineer Reviews Your Building</h3><p>A licensed engineer looks at your address, property type, age, and areas of concern.</p></div>
+      <div class="process-step"><div class="process-num">02</div><h3>You Get Exact Requirements</h3><p>We tell you precisely what applies, what doesn't, and what your timeline looks like. In plain language.</p></div>
+      <div class="process-step"><div class="process-num">03</div><h3>We Handle Everything</h3><p>If you move forward, we manage inspections, reports, and city submission. No managing multiple vendors.</p></div>
+      <div class="process-step"><div class="process-num">04</div><h3>Done. Move On.</h3><p>You get the result you needed. Check it off the list. No confusion, no back-and-forth, no surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="authority-section">
+  <div class="authority-inner">
+    <div class="authority-left">
+      <div class="section-label">Why Souffront</div>
+      <h2 class="section-title">We don't just inspect — we get you compliant.</h2>
+      <p>Most inspection companies hand you a report and leave. You're still left figuring out what it means, what to do next, and how to deal with your county building department.</p>
+      <p style="margin-top:12px">Souffront Construction &amp; Engineering is a licensed engineering firm. We identify what's required, perform the inspections, prepare the reports, and handle submission — start to finish.</p>
+      <div class="differentiator"><p>"If we review your building and you don't need anything yet — we'll tell you. No unnecessary inspections, no pressure."</p></div>
+      <div class="compliance-banner"><h4>Florida Milestone Inspection Law — SB 4-D</h4><p>Florida law requires condominium and cooperative buildings 3 stories or higher to undergo milestone inspections at 25 or 30 years of age (depending on county). Deadlines are active.</p></div>
+    </div>
+    <div>
+      <div class="authority-cards">
+        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">🏛️</div><h4>Licensed Engineering Firm</h4></div><p>Florida-licensed structural and civil engineers on staff. We sign and seal reports that carry real legal weight.</p></div>
+        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">📋</div><h4>Compliance-Ready Reports</h4></div><p>Our reports are formatted to meet Florida's statutory requirements — ready to submit without revisions.</p></div>
+        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">🤝</div><h4>End-to-End Service</h4></div><p>We handle everything: structural evaluations, electrical inspections, infrared scans, and full city submission.</p></div>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card"><div class="proof-stars">★★★★★</div><p class="proof-quote">"They told us exactly what we needed, handled the entire process, and submitted to the county without a single revision."</p><div class="proof-attr">— HOA Board President, Miami-Dade County</div></div>
+        <div class="proof-card"><div class="proof-stars">★★★★★</div><p class="proof-quote">"We didn't even know if we needed a milestone inspection. One call gave us total clarity — no pressure, just straightforward answers."</p><div class="proof-attr">— Property Manager, Broward County</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-header"><div class="section-label">Questions</div><h2 class="section-title">Answers before you commit</h2></div>
+    <div class="faq-item"><button class="faq-q">Is this actually free? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">Yes — 100% free. The online tool, your preliminary overview, and the follow-up engineer review all come at no cost and with zero obligation.</div></div></div>
+    <div class="faq-item"><button class="faq-q">Is this tool accurate for my building? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">The tool gives you a preliminary overview based on common patterns for buildings of your type, age, and location in Florida. The engineer who follows up will give you a specific, accurate picture.</div></div></div>
+    <div class="faq-item"><button class="faq-q">Do I have to hire Souffront after this? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">No. There's no obligation at any point. If your building doesn't need anything right now, we'll tell you plainly.</div></div></div>
+    <div class="faq-item"><button class="faq-q">What happens after I submit? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">A licensed engineer reviews what you've submitted and reaches out — typically within one business day — with a clear explanation of what your building likely needs.</div></div></div>
+    <div class="faq-item"><button class="faq-q">What is Florida's Milestone Inspection Law? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">Florida Senate Bill 4-D requires condominium and cooperative buildings 3 stories or taller to undergo a milestone structural inspection at 25 years of age (30 years for buildings more than 3 miles from the coast).</div></div></div>
+    <div class="faq-item"><button class="faq-q">What if my building doesn't need anything yet? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">We'll tell you — plainly and honestly. We don't manufacture urgency or recommend work that isn't needed.</div></div></div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="spike-pill">Takes 2 Minutes &middot; Free &middot; No Obligation</div>
+    <h2>The Easiest Way to Handle This Correctly and Move On</h2>
+    <p>Find out exactly what your building requires — from licensed engineers who handle the entire process, start to finish.</p>
+    <button class="btn-primary" id="finalCta" style="margin:0 auto;display:inline-flex">
+      Check My Building Now
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <div class="final-contact">
+      <a href="tel:5617281106">📞 (561) 728-1106</a>
+      <a href="mailto:Estimates@Souffronts.com">✉ Estimates@Souffronts.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="nav-logo">Souffront <span>C&amp;E</span><span class="nav-logo-full"> Construction &amp; Engineering</span></div>
+  <p>© 2025 Souffront Construction &amp; Engineering. Licensed in Florida. All rights reserved.</p>
+  <p style="font-size:0.72rem;color:var(--gray-700)">This tool provides preliminary informational overviews only. It does not constitute engineering advice or a formal inspection.</p>
+</footer>
+
+<!-- EXIT MODAL -->
+<div class="modal-overlay" id="exitModal">
+  <div class="modal-card">
+    <button class="modal-close" id="exitModalClose">✕</button>
+    <div style="font-size:2rem;margin-bottom:12px">🏢</div>
+    <h3>Don't Leave Without Your Answer</h3>
+    <p>You're most of the way there. In under a minute you'll know exactly what your building requires.</p>
+    <div class="modal-btn-row">
+      <button class="btn-step" id="exitModalResume" style="margin-top:0">Finish My Building Check →</button>
+      <button class="btn-step btn-back" id="exitModalDismiss" style="margin-top:0">Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+<!-- ENGINEER MODAL -->
+<div class="eng-modal-overlay" id="engModal">
+  <div class="eng-modal-card">
+    <div id="engModalForm">
+      <div class="eng-modal-header">
+        <button class="eng-modal-close" id="engModalClose">✕</button>
+        <div class="eng-modal-badge">Direct Engineer Access</div>
+        <h3>Talk to a Licensed Engineer — No Quiz Required</h3>
+        <p>Tell us what you're dealing with and we'll have an engineer reach out within one business day.</p>
+      </div>
+      <div class="eng-modal-body">
+        <div class="eng-trust-row">
+          <span class="eng-trust-pill">Free consultation</span>
+          <span class="eng-trust-pill">No obligation</span>
+          <span class="eng-trust-pill">1-day response</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="engName">Your Name</label><input type="text" class="form-input" id="engName" placeholder="Jane Smith" /><div class="field-error" id="engNameError">Please enter your name.</div></div>
+          <div class="form-group"><label class="form-label" for="engEmail">Email Address</label><input type="email" class="form-input" id="engEmail" placeholder="jane@yourbuilding.com" /><div class="field-error" id="engEmailError">Please enter a valid email.</div></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="engPhone">Phone <span style="color:var(--gray-300);font-weight:400">(optional)</span></label><input type="tel" class="form-input" id="engPhone" placeholder="(561) 728-1106" /></div>
+          <div class="form-group"><label class="form-label" for="engRole">Your Role</label><select class="form-input" id="engRole"><option value="">Select...</option><option>HOA Board Member</option><option>Property Manager</option><option>Building Owner</option><option>Condo Association Member</option><option>Other</option></select></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="engSituationLabel" for="engSituation">What are you dealing with?</label>
+          <textarea class="eng-situation-textarea" id="engSituation" placeholder="e.g. We received a notice from Miami-Dade and need a milestone inspection done quickly. 12-story condo, built in 1978..."></textarea>
+          <div class="field-error" id="engSituationError">Please describe your situation so we can help.</div>
+        </div>
+        <button class="eng-modal-submit" id="engModalSubmit">Connect Me With an Engineer →</button>
+        <p class="eng-modal-disclaimer">A licensed Souffront engineer will personally review your message and respond within one business day.</p>
+      </div>
+    </div>
+    <div id="engModalThanks" style="display:none">
+      <div class="eng-modal-thanks">
+        <div class="eng-modal-thanks-icon">✓</div>
+        <h3>You're All Set</h3>
+        <p>A licensed engineer from Souffront will review your message and reach out within one business day.</p>
+        <p style="margin-top:14px;font-size:0.82rem;color:var(--gray-400)">Need to talk now? Call <strong style="color:var(--navy)">(561) 728-1106</strong></p>
+        <button class="eng-modal-submit" id="engModalCloseBtn" style="margin-top:22px;max-width:200px">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
+
+var S = { propType:'', year:'', stories:'', county:'', areas:[], prompt:'', inspection:'', notice:'', address:'', currentStep:1, exitShown:false };
+
+var stepMeta = {
+  1:{label:'Step 1 of 10 — Property Type',pct:10},
+  2:{label:'Step 2 of 10 — Building Age',pct:20},
+  3:{label:'Step 3 of 10 — Building Height',pct:30},
+  4:{label:'Step 4 of 10 — Location',pct:40},
+  5:{label:'Step 5 of 10 — Areas of Concern',pct:50},
+  6:{label:'Step 6 of 10 — Your Situation',pct:60},
+  7:{label:'Step 7 of 10 — Inspection History',pct:70},
+  8:{label:'Step 8 of 10 — Compliance Status',pct:80},
+  9:{label:'Step 9 of 10 — Property Address',pct:90},
+  '9b':{label:'Step 9 of 10 — Confirm Location',pct:90},
+  10:{label:'Step 10 of 10 — Your Building Overview',pct:100},
+  11:{label:'Almost done — Get Your Report',pct:100}
+};
+
+function initDots() {
+  var wrap = document.getElementById('progressDots');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  for (var i = 0; i < 10; i++) {
+    var d = document.createElement('div');
+    d.className = 'progress-dot';
+    wrap.appendChild(d);
+  }
+}
+
+function updateProgress(stepNum, meta) {
+  var lbl = document.getElementById('progressLabel');
+  var pct = document.getElementById('progressPct');
+  var fill = document.getElementById('progressFill');
+  if (lbl) lbl.textContent = meta.label;
+  if (pct) pct.textContent = Math.round(meta.pct) + '%';
+  if (fill) fill.style.width = meta.pct + '%';
+  var dots = document.querySelectorAll('.progress-dot');
+  dots.forEach(function(d, i) {
+    d.className = 'progress-dot' + (i < stepNum - 1 ? ' done' : i === stepNum - 1 ? ' active' : '');
+  });
+}
+
+function showStep(id) {
+  document.querySelectorAll('.wizard-step').forEach(function(el) { el.classList.remove('active'); });
+  var el = document.getElementById('step' + id);
+  if (el) el.classList.add('active');
+  S.currentStep = id;
+  var meta = stepMeta[id];
+  var num = typeof id === 'number' ? id : 9;
+  if (meta) updateProgress(num, meta);
+  var tool = document.getElementById('tool');
+  if (tool) tool.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function showThanks() {
+  document.querySelectorAll('.wizard-step').forEach(function(el) { el.classList.remove('active'); });
+  var t = document.getElementById('stepThanks');
+  if (t) t.classList.add('active');
+  var pw = document.getElementById('progressWrap');
+  if (pw) pw.style.display = 'none';
+  var tool = document.getElementById('tool');
+  if (tool) tool.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function scrollToTool() {
+  var tool = document.getElementById('tool');
+  if (tool) tool.scrollIntoView({ behavior:'smooth', block:'start' });
+  setTimeout(function() { showStep(1); }, 350);
+}
+
+function getSelected(listId) {
+  var el = document.querySelector('#' + listId + ' .option-item.selected');
+  return el ? el.dataset.val : null;
+}
+
+function selectOption(el, listId) {
+  document.querySelectorAll('#' + listId + ' .option-item').forEach(function(o) { o.classList.remove('selected'); });
+  el.classList.add('selected');
+}
+
+function collectAll() {
+  S.propType = getSelected('propTypeList') || S.propType;
+  S.year = getSelected('yearList') || S.year;
+  S.stories = getSelected('storiesList') || S.stories;
+  S.county = getSelected('countyList') || S.county;
+  S.areas = Array.from(document.querySelectorAll('#areaGrid .chip.selected')).map(function(c){ return c.dataset.area; });
+  S.prompt = getSelected('promptList') || S.prompt;
+  S.inspection = getSelected('inspectionList') || S.inspection;
+  S.notice = getSelected('noticeList') || S.notice;
+}
+
+function validate(checks) {
+  var ok = true;
+  checks.forEach(function(c) {
+    var errEl = document.getElementById(c.errorId);
+    if (!c.condition) {
+      if (errEl) errEl.style.display = 'block';
+      ok = false;
+    } else {
+      if (errEl) errEl.style.display = 'none';
+    }
+  });
+  return ok;
+}
+
+function goStep(n) {
+  collectAll();
+  if (n === 10) { buildDiagnosis(); document.getElementById('diagAddress').textContent = S.address || S.county + ' County'; }
+  if (n === 11) { document.getElementById('leadAddressText').textContent = S.address || S.county + ' County'; }
+  showStep(n);
+}
+
+function goToMap() {
+  var addr = document.getElementById('addressInput').value.trim();
+  var ok = validate([{ condition: addr.length >= 6, errorId: 'addressError' }]);
+  if (!ok) { document.getElementById('addressInput').classList.add('error'); return; }
+  document.getElementById('addressInput').classList.remove('error');
+  S.address = addr;
+  document.getElementById('mapFrame').src = 'https://maps.google.com/maps?q=' + encodeURIComponent(addr) + '&t=k&z=18&ie=UTF8&iwloc=&output=embed';
+  document.getElementById('mapAddress').textContent = addr;
+  S.currentStep = 9;
+  showStep('9b');
+}
+
+function buildDiagnosis() {
+  var yr=S.year, stories=S.stories, county=S.county, areas=S.areas, prompt=S.prompt, inspection=S.inspection, notice=S.notice, propType=S.propType;
+  var isOld=(yr==='before1980'||yr==='1980-1994'), isMid=(yr==='1995-2004'), isNew=(yr==='2005-2015'||yr==='2016plus');
+  var isTall=(stories==='3-5'||stories==='6-10'||stories==='11plus'), isHighRise=(stories==='6-10'||stories==='11plus');
+  var isCondo=(propType==='Condominium'||propType==='Mixed-Use'), isMiamiDade=(county==='Miami-Dade'), isBroward=(county==='Broward');
+  var hasDamage=areas.indexOf('Facade / Exterior')>-1||areas.indexOf('Balcony / Railings')>-1||areas.indexOf('Foundation')>-1;
+  var hasNotice=(notice==='Yes - city/county'||notice==='Yes - attorney/insurance'), noInspection=(inspection==='No'||inspection==='Unknown');
+  var isUrgent=hasNotice||prompt==='Notice'||(prompt==='Visible damage'&&isOld);
+  var score=0;
+  if(isOld)score+=3; else if(isMid)score+=1;
+  if(isTall)score+=2; if(isCondo)score+=1; if(hasDamage)score+=2; if(hasNotice)score+=3;
+  if(noInspection&&(isOld||isMid))score+=1; if(isMiamiDade||isBroward)score+=1; if(prompt==='Visible damage')score+=1;
+  var status,icon,headline,sub;
+  if(isUrgent||score>=7){status='action';icon='⚠️';headline='Action required — likely sooner than you think.';sub='Based on your building profile, there are active or imminent compliance requirements that carry real consequences if delayed.';}
+  else if(score>=4){status='monitor';icon='🔶';headline='Worth confirming now — you may be closer to a requirement than you realize.';sub='Buildings with this profile commonly have upcoming requirements or areas that warrant a professional review before they become urgent.';}
+  else{status='clear';icon='🟢';headline='Lower immediate risk — but good to know exactly where you stand.';sub="Your building profile doesn't suggest an immediate statutory requirement, but proactive documentation is always a smart move.";}
+  var banner=document.getElementById('diagBanner');
+  banner.className='diag-status-banner '+status;
+  document.getElementById('diagIcon').textContent=icon;
+  document.getElementById('diagHeadline').textContent=headline;
+  document.getElementById('diagSub').textContent=sub;
+  var tags=[propType,yr.replace('before','Before ').replace('1980-1994','1980–1994').replace('1995-2004','1995–2004').replace('2005-2015','2005–2015').replace('2016plus','2016+'),stories+' stories',county+' County'];
+  document.getElementById('scenarioTags').innerHTML=tags.map(function(t){return'<span class="scenario-tag">'+t+'</span>';}).join('');
+  var reqs=[];
+  if(isTall&&isCondo){if(isOld)reqs.push({level:'urgent',title:'Milestone Inspection — Florida SB 4-D',desc:'Your building almost certainly qualifies and the deadline has passed or is imminent. 3+ story condos built before 1995 are required to have a Phase 1 milestone inspection.',badge:'urgent'});else if(isMid)reqs.push({level:'likely',title:'Milestone Inspection — Approaching Threshold',desc:'Your building is within the 20–30 year window where milestone inspection deadlines begin applying.',badge:'likely'});}
+  if((isMiamiDade||isBroward)&&isOld)reqs.push({level:'urgent',title:(isMiamiDade?'Miami-Dade':'Broward')+' 40-Year Building Recertification',desc:isMiamiDade?'Miami-Dade requires structural and electrical recertification for buildings 40+ years old, then every 10 years.':'Broward County requires 40-year recertification (structural + electrical) for buildings that age.',badge:'urgent'});
+  if(hasDamage)reqs.push({level:'likely',title:'Structural Assessment of Flagged Areas',desc:'The areas you identified are common failure points in Florida\'s environment and warrant a licensed engineer evaluation.',badge:'likely'});
+  if(noInspection&&(isOld||isMid)&&isTall)reqs.push({level:'likely',title:'No Inspection Record on File',desc:'Buildings without a recent structural inspection record are at higher risk of a surprise violation.',badge:'likely'});
+  if(areas.indexOf('Roof')>-1)reqs.push({level:'watch',title:'Roof Condition Evaluation',desc:'Roof condition is typically assessed as part of a structural review for older Florida buildings.',badge:'watch'});
+  if(areas.indexOf('Parking Structure')>-1&&isTall)reqs.push({level:'watch',title:'Parking Structure Evaluation',desc:'Concrete parking structures in South Florida are subject to accelerated corrosion from salt air exposure.',badge:'watch'});
+  if(isNew&&!hasDamage&&!hasNotice)reqs.push({level:'ok',title:'No Immediate Statutory Requirement Indicated',desc:'Based on your building\'s age and profile, you\'re likely below the milestone inspection threshold.',badge:'ok'});
+  if(reqs.length===0)reqs.push({level:'watch',title:'Proactive Review Recommended',desc:'Based on your inputs, there\'s no clear immediate statutory trigger — but an engineer review can confirm this definitively.',badge:'watch'});
+  var bl={urgent:'Action Required',likely:'Likely Applies',watch:'Worth Reviewing',ok:'Currently Clear'};
+  document.getElementById('reqList').innerHTML=reqs.map(function(r){return'<li class="req-item"><div class="req-item-dot '+r.level+'"></div><div class="req-item-body"><div class="req-item-title">'+r.title+'</div><div class="req-item-desc">'+r.desc+'</div><span class="req-item-badge '+r.badge+'">'+bl[r.badge]+'</span></div></li>';}).join('');
+  var cb=document.getElementById('consequenceBlock');
+  if(status==='clear'){cb.style.display='none';}else{cb.style.display='block';var cons=[];if(hasNotice)cons.push('You have an active notice — delays increase the risk of escalating fines or legal action');if(isOld&&isTall&&isCondo)cons.push('Missed milestone deadlines can result in the county issuing formal violations');cons.push('Insurance carriers are increasingly non-renewing policies for buildings without current inspection records');cons.push('Licensed engineering firms with compliance experience book quickly — proactive outreach means more options');document.getElementById('consequenceList').innerHTML=cons.slice(0,4).map(function(c){return'<li>'+c+'</li>';}).join('');}
+  var ns={action:'We recommend having a licensed engineer review your building before taking any further steps. Our team can typically complete an initial review within 1–2 business days.',monitor:'A no-obligation consultation is the right move here. Our engineers can confirm whether a formal inspection is needed and clarify your specific timeline.',clear:'Even if nothing is required right now, a quick engineer review can confirm this definitively and document your building\'s baseline.'};
+  document.getElementById('diagNextStep').textContent=ns[status];
+}
+
+// ─── CONVERSION-TRACKED SUBMIT FUNCTIONS ───────────────────────────────────
+
+function submitLead() {
+  var name=document.getElementById('leadName').value.trim(), email=document.getElementById('leadEmail').value.trim();
+  var ok=validate([{condition:!!name,errorId:'nameError'},{condition:/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),errorId:'emailError'}]);
+  if(!ok)return;
+  collectAll();
+  var payload={
+    lead_type:'quiz_funnel',
+    name:name,
+    email:email,
+    phone:document.getElementById('leadPhone').value,
+    role:document.getElementById('leadRole').value,
+    top_concern:document.getElementById('leadConcern').value,
+    address:S.address,
+    property_type:S.propType,
+    building_age:S.year,
+    stories:S.stories,
+    county:S.county,
+    areas_of_concern:S.areas.join(', '),
+    situation_prompt:S.prompt,
+    prior_inspection:S.inspection,
+    formal_notices:S.notice
+  };
+  // Fire Google Ads conversion — Quiz Funnel Lead
+  if(typeof gtagConversionQuizLead === 'function') { gtagConversionQuizLead(); }
+  fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(e){console.error('Webhook error:',e);});
+  showThanks();
+}
+
+function submitEngForm() {
+  var name=document.getElementById('engName').value.trim(), email=document.getElementById('engEmail').value.trim(), situation=document.getElementById('engSituation').value.trim();
+  var ok=validate([{condition:!!name,errorId:'engNameError'},{condition:/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),errorId:'engEmailError'},{condition:!!situation,errorId:'engSituationError'}]);
+  if(!ok)return;
+  var payload={
+    lead_type:'direct_engineer_contact',
+    name:name,
+    email:email,
+    phone:document.getElementById('engPhone').value,
+    role:document.getElementById('engRole').value,
+    situation:situation
+  };
+  // Fire Google Ads conversion — Direct Engineer Contact
+  if(typeof gtagConversionEngineerContact === 'function') { gtagConversionEngineerContact(); }
+  fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(e){console.error('Webhook error:',e);});
+  document.getElementById('engModalForm').style.display='none';
+  document.getElementById('engModalThanks').style.display='block';
+}
+
+// ─── WIRING ────────────────────────────────────────────────────────────────
+
+function openEngModal() {
+  document.getElementById('engModal').classList.add('visible');
+  document.getElementById('engModalForm').style.display='block';
+  document.getElementById('engModalThanks').style.display='none';
+  document.body.style.overflow='hidden';
+}
+
+function closeEngModal() {
+  document.getElementById('engModal').classList.remove('visible');
+  document.body.style.overflow='';
+}
+
+function wireOptionList(listId, nextStep) {
+  var items = document.querySelectorAll('#' + listId + ' .option-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      selectOption(this, listId);
+      if (nextStep) setTimeout(function() { goStep(nextStep); }, 280);
+    });
+  });
+}
+
+function wireChips() {
+  document.querySelectorAll('#areaGrid .chip').forEach(function(chip) {
+    chip.addEventListener('click', function() { this.classList.toggle('selected'); });
+  });
+}
+
+function wireFaq() {
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var isOpen = this.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) this.classList.add('open');
+    });
+  });
+}
+
+function btn(id, fn) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('click', fn);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initDots();
+
+  btn('navCta', scrollToTool);
+  btn('heroCta', scrollToTool);
+  btn('finalCta', scrollToTool);
+  btn('heroEngLink', openEngModal);
+  btn('step1EngLink', openEngModal);
+
+  wireOptionList('propTypeList', 2);
+  wireOptionList('yearList', null);
+  wireOptionList('storiesList', null);
+  wireOptionList('countyList', null);
+  wireOptionList('promptList', null);
+  wireOptionList('inspectionList', null);
+  wireOptionList('noticeList', null);
+  wireChips();
+
+  btn('step2Next', function() { if(validate([{condition:!!getSelected('yearList'),errorId:'yearError'}])) goStep(3); });
+  btn('step2Back', function() { goStep(1); });
+  btn('step3Next', function() { if(validate([{condition:!!getSelected('storiesList'),errorId:'storiesError'}])) goStep(4); });
+  btn('step3Back', function() { goStep(2); });
+  btn('step4Next', function() { if(validate([{condition:!!getSelected('countyList'),errorId:'countyError'}])) goStep(5); });
+  btn('step4Back', function() { goStep(3); });
+  btn('step5Next', function() { if(validate([{condition:document.querySelectorAll('#areaGrid .chip.selected').length>0,errorId:'areaError'}])) goStep(6); });
+  btn('step5Back', function() { goStep(4); });
+  btn('step6Next', function() { if(validate([{condition:!!getSelected('promptList'),errorId:'promptError'}])) goStep(7); });
+  btn('step6Back', function() { goStep(5); });
+  btn('step7Next', function() { if(validate([{condition:!!getSelected('inspectionList'),errorId:'inspectionError'}])) goStep(8); });
+  btn('step7Back', function() { goStep(6); });
+  btn('step8Next', function() { if(validate([{condition:!!getSelected('noticeList'),errorId:'noticeError'}])) goStep(9); });
+  btn('step8Back', function() { goStep(7); });
+  btn('step9Next', goToMap);
+  btn('step9Back', function() { goStep(8); });
+  btn('step9bConfirm', function() { goStep(10); });
+  btn('step9bBack', function() { goStep(9); });
+  btn('step10Next', function() { goStep(11); });
+  btn('submitLeadBtn', submitLead);
+
+  btn('engModalClose', closeEngModal);
+  btn('engModalSubmit', submitEngForm);
+  btn('engModalCloseBtn', closeEngModal);
+  document.getElementById('engModal').addEventListener('click', function(e) { if(e.target===this) closeEngModal(); });
+
+  btn('exitModalClose', function() { document.getElementById('exitModal').classList.remove('visible'); });
+  btn('exitModalResume', function() { document.getElementById('exitModal').classList.remove('visible'); });
+  btn('exitModalDismiss', function() { document.getElementById('exitModal').classList.remove('visible'); });
+  document.getElementById('exitModal').addEventListener('click', function(e) { if(e.target===this) this.classList.remove('visible'); });
+
+  var addrInput = document.getElementById('addressInput');
+  if (addrInput) addrInput.addEventListener('keydown', function(e) { if(e.key==='Enter') goToMap(); });
+
+  document.addEventListener('mouseleave', function(e) {
+    if(e.clientY<=0 && typeof S.currentStep==='number' && S.currentStep>1 && S.currentStep<10 && !S.exitShown) {
+      S.exitShown=true;
+      document.getElementById('exitModal').classList.add('visible');
+    }
+  });
+
+  wireFaq();
+
+  // Unmute banner
+  var heroVideo = document.getElementById('heroVideo');
+  var unmuteBanner = document.getElementById('unmuteBanner');
+  if (heroVideo && unmuteBanner) {
+    unmuteBanner.addEventListener('click', function() {
+      heroVideo.muted = false;
+      heroVideo.play();
+      unmuteBanner.classList.add('hidden');
+    });
+    heroVideo.addEventListener('volumechange', function() {
+      if (!heroVideo.muted) unmuteBanner.classList.add('hidden');
+    });
+  }
+});
+</script>
+</body>
+</html>
