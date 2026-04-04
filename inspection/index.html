@@ -594,9 +594,13 @@ function scrollToTool() {
   setTimeout(function() { showStep(1); }, 350);
 }
  
-function getSelected(listId) {
-  var el = document.querySelector('#' + listId + ' .option-item.selected');
-  return el ? el.dataset.val : null;
+function scrollToTool() {
+  var tool = document.getElementById('tool');
+  if (tool) tool.scrollIntoView({ behavior:'smooth', block:'start' });
+  setTimeout(function() {
+    var name = document.getElementById('leadName');
+    if (name) name.scrollIntoView({ behavior:'smooth', block:'center' });
+  }, 350);
 }
  
 function selectOption(el, listId) {
