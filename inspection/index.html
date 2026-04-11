@@ -134,10 +134,17 @@
   .funnel-header p { color:var(--gray-300); font-size:0.82rem; line-height:1.5; }
   #fp1 .funnel-header h2 { text-transform:uppercase; font-family:'DM Sans',sans-serif; font-weight:700; letter-spacing:0.08em; font-size:clamp(1rem,2.5vw,1.25rem); }
 
+  /* progress bar header for quiz steps */
+  .funnel-progress-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:20px 24px 0; }
+  .fph-top { display:flex; justify-content:flex-end; align-items:center; margin-bottom:8px; }
+  .fph-pct { font-size:0.75rem; font-weight:700; color:var(--orange-light); }
+  .fph-bar { height:6px; background:rgba(255,255,255,0.12); border-radius:999px; overflow:hidden; }
+  .fph-fill { height:100%; background:linear-gradient(90deg,var(--orange),var(--orange-light)); border-radius:999px; transition:width 0.4s ease; }
+
   .funnel-body { padding:28px 24px 24px; }
 
   /* step dots */
-  .step-dots { display:flex; align-items:center; gap:6px; margin-bottom:18px; }
+  .step-dots { display:none; }
   .sdot { width:8px; height:8px; border-radius:50%; background:var(--gray-100); transition:all 0.25s; }
   .sdot.done { background:var(--orange); }
   .sdot.active { background:var(--orange); width:20px; border-radius:4px; }
@@ -414,7 +421,7 @@
       <div class="fp" id="fpphone">
         <div class="funnel-header">
           <h2>We'll have someone call you</h2>
-          <p>Leave your number and an engineer will reach out shortly</p>
+          <p>Often within 60 seconds</p>
         </div>
         <div class="funnel-body">
           <h3>What's the best number to reach you?</h3>
@@ -433,14 +440,14 @@
 
       <!-- ── PANEL 2: Service type ───────────────────────── -->
       <div class="fp" id="fp2">
-        <div class="funnel-header">
-          <h2>Step 1 of 5 — What do you need help with?</h2>
-          <p>Tap the option that best matches your situation</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">20%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:20%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dots2"></div>
-          <h3>What do you need help with?</h3>
-          <p class="fdesc">Select one — we'll move to the next question automatically.</p>
+          <h3>Which of these sounds most like you?</h3>
+          <p class="fdesc">Don't worry about knowing the right terms — just pick what sounds closest to your situation and we'll figure out the rest together.</p>
           <div class="fcells" id="svcOpts"></div>
           <div class="fbrow" style="margin-top:14px">
             <button class="fbk" onclick="fGoTo(1)">Back</button>
@@ -457,9 +464,9 @@
 
       <!-- ── PANEL 3: Urgency ───────────────────────────── -->
       <div class="fp" id="fp3">
-        <div class="funnel-header">
-          <h2 id="fp3title">Step 2 of 5 — How urgent is this?</h2>
-          <p id="fp3sub">Choose the option closest to your situation</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">40%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:40%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dots3"></div>
@@ -475,9 +482,9 @@
 
       <!-- ── PANEL 4: Goal ──────────────────────────────── -->
       <div class="fp" id="fp4">
-        <div class="funnel-header">
-          <h2>Step 3 of 5 — What do you want to understand?</h2>
-          <p>Tap the option — we'll move on automatically</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">60%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:60%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dots4"></div>
@@ -492,9 +499,9 @@
 
       <!-- ── PANEL 5: Call preference ───────────────────── -->
       <div class="fp" id="fp5">
-        <div class="funnel-header">
-          <h2>Step 4 of 5 — One last question</h2>
-          <p>Almost done</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">80%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:80%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dots5"></div>
@@ -521,9 +528,9 @@
 
       <!-- ── FORM STEP 1: Phone ─────────────────────────── -->
       <div class="fp" id="ff1">
-        <div class="funnel-header">
-          <h2>Step 5 of 5 — Your contact details</h2>
-          <p>We save your info as you go</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">90%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:90%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dotsf1"></div>
@@ -543,9 +550,9 @@
 
       <!-- ── FORM STEP 2: Address ───────────────────────── -->
       <div class="fp" id="ff2">
-        <div class="funnel-header">
-          <h2>Property address</h2>
-          <p>Helps us understand your building's location and context</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">95%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:95%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dotsf2"></div>
@@ -568,9 +575,9 @@
 
       <!-- ── FORM STEP 3: Name + email ──────────────────── -->
       <div class="fp" id="ff3">
-        <div class="funnel-header">
-          <h2>Last one — who should we follow up with?</h2>
-          <p>We'll send results here and reach out with next steps</p>
+        <div class="funnel-progress-header">
+          <div class="fph-top"><span class="fph-pct">99%</span></div>
+          <div class="fph-bar"><div class="fph-fill" style="width:99%"></div></div>
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dotsf3"></div>
@@ -766,7 +773,7 @@
     </button>
     <div class="final-contact">
       <a href="tel:5617281106">📞 (561) 728-1106</a>
-      <a href="/cdn-cgi/l/email-protection#d792a4a3bebab6a3b2a49784b8a2b1b1a5b8b9a3a4f9b4b8ba">✉ <span class="__cf_email__" data-cfemail="723701061b1f1306170132211d071414001d1c06015c111d1f">[email&#160;protected]</span></a>
+      <a href="mailto:Estimates@Souffronts.com">✉ Estimates@Souffronts.com</a>
     </div>
   </div>
 </section>
@@ -790,32 +797,32 @@
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
 
 /* ── DATA ─────────────────────────────────────────────── */
 var SVC = [
-  {v:'Milestone Inspection',    e:'🏢', t:'Milestone inspection',        d:'20, 30, or 40-year requirements.'},
-  {v:'Threshold Inspection',    e:'🏗️', t:'Threshold inspection',        d:'Structural observation for qualifying buildings.'},
-  {v:'Water Intrusion',         e:'💧', t:'Water intrusion',             d:'Leaks, moisture, or water getting in.'},
-  {v:'Seawall',                 e:'🌊', t:'Seawall',                     d:'Waterfront wall concerns or structural evaluation.'},
-  {v:'Plumbing / Backflow',     e:'🔧', t:'Plumbing / backflow',         d:'Backflow, plumbing, or compliance concerns.'},
-  {v:'Concrete Pad / Structural',e:'🧱',t:'Concrete / structural',       d:'Cracking, settlement, slab, or structural.'},
-  {v:'Third Party / Special Inspection',e:'📋',t:'Third party / special',d:'Independent or special inspection services.'},
-  {v:'Not Sure',                e:'❓', t:'Not sure yet',                d:"Help me figure out what I need."},
-  {v:'Something Else',          e:'💬', t:'Something else',              d:"My situation is more specific — I'll explain."}
+  {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help",         d:"I want someone to tell me what I need."},
+  {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city",             d:"I need to deal with it and don't know where to start."},
+  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection",               d:"Someone told me I might — I'm not sure if I actually do."},
+  {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere",       d:"Leaks, moisture, or something doesn't look right."},
+  {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water",          d:"Something looks wrong or shifting near the seawall."},
+  {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue",        d:"Something with pipes, pressure, or compliance."},
+  {v:'Concrete Pad / Structural',         e:'🧱', c:'#f97316', t:"I'm seeing cracks or damage",              d:"Something looks off structurally and I'm concerned."},
+  {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork",           d:"Insurance, city, or something official requires it."},
+  {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain",            d:"My situation is a little different."}
 ];
 
 var URG = {
-  'Milestone Inspection':     {h:'How urgent is your milestone inspection situation?',    p:'Pick the option closest to where you are.',o:[{t:'Just planning ahead',d:'Want to understand requirements before it becomes urgent.'},{t:'Deadline coming up',d:'The deadline is approaching and I want to get ahead of it.'},{t:'City or HOA notice',d:'Received a notice and need clarity on next steps.'},{t:'Already overdue',d:'The deadline may have passed and I need help quickly.'}]},
-  'Threshold Inspection':     {h:'How urgent is your threshold inspection need?',         p:'Choose the option that best matches the project stage.',o:[{t:'Early planning',d:'Being proactive and figuring this out ahead of time.'},{t:'Project starting soon',d:'Construction is approaching and I need guidance.'},{t:'Permit or requirement issue',d:'A permit or requirement brought this up.'},{t:'Construction already moving',d:'Work is active and I need help right away.'}]},
-  'Water Intrusion':          {h:'How urgent is the water intrusion problem?',            p:'Pick the option most like what is happening right now.',o:[{t:'Water coming in through a crack',d:'Noticeable entry point but damage still seems limited.'},{t:'Being proactive for rainy season',d:'Want to address this before heavier rain hits.'},{t:'Got a city or building notice',d:'A notice has made this more urgent.'},{t:'Active flooding or damage',d:'Water is actively coming in and causing damage.'}]},
-  'Seawall':                  {h:'How urgent is the seawall issue?',                     p:'Choose the stage closest to what you are dealing with.',o:[{t:'Routine concern',d:'Want to inspect it before things get worse.'},{t:'Visible wear or movement',d:'Seeing signs of deterioration or shifting.'},{t:'Storm season concern',d:'Want to address it before conditions worsen.'},{t:'Obvious failure risk',d:'Major damage, collapse risk, or urgent shoreline loss.'}]},
-  'Plumbing / Backflow':      {h:'How urgent is the plumbing or backflow issue?',        p:'Pick the option that best fits your situation.',o:[{t:'General compliance question',d:'Want to understand requirements before a problem arises.'},{t:'Device needs testing or attention',d:'Known issue or upcoming requirement.'},{t:'Received a notice',d:'A notice made this urgent.'},{t:'Active problem',d:'Immediate issue happening now.'}]},
-  'Concrete Pad / Structural':{h:'How urgent is the structural concern?',                p:'Choose the option closest to what you are seeing.',o:[{t:'Minor concern',d:'Noticed something small — want to be proactive.'},{t:'Visible cracking or movement',d:'Clear signs that something may be wrong.'},{t:'Worsening over time',d:'The issue seems to be getting more noticeable.'},{t:'Serious safety concern',d:'Worried this may be dangerous or cause damage soon.'}]},
-  'Third Party / Special Inspection':{h:'How urgent is the inspection need?',            p:'Choose the option that best matches why you need this.',o:[{t:'Planning ahead',d:'Gathering information and trying to prepare.'},{t:'Project requirement',d:'Inspection needed as part of a project or process.'},{t:'Requested by another party',d:'City, lender, insurer, or other party requested it.'},{t:'Need it quickly',d:'Timing is tight and I need to move on this soon.'}]},
-  'Not Sure':                 {h:'How urgent does this feel?',                           p:"Even if unsure, this helps us understand your situation.",o:[{t:'Just exploring',d:'Mainly want clarity — not in a rush yet.'},{t:'Trying to prevent a problem',d:'Want to be proactive before things get worse.'},{t:'Something changed recently',d:'A new issue, notice, or concern came up.'},{t:'Feels urgent',d:'Need help quickly because something seems wrong.'}]},
-  'Something Else':           {h:'How urgent is your situation?',                        p:'Give us a sense of the timing so we can help you appropriately.',o:[{t:'Just exploring',d:'No immediate pressure — I want to understand my options.'},{t:'Planning ahead',d:'Something is coming up and I want to be prepared.'},{t:'Need answers soon',d:'I have a specific situation I need clarity on quickly.'},{t:'Urgent',d:'I need to speak with someone as soon as possible.'}]}
+  'Milestone Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it',d:'No pressure yet — I want to understand what we are dealing with.'},{t:'Deadline is coming up',d:'I know something needs to happen and I want to get ahead of it.'},{t:'I got a notice',d:'The city, HOA, or someone official has already reached out.'},{t:'It may already be overdue',d:'I think we are past the deadline and need help now.'}]},
+  'Threshold Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it',d:'No pressure yet — I want to understand what we are dealing with.'},{t:'Project is coming up soon',d:'Something is starting and I want to be prepared.'},{t:'A permit or requirement flagged this',d:'Someone told me this needs to happen for something official.'},{t:'We need to move quickly',d:'Work is already underway and I need answers fast.'}]},
+  'Water Intrusion':          {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive',d:'Nothing serious yet — I want to get ahead of it.'},{t:'Something looks off',d:'I am noticing signs of moisture or a possible entry point.'},{t:'It is getting worse',d:'The issue is more noticeable and I am concerned.'},{t:'It is actively happening',d:'Water is coming in now and causing damage.'}]},
+  'Seawall':                  {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive',d:'Nothing alarming yet — want to check on it.'},{t:'Something looks off',d:'I am seeing wear, movement, or something that does not look right.'},{t:'Worried about storm season',d:'I want to address it before conditions get worse.'},{t:'There is obvious damage',d:'Something is clearly wrong and may be a safety risk.'}]},
+  'Plumbing / Backflow':      {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into requirements',d:'I want to understand what we may need to do.'},{t:'Something needs attention',d:'There is a known issue or an upcoming requirement.'},{t:'I received a notice',d:'The city or a property manager has flagged this.'},{t:'There is an active problem',d:'Something is wrong right now and I need help.'}]},
+  'Concrete Pad / Structural':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being cautious',d:'I noticed something small and want to get it checked.'},{t:'I can see cracks or damage',d:'There are visible signs something may be wrong.'},{t:'It is getting worse over time',d:'The issue has been growing and I am more concerned.'},{t:'I am genuinely worried',d:'This could be a safety issue and I need answers quickly.'}]},
+  'Third Party / Special Inspection':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just gathering information',d:'I want to understand what is involved before committing.'},{t:'It is needed for a project',d:'Something official requires this as part of a process.'},{t:'Someone else is requesting it',d:'A city, lender, insurer, or other party needs it done.'},{t:'I need it done soon',d:'Timing is tight and I need to move quickly.'}]},
+  'Not Sure':                 {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring',d:'Mainly want clarity — not in a rush yet.'},{t:'Trying to prevent a problem',d:'Want to be proactive before things get worse.'},{t:'Something changed recently',d:'A new issue, notice, or concern came up.'},{t:'Feels urgent',d:'Need help quickly because something seems wrong.'}]},
+  'Something Else':           {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring',d:'No immediate pressure — I want to understand my options.'},{t:'Planning ahead',d:'Something is coming up and I want to be prepared.'},{t:'Need answers soon',d:'I have a specific situation I need clarity on quickly.'},{t:'Feels urgent',d:'I need to speak with someone as soon as possible.'}]}
 };
 
 var GOALS = [
@@ -943,18 +950,25 @@ function mkCells(containerId, items, stateKey, valKey, cb) {
   g.innerHTML = '';
   items.forEach(function(item, idx){
     var val = valKey ? item[valKey] : item.t;
-    var b = document.createElement('button');
-    b.type = 'button';
+    var color = item.c || 'var(--orange)';
+    var isSel = FS[stateKey] === val;
     var isLast = idx === items.length - 1;
     var isOdd = items.length % 2 !== 0;
-    b.className = 'fcell' + (FS[stateKey] === val ? ' sel' : '') + (isLast && isOdd ? ' span2' : '');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'fcell' + (isSel ? ' sel' : '') + (isLast && isOdd ? ' span2' : '');
+    b.style.borderColor = color;
+    if (isSel) b.style.background = color + '18';
     b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span>'
                 + '<span class="fcell-label">' + item.t + '</span>'
                 + '<span class="fcell-sub">'   + item.d + '</span>';
+    b.onmouseenter = function(){ if (!this.classList.contains('sel')) this.style.background = color + '12'; };
+    b.onmouseleave = function(){ if (!this.classList.contains('sel')) this.style.background = ''; };
     b.onclick = function(){
       FS[stateKey] = val;
-      g.querySelectorAll('.fcell').forEach(function(x){ x.classList.remove('sel'); });
+      g.querySelectorAll('.fcell').forEach(function(x){ x.classList.remove('sel'); x.style.background = ''; });
       b.classList.add('sel');
+      b.style.background = color + '18';
       if (cb) cb(item);
     };
     g.appendChild(b);
@@ -973,8 +987,8 @@ function wireOpts() {
     mkOpts('urgOpts', cfg.o, 'urgency', 'fb3', 't', function(){
       FS.goal = ''; FS.call = '';
       ['fb4','fb5'].forEach(function(id){ var b=document.getElementById(id); if(b) b.disabled=true; });
-      document.getElementById('fp4h').textContent = 'What are you looking to understand about your ' + FS.intent.toLowerCase() + ' situation?';
-      document.getElementById('fp4p').textContent = 'You said this feels like "' + FS.urgency + '." What do you most want help with?';
+      document.getElementById('fp4h').textContent = 'What are you looking to understand?';
+      document.getElementById('fp4p').textContent = 'Choose the answer that best matches what you want help with.';
       // Step 4 — goal: emoji grid, auto-advance to step 5
       mkCells('goalOpts', GOALS, 'goal', 't', function(){
         FS.call = '';
