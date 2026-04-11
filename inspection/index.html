@@ -71,8 +71,10 @@
   .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(245,197,24,0.07); border:1px solid rgba(245,197,24,0.09); border-radius:100px; padding:6px 16px; color:var(--orange-light); font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:28px; }
   .hero-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:pulse 2s infinite; }
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
-  .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(2.1rem,5.5vw,3.7rem); color:var(--white); line-height:1.12; letter-spacing:-0.02em; margin-bottom:22px; }
+  .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(2.1rem,5.5vw,3.7rem); color:var(--white); line-height:1.12; letter-spacing:-0.02em; margin-bottom:18px; }
   .hero h1 em { font-style:italic; color:var(--orange-light); }
+  .hero-sub { font-size:clamp(1rem,2vw,1.2rem); color:rgba(255,255,255,0.82); line-height:1.55; margin-bottom:28px; max-width:560px; margin-left:auto; margin-right:auto; }
+  .hero-sub strong { color:var(--white); font-weight:600; }
   .hero-mirror { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:12px; padding:18px 22px; max-width:520px; margin:0 auto 32px; text-align:left; }
   .hero-mirror p { font-size:0.88rem; color:var(--gray-300); line-height:1.7; }
   .hero-mirror ul { list-style:none; margin-top:10px; display:flex; flex-direction:column; gap:6px; }
@@ -112,7 +114,7 @@
   .mirror-card p { font-size:0.84rem; color:var(--gray-500); line-height:1.65; }
 
   /* ── FUNNEL TOOL SECTION ── */
-  .tool-section { background:var(--off-white); padding:100px 5vw; }
+  .tool-section { background:var(--off-white); padding:80px 5vw; scroll-margin-top:60px; }
   .tool-wrap { max-width:660px; margin:0 auto; }
   .tool-header { text-align:center; margin-bottom:34px; }
 
@@ -124,44 +126,43 @@
   @keyframes fadeSlideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
 
   /* reassure screen */
-  .reassure-screen { display:none; text-align:center; padding:72px 32px 60px; }
+  .reassure-screen { display:none; text-align:center; padding:48px 24px 40px; }
   .reassure-screen.active { display:block; animation:fadeSlideIn 0.28s cubic-bezier(0.4,0,0.2,1); }
 
-  .funnel-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:40px 40px; text-align:center; }
-  .funnel-header h2 { font-family:'DM Serif Display',serif; color:var(--white); font-size:clamp(1.4rem,3vw,1.9rem); font-weight:400; letter-spacing:0.02em; margin-bottom:8px; }
-  .funnel-header p { color:var(--gray-300); font-size:0.85rem; line-height:1.6; }
-  #fp1 .funnel-header h2 { text-transform:uppercase; font-family:'DM Sans',sans-serif; font-weight:700; letter-spacing:0.08em; font-size:clamp(1.1rem,2.5vw,1.35rem); }
+  .funnel-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:28px 24px; text-align:center; }
+  .funnel-header h2 { font-family:'DM Serif Display',serif; color:var(--white); font-size:clamp(1.1rem,3vw,1.55rem); font-weight:400; letter-spacing:0.02em; margin-bottom:6px; line-height:1.3; }
+  .funnel-header p { color:var(--gray-300); font-size:0.82rem; line-height:1.5; }
+  #fp1 .funnel-header h2 { text-transform:uppercase; font-family:'DM Sans',sans-serif; font-weight:700; letter-spacing:0.08em; font-size:clamp(1rem,2.5vw,1.25rem); }
 
-  .funnel-body { padding:44px 44px 40px; }
-  @media(max-width:520px){.funnel-body{padding:28px 22px 26px}}
+  .funnel-body { padding:28px 24px 24px; }
 
   /* step dots */
-  .step-dots { display:flex; align-items:center; gap:6px; margin-bottom:26px; }
+  .step-dots { display:flex; align-items:center; gap:6px; margin-bottom:18px; }
   .sdot { width:8px; height:8px; border-radius:50%; background:var(--gray-100); transition:all 0.25s; }
   .sdot.done { background:var(--orange); }
   .sdot.active { background:var(--orange); width:20px; border-radius:4px; }
 
-  .funnel-body h3 { font-family:'DM Serif Display',serif; font-size:clamp(1.25rem,3vw,1.55rem); color:var(--navy); margin-bottom:8px; line-height:1.25; }
-  .funnel-body .fdesc { font-size:0.88rem; color:var(--gray-500); line-height:1.62; margin-bottom:22px; }
+  .funnel-body h3 { font-family:'DM Serif Display',serif; font-size:clamp(1.1rem,3vw,1.4rem); color:var(--navy); margin-bottom:6px; line-height:1.25; }
+  .funnel-body .fdesc { font-size:0.84rem; color:var(--gray-500); line-height:1.55; margin-bottom:16px; }
 
-  /* option cards */
-  .fopts { display:flex; flex-direction:column; gap:9px; margin-bottom:6px; }
-  .fopt { display:flex; align-items:center; gap:14px; border:1.5px solid var(--gray-100); border-radius:11px; padding:13px 16px; cursor:pointer; transition:all var(--transition); user-select:none; background:var(--white); text-align:left; width:100%; }
+  /* option cards — list style */
+  .fopts { display:flex; flex-direction:column; gap:8px; margin-bottom:6px; }
+  .fopt { display:flex; align-items:center; gap:12px; border:1.5px solid var(--gray-100); border-radius:10px; padding:12px 14px; cursor:pointer; transition:all var(--transition); user-select:none; background:var(--white); text-align:left; width:100%; }
   .fopt:hover { border-color:var(--orange); background:var(--orange-glow); }
   .fopt.sel { border-color:var(--orange); background:var(--orange-glow); box-shadow:0 0 0 2px rgba(245,197,24,0.1); }
   .fopt-check { width:20px; height:20px; min-width:20px; border-radius:50%; border:2px solid var(--gray-300); transition:all var(--transition); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   .fopt.sel .fopt-check { border-color:var(--orange); background:var(--orange); }
   .fopt.sel .fopt-check::after { content:''; width:6px; height:6px; background:#fff; border-radius:50%; display:block; }
   .fopt-text { flex:1; }
-  .fopt-label { font-size:0.93rem; font-weight:600; color:var(--navy); display:block; line-height:1.3; }
-  .fopt-sub { font-size:0.78rem; color:var(--gray-500); display:block; margin-top:2px; line-height:1.4; }
+  .fopt-label { font-size:0.9rem; font-weight:600; color:var(--navy); display:block; line-height:1.3; }
+  .fopt-sub { font-size:0.76rem; color:var(--gray-500); display:block; margin-top:2px; line-height:1.4; }
 
   /* btn row */
-  .fbrow { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap; }
-  .fbn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--orange); color:var(--white); border:2px solid var(--orange); border-radius:10px; padding:16px 28px; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:all var(--transition); }
+  .fbrow { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
+  .fbn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--orange); color:var(--white); border:2px solid var(--orange); border-radius:10px; padding:14px 24px; font-family:'DM Sans',sans-serif; font-size:0.97rem; font-weight:700; cursor:pointer; transition:all var(--transition); }
   .fbn:hover { background:var(--orange-light); transform:translateY(-1px); }
   .fbn:disabled { opacity:0.4; cursor:not-allowed; transform:none; }
-  .fbk { background:none; color:var(--gray-500); border:1.5px solid var(--gray-200); border-radius:10px; padding:15px 22px; font-family:'DM Sans',sans-serif; font-size:0.97rem; cursor:pointer; transition:all var(--transition); }
+  .fbk { background:none; color:var(--gray-500); border:1.5px solid var(--gray-200); border-radius:10px; padding:13px 20px; font-family:'DM Sans',sans-serif; font-size:0.93rem; cursor:pointer; transition:all var(--transition); }
   .fbk:hover { background:var(--off-white); color:var(--navy); }
 
   /* big phone input */
@@ -199,27 +200,24 @@
   .skip-btn:hover { color:var(--gray-500); }
 
   /* shortcut */
-  .funnel-shortcut { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:18px; padding-top:16px; border-top:1px solid var(--gray-100); }
-  .funnel-shortcut-btn { background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.84rem; color:var(--gray-500); display:inline-flex; align-items:center; gap:6px; transition:color var(--transition); }
+  .funnel-shortcut { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; padding-top:14px; border-top:1px solid var(--gray-100); }
+  .funnel-shortcut-btn { background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.82rem; color:var(--gray-500); display:inline-flex; align-items:center; gap:6px; transition:color var(--transition); }
   .funnel-shortcut-btn:hover { color:var(--orange); }
   .funnel-shortcut-label { font-size:0.72rem; color:var(--gray-300); }
 
   /* cover centered */
-  .fp1-body { text-align:center; padding-top:8px; padding-bottom:8px; }
-  .fp1-body .fdesc { max-width:420px; margin:0 auto 20px; }
-  .fp1-info { background:var(--off-white); border-radius:11px; padding:14px 18px; margin:0 auto 24px; max-width:440px; }
-  .fp1-info p { font-size:0.84rem; color:var(--gray-700); line-height:1.65; margin:0; }
-  .fp1-btns { display:flex; flex-direction:column; gap:12px; max-width:400px; margin:0 auto; }
+  .fp1-body { text-align:center; }
+  .fp1-btns { display:flex; flex-direction:column; gap:10px; width:100%; }
 
   /* emoji grid cells */
-  .fcells { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-bottom:6px; }
-  .fcell { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:6px; border:1.5px solid var(--gray-100); border-radius:13px; padding:18px 12px 16px; cursor:pointer; transition:all var(--transition); background:var(--white); user-select:none; }
+  .fcells { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px; margin-bottom:6px; }
+  .fcell { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:4px; border:1.5px solid var(--gray-100); border-radius:11px; padding:14px 8px 12px; cursor:pointer; transition:all var(--transition); background:var(--white); user-select:none; }
   .fcell:hover { border-color:var(--orange); background:var(--orange-glow); transform:translateY(-1px); }
   .fcell.sel { border-color:var(--orange); background:var(--orange-glow); box-shadow:0 0 0 2px rgba(245,197,24,0.12); }
-  .fcell-emoji { font-size:1.6rem; line-height:1; }
-  .fcell-label { font-size:0.88rem; font-weight:700; color:var(--navy); line-height:1.25; }
-  .fcell-sub { font-size:0.73rem; color:var(--gray-500); line-height:1.4; }
-  @media(max-width:440px){ .fcells { grid-template-columns:1fr 1fr; } .fcell { padding:14px 8px 12px; } .fcell-emoji { font-size:1.3rem; } .fcell-label { font-size:0.8rem; } }
+  .fcell-emoji { font-size:1.3rem; line-height:1; }
+  .fcell-label { font-size:0.82rem; font-weight:700; color:var(--navy); line-height:1.2; }
+  .fcell-sub { font-size:0.68rem; color:var(--gray-500); line-height:1.35; }
+  .fcell.span2 { grid-column: span 2; flex-direction:row; justify-content:center; gap:10px; padding:16px 20px; }
 
   /* success */
   .funnel-success { text-align:center; padding:56px 32px; }
@@ -229,17 +227,47 @@
 
   /* rest of page */
   .process-section { background:var(--navy); padding:80px 5vw; color:var(--white); }
-  .process-inner { max-width:960px; margin:0 auto; }
+  .process-inner { max-width:1000px; margin:0 auto; }
   .process-section .section-label { color:var(--orange-light); }
-  .process-section .section-title { color:var(--white); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:48px; }
-  .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0; }
-  .process-step { padding:28px 22px; position:relative; }
-  .process-step:not(:last-child)::after { content:''; position:absolute; top:40px; right:0; width:1px; height:40px; background:rgba(255,255,255,0.1); }
-  @media(max-width:800px){.process-step:not(:last-child)::after{display:none}.process-steps{grid-template-columns:1fr 1fr}}
-  @media(max-width:480px){.process-steps{grid-template-columns:1fr}}
-  .process-num { font-family:'DM Serif Display',serif; font-size:2.2rem; color:var(--orange); line-height:1; margin-bottom:14px; }
-  .process-step h3 { font-weight:700; font-size:0.97rem; color:var(--white); margin-bottom:7px; }
-  .process-step p { font-size:0.84rem; color:var(--gray-300); line-height:1.62; }
+  .process-section .section-title { color:var(--white); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:40px; }
+
+  /* top row */
+  .flow-top { display:flex; align-items:center; gap:0; flex-wrap:wrap; margin-bottom:40px; }
+  .flow-node { background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 16px; flex:1; min-width:120px; text-align:center; }
+  .flow-node--decision { background:rgba(245,197,24,0.12); border-color:rgba(245,197,24,0.35); }
+  .fn-num { font-size:0.7rem; font-weight:700; color:var(--orange); letter-spacing:0.08em; margin-bottom:5px; }
+  .fn-title { font-size:0.9rem; font-weight:700; color:var(--white); line-height:1.2; margin-bottom:4px; }
+  .fn-sub { font-size:0.72rem; color:rgba(255,255,255,0.55); line-height:1.4; }
+  .flow-arrow { color:rgba(255,255,255,0.3); font-size:1.2rem; padding:0 6px; flex-shrink:0; }
+
+  /* pass / fail split */
+  .flow-split { display:flex; flex-direction:column; gap:14px; }
+  .flow-path { border-radius:12px; padding:18px 20px; }
+  .flow-path--pass { background:rgba(26,158,92,0.1); border:1.5px solid rgba(26,158,92,0.3); }
+  .flow-path--fail { background:rgba(192,57,43,0.1); border:1.5px solid rgba(192,57,43,0.3); }
+  .flow-path-label { font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px; }
+  .pass-label { color:#4ecb8a; }
+  .fail-label { color:#e57373; }
+  .flow-path-steps { display:flex; align-items:center; flex-wrap:wrap; gap:0; }
+  .flow-path-node { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; flex:1; min-width:100px; text-align:center; }
+  .flow-path-node--final { flex:1.2; }
+  .pass-final { background:rgba(26,158,92,0.15); border-color:rgba(26,158,92,0.4); }
+  .fpn-title { font-size:0.82rem; font-weight:700; color:var(--white); line-height:1.25; margin-bottom:3px; }
+  .fpn-sub { font-size:0.69rem; color:rgba(255,255,255,0.5); line-height:1.4; }
+  .flow-path-arrow { color:rgba(255,255,255,0.3); font-size:1rem; padding:0 6px; flex-shrink:0; }
+
+  @media(max-width:700px){
+    .flow-top { gap:6px; }
+    .flow-node { min-width:80px; padding:10px 8px; }
+    .fn-title { font-size:0.78rem; }
+    .fn-sub { display:none; }
+    .flow-arrow { padding:0 3px; font-size:1rem; }
+    .flow-path-steps { gap:4px; }
+    .flow-path-node { min-width:70px; padding:8px 8px; }
+    .fpn-title { font-size:0.74rem; }
+    .fpn-sub { display:none; }
+    .flow-path-arrow { padding:0 2px; font-size:0.9rem; }
+  }
 
   .authority-section { background:var(--off-white); padding:80px 5vw; }
   .authority-inner { max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
@@ -309,6 +337,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Free Engineer Review — No Obligation</div>
     <h1>Not Sure What Your Building <em>Actually Requires?</em></h1>
+    <p class="hero-sub">Stop guessing. Find out exactly what's required for your building — free, in under 2 minutes.</p>
     <div class="vsl-wrap">
       <div class="vsl-inner">
         <video id="heroVideo" controls playsinline autoplay muted preload="auto">
@@ -596,34 +625,88 @@
 <section class="process-section">
   <div class="process-inner">
     <div class="section-label">The Process</div>
-    <h2 class="section-title">From your first question to inspection day</h2>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <h3>You submit</h3>
-        <p>A licensed engineer reviews your building — address, age, property type, and your situation. We pull county records and cross-reference what applies to you specifically.</p>
+    <h2 class="section-title">We handle everything. Here's what that looks like.</h2>
+
+    <!-- Top flow: submit → call → proposal → inspect → results -->
+    <div class="flow-top">
+      <div class="flow-node flow-node--start">
+        <div class="fn-num">01</div>
+        <div class="fn-title">Check your building</div>
+        <div class="fn-sub">Use our free 2-min tool to tell us your situation</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <h3>We call you — often within 60 seconds</h3>
-        <p>A licensed engineer calls you shortly after you submit — not a sales rep. Exactly what's required, your deadline, and what happens if it's missed. If you'd prefer a specific time, just let us know and we'll schedule around you.</p>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="fn-num">02</div>
+        <div class="fn-title">We call you</div>
+        <div class="fn-sub">Often within 60 seconds</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <h3>We send a clear proposal</h3>
-        <p>Scope of inspection, what we'll assess on-site, what the report includes, and what we submit to the city. You review it, ask questions, and decide. No pressure.</p>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="fn-num">03</div>
+        <div class="fn-title">Clear plan of action</div>
+        <div class="fn-sub">Scope, cost, timeline — no pressure</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">04</div>
-        <h3>We inspect and prepare the report</h3>
-        <p>We coordinate with your building manager, perform the structural and electrical evaluation, and prepare a signed and sealed report formatted to submit without revisions.</p>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="fn-num">04</div>
+        <div class="fn-title">We inspect</div>
+        <div class="fn-sub">On-site structural &amp; electrical evaluation</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">05</div>
-        <h3>We handle everything with the city</h3>
-        <p>We file the reports and permits. If the building passes, we see approval through. If repairs are needed, we manage the repair path, re-inspection, and amended report.</p>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node flow-node--decision">
+        <div class="fn-title">Inspection results</div>
       </div>
     </div>
+
+    <!-- Pass / Fail split -->
+    <div class="flow-split">
+
+      <div class="flow-path flow-path--pass">
+        <div class="flow-path-label pass-label">✓ Report passes</div>
+        <div class="flow-path-steps">
+          <div class="flow-path-node">
+            <div class="fpn-title">City submission</div>
+            <div class="fpn-sub">Reports submitted · City fees paid</div>
+          </div>
+          <div class="flow-path-arrow">→</div>
+          <div class="flow-path-node">
+            <div class="fpn-title">City review</div>
+            <div class="fpn-sub">Plan examiners review reports</div>
+          </div>
+          <div class="flow-path-arrow">→</div>
+          <div class="flow-path-node flow-path-node--final pass-final">
+            <div class="fpn-title">✓ Recertification approved</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-path flow-path--fail">
+        <div class="flow-path-label fail-label">✗ Report has deficiencies</div>
+        <div class="flow-path-steps">
+          <div class="flow-path-node">
+            <div class="fpn-title">Bidding</div>
+            <div class="fpn-sub">Hire engineer &amp; contractor</div>
+          </div>
+          <div class="flow-path-arrow">→</div>
+          <div class="flow-path-node">
+            <div class="fpn-title">Construction</div>
+            <div class="fpn-sub">Open permit · Make repairs</div>
+          </div>
+          <div class="flow-path-arrow">→</div>
+          <div class="flow-path-node">
+            <div class="fpn-title">Re-inspection</div>
+            <div class="fpn-sub">Schedule re-inspection · Amend report</div>
+          </div>
+          <div class="flow-path-arrow">→</div>
+          <div class="flow-path-node flow-path-node--final pass-final">
+            <div class="fpn-title">✓ Recertification approved</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;font-size:0.84rem;color:rgba(255,255,255,0.45);margin-top:32px">Either way, we manage every step — you don't deal with the city directly.</p>
   </div>
 </section>
 
@@ -655,6 +738,8 @@
   <div class="faq-inner">
     <div class="faq-header"><div class="section-label">Questions</div><h2 class="section-title">What people ask before they hire us</h2></div>
 
+    <div class="faq-item"><button class="faq-q">What services do you provide? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">We're a full-service structural inspection and engineering firm — so if it involves a building, there's a very good chance we can help. Rather than list every service we offer, the easiest thing to do is run through our quick online tool. It takes about 2 minutes and will point you in the right direction based on your specific situation. If the tool doesn't quite cover what you're dealing with, just hit "I'd rather speak to someone on the phone" and we'll connect you directly with one of our engineers who can answer your questions on the spot.</div></div></div>
+
     <div class="faq-item"><button class="faq-q">What exactly does the city want from me? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">It depends on your building's age, height, and county — but in most cases the city wants two things: a signed and sealed report from a licensed engineer confirming the structural and electrical condition of the building, and a permit application submitted with that report. For Miami-Dade and Broward, this is required at 40 years and every 10 years after. Under Florida's SB 4-D milestone inspection law, condominiums and cooperatives 3 stories or taller must complete a Phase 1 structural inspection at 25 or 30 years depending on their distance from the coast. If repairs are needed, the city also wants documentation that those repairs were completed before they'll close out the recertification. We'll tell you exactly what applies to your specific building — that's part of what we do before anything else.</div></div></div>
 
     <div class="faq-item"><button class="faq-q">How does the recertification or inspection process actually work? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">There are four stages. First, we review your building — property type, age, available documents, and any known concerns — so we can scope the inspection correctly and tell you what to expect. Second, our licensed engineers perform an on-site structural and electrical evaluation, assessing visible conditions, signs of deterioration, and anything that could affect compliance. Third, we prepare the required reports in the format the city accepts — our reports are formatted to submit without revisions. Fourth, we handle city submission: filing the inspection reports, permit applications, and the licensed professional's form confirming the building's condition. If the building passes, the city reviews the reports and approves recertification. If repairs are needed, we help coordinate the repair and re-inspection process before final approval. You don't manage any of that — we do.</div></div></div>
@@ -681,7 +766,7 @@
     </button>
     <div class="final-contact">
       <a href="tel:5617281106">📞 (561) 728-1106</a>
-      <a href="mailto:Estimates@Souffronts.com">✉ Estimates@Souffronts.com</a>
+      <a href="/cdn-cgi/l/email-protection#d792a4a3bebab6a3b2a49784b8a2b1b1a5b8b9a3a4f9b4b8ba">✉ <span class="__cf_email__" data-cfemail="723701061b1f1306170132211d071414001d1c06015c111d1f">[email&#160;protected]</span></a>
     </div>
   </div>
 </section>
@@ -705,7 +790,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
 
 /* ── DATA ─────────────────────────────────────────────── */
@@ -717,7 +802,8 @@ var SVC = [
   {v:'Plumbing / Backflow',     e:'🔧', t:'Plumbing / backflow',         d:'Backflow, plumbing, or compliance concerns.'},
   {v:'Concrete Pad / Structural',e:'🧱',t:'Concrete / structural',       d:'Cracking, settlement, slab, or structural.'},
   {v:'Third Party / Special Inspection',e:'📋',t:'Third party / special',d:'Independent or special inspection services.'},
-  {v:'Not Sure',                e:'❓', t:'Not sure yet',                d:"Help me figure out what I need."}
+  {v:'Not Sure',                e:'❓', t:'Not sure yet',                d:"Help me figure out what I need."},
+  {v:'Something Else',          e:'💬', t:'Something else',              d:"My situation is more specific — I'll explain."}
 ];
 
 var URG = {
@@ -728,7 +814,8 @@ var URG = {
   'Plumbing / Backflow':      {h:'How urgent is the plumbing or backflow issue?',        p:'Pick the option that best fits your situation.',o:[{t:'General compliance question',d:'Want to understand requirements before a problem arises.'},{t:'Device needs testing or attention',d:'Known issue or upcoming requirement.'},{t:'Received a notice',d:'A notice made this urgent.'},{t:'Active problem',d:'Immediate issue happening now.'}]},
   'Concrete Pad / Structural':{h:'How urgent is the structural concern?',                p:'Choose the option closest to what you are seeing.',o:[{t:'Minor concern',d:'Noticed something small — want to be proactive.'},{t:'Visible cracking or movement',d:'Clear signs that something may be wrong.'},{t:'Worsening over time',d:'The issue seems to be getting more noticeable.'},{t:'Serious safety concern',d:'Worried this may be dangerous or cause damage soon.'}]},
   'Third Party / Special Inspection':{h:'How urgent is the inspection need?',            p:'Choose the option that best matches why you need this.',o:[{t:'Planning ahead',d:'Gathering information and trying to prepare.'},{t:'Project requirement',d:'Inspection needed as part of a project or process.'},{t:'Requested by another party',d:'City, lender, insurer, or other party requested it.'},{t:'Need it quickly',d:'Timing is tight and I need to move on this soon.'}]},
-  'Not Sure':                 {h:'How urgent does this feel?',                           p:"Even if unsure, this helps us understand your situation.",o:[{t:'Just exploring',d:'Mainly want clarity — not in a rush yet.'},{t:'Trying to prevent a problem',d:'Want to be proactive before things get worse.'},{t:'Something changed recently',d:'A new issue, notice, or concern came up.'},{t:'Feels urgent',d:'Need help quickly because something seems wrong.'}]}
+  'Not Sure':                 {h:'How urgent does this feel?',                           p:"Even if unsure, this helps us understand your situation.",o:[{t:'Just exploring',d:'Mainly want clarity — not in a rush yet.'},{t:'Trying to prevent a problem',d:'Want to be proactive before things get worse.'},{t:'Something changed recently',d:'A new issue, notice, or concern came up.'},{t:'Feels urgent',d:'Need help quickly because something seems wrong.'}]},
+  'Something Else':           {h:'How urgent is your situation?',                        p:'Give us a sense of the timing so we can help you appropriately.',o:[{t:'Just exploring',d:'No immediate pressure — I want to understand my options.'},{t:'Planning ahead',d:'Something is coming up and I want to be prepared.'},{t:'Need answers soon',d:'I have a specific situation I need clarity on quickly.'},{t:'Urgent',d:'I need to speak with someone as soon as possible.'}]}
 };
 
 var GOALS = [
@@ -767,9 +854,12 @@ function fGoTo(n) {
   updateDots(n);
   if (n === 'ff3') buildRecap();
 
-  // scroll funnel into view
+  // scroll funnel into view — offset for fixed nav
   var card = document.getElementById('funnelCard');
-  if (card) card.scrollIntoView({ behavior:'smooth', block:'start' });
+  if (card) {
+    var top = card.getBoundingClientRect().top + window.pageYOffset - 72;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
 }
 
 /* ── DOTS ──────────────────────────────────────────────── */
@@ -851,11 +941,13 @@ function mkCells(containerId, items, stateKey, valKey, cb) {
   var g = document.getElementById(containerId);
   if (!g) return;
   g.innerHTML = '';
-  items.forEach(function(item){
+  items.forEach(function(item, idx){
     var val = valKey ? item[valKey] : item.t;
     var b = document.createElement('button');
     b.type = 'button';
-    b.className = 'fcell' + (FS[stateKey] === val ? ' sel' : '');
+    var isLast = idx === items.length - 1;
+    var isOdd = items.length % 2 !== 0;
+    b.className = 'fcell' + (FS[stateKey] === val ? ' sel' : '') + (isLast && isOdd ? ' span2' : '');
     b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span>'
                 + '<span class="fcell-label">' + item.t + '</span>'
                 + '<span class="fcell-sub">'   + item.d + '</span>';
@@ -1034,7 +1126,10 @@ function submitFF3() {
 /* ── SCROLL TO TOOL ────────────────────────────────────── */
 function scrollToTool() {
   var tool = document.getElementById('tool');
-  if (tool) tool.scrollIntoView({ behavior:'smooth', block:'start' });
+  if (tool) {
+    var top = tool.getBoundingClientRect().top + window.pageYOffset - 72;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
 }
 
 /* ── FAQ ───────────────────────────────────────────────── */
