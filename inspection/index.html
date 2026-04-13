@@ -1216,14 +1216,17 @@ document.addEventListener('DOMContentLoaded', function(){
   var heroVideo = document.getElementById('heroVideo');
   var unmuteBanner = document.getElementById('unmuteBanner');
   if (heroVideo && unmuteBanner) {
+    heroVideo.muted = true;
+    heroVideo.play().catch(function(){});
+    var unmuted = false;
     function doUnmute() {
+      if (unmuted) return;
+      unmuted = true;
       heroVideo.muted = false;
-      heroVideo.play();
       unmuteBanner.classList.add('hidden');
     }
     unmuteBanner.addEventListener('click', doUnmute);
     heroVideo.addEventListener('click', doUnmute);
-    heroVideo.addEventListener('play', doUnmute);
     heroVideo.addEventListener('volumechange', function(){
       if (!heroVideo.muted) unmuteBanner.classList.add('hidden');
     });
