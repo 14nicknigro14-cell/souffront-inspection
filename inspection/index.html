@@ -1219,14 +1219,21 @@ document.addEventListener('DOMContentLoaded', function(){
     heroVideo.muted = true;
     heroVideo.play().catch(function(){});
     var unmuted = false;
-    function doUnmute() {
+    function doUnmute(e) {
       if (unmuted) return;
       unmuted = true;
       heroVideo.muted = false;
       unmuteBanner.classList.add('hidden');
+      heroVideo.play().catch(function(){});
     }
+    heroVideo.addEventListener('click', function(e) {
+      if (!unmuted) {
+        e.preventDefault();
+        e.stopPropagation();
+        doUnmute();
+      }
+    }, true);
     unmuteBanner.addEventListener('click', doUnmute);
-    heroVideo.addEventListener('click', doUnmute);
     heroVideo.addEventListener('volumechange', function(){
       if (!heroVideo.muted) unmuteBanner.classList.add('hidden');
     });
