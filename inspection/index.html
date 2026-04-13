@@ -790,15 +790,15 @@ var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQ
 
 /* ── DATA ─────────────────────────────────────────────── */
 var SVC = [
-  {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help",         d:"I want someone to tell me what I need."},
-  {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city",             d:"I need to deal with it and don't know where to start."},
-  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection",               d:"Someone told me I might — I'm not sure if I actually do."},
-  {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere",       d:"Leaks, moisture, or something doesn't look right."},
-  {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water",          d:"Something looks wrong or shifting near the seawall."},
-  {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue",        d:"Something with pipes, pressure, or compliance."},
-  {v:'Concrete Pad / Structural',         e:'🧱', c:'#f97316', t:"I'm seeing cracks or damage",              d:"Something looks off structurally and I'm concerned."},
-  {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork",           d:"Insurance, city, or something official requires it."},
-  {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain",            d:"My situation is a little different."}
+  {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help"},
+  {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city"},
+  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection"},
+  {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere"},
+  {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water"},
+  {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue"},
+  {v:'Concrete Pad / Structural',         e:'🧱', c:'#f97316', t:"I'm seeing cracks or damage"},
+  {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork"},
+  {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain"}
 ];
 
 var URG = {
@@ -949,7 +949,7 @@ function mkCells(containerId, items, stateKey, valKey, cb) {
     if (isSel) b.style.background = color + '18';
     b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span>'
                 + '<span class="fcell-label">' + item.t + '</span>'
-                + '<span class="fcell-sub">'   + item.d + '</span>';
+                + (item.d ? '<span class="fcell-sub">' + item.d + '</span>' : '');
     b.onmouseenter = function(){ if (!this.classList.contains('sel')) this.style.background = color + '12'; };
     b.onmouseleave = function(){ if (!this.classList.contains('sel')) this.style.background = ''; };
     b.onclick = function(){
