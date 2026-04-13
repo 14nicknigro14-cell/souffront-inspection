@@ -264,16 +264,17 @@
   .flow-path-arrow { color:rgba(255,255,255,0.3); font-size:1rem; padding:0 6px; flex-shrink:0; }
 
   @media(max-width:700px){
-    .flow-top { gap:6px; }
-    .flow-node { min-width:80px; padding:10px 8px; }
-    .fn-title { font-size:0.78rem; }
-    .fn-sub { display:none; }
-    .flow-arrow { padding:0 3px; font-size:1rem; }
-    .flow-path-steps { gap:4px; }
-    .flow-path-node { min-width:70px; padding:8px 8px; }
-    .fpn-title { font-size:0.74rem; }
+    .flow-top { flex-direction:column; align-items:stretch; gap:0; }
+    .flow-node { min-width:0; padding:12px 14px; flex:none; width:100%; }
+    .flow-arrow { transform:rotate(90deg); align-self:center; padding:4px 0; }
+    .fn-title { font-size:0.88rem; }
+    .fn-sub { display:block; font-size:0.72rem; }
+    .flow-split { gap:12px; }
+    .flow-path-steps { flex-wrap:wrap; gap:6px; }
+    .flow-path-node { min-width:0; flex:1 1 80px; padding:10px 10px; }
+    .fpn-title { font-size:0.78rem; }
     .fpn-sub { display:none; }
-    .flow-path-arrow { padding:0 2px; font-size:0.9rem; }
+    .flow-path-arrow { padding:0 3px; font-size:0.9rem; flex-shrink:0; }
   }
 
   .authority-section { background:var(--off-white); padding:80px 5vw; }
