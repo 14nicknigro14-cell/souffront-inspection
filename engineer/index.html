@@ -422,16 +422,12 @@
       <!-- ── PANEL 1: Welcome ───────────────────────────── -->
       <div class="fp active" id="fp1">
         <div class="funnel-header">
-          <h2>Get My Building Action Plan</h2>
-          <p>Free &middot; No obligation &middot; Takes about 2 minutes</p>
+          <h2>Talk to an Engineer</h2>
+          <p>Free &middot; No obligation &middot; Licensed engineers on call</p>
         </div>
         <div class="funnel-body" style="text-align:center;padding:44px 44px;min-height:0;display:flex;align-items:center;justify-content:center">
           <div style="display:flex;flex-direction:column;gap:14px;width:100%">
-            <button type="button" class="fbn" id="btnGetStarted" style="width:100%;padding:20px 28px;font-size:1.08rem;justify-content:center">Start Online &nbsp;→</button>
-            <button type="button" class="fbk" id="btnSpeakPhone" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;font-size:1rem;border:1.5px solid var(--gray-300);color:var(--gray-700)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              I'd Rather Do It Over the Phone
-            </button>
+            <button type="button" class="fbn" id="btnGetStarted" style="width:100%;padding:20px 28px;font-size:1.08rem;justify-content:center">Get started — takes about 2 min &nbsp;→</button>
           </div>
         </div>
       </div>
@@ -1177,8 +1173,7 @@ document.addEventListener('DOMContentLoaded', function(){
   updateDots(2);
 
   // Cover buttons
-  document.getElementById('btnGetStarted').addEventListener('click', function(){ fGoTo(2); });
-  document.getElementById('btnSpeakPhone').addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
+  document.getElementById('btnGetStarted').addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
 
   // Hero CTA goes to call panel
   var heroCta = document.getElementById('heroCta');
