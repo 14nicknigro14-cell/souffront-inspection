@@ -6,30 +6,14 @@
 <title>Souffront Construction & Engineering — Check What Your Building Actually Needs</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) — GA4 + Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJN4F7NE1Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZJN4F7NE1Y');
-</script>
-
-<!-- Event snippet for CTC Calls from website PVO conversion page -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-973857509/cJyBCMjIs5ocEOXFr9AD',
-      'event_callback': callback
-  });
-  return false;
-}
+  gtag('config', 'AW-973857509');
 </script>
 
 <!-- PostHog Session Recording -->
@@ -39,14 +23,22 @@ function gtag_report_conversion(url) {
         api_host: 'https://us.i.posthog.com',
         defaults: '2026-01-30',
         person_profiles: 'identified_only',
-        loaded: function(posthog) {
-            posthog.register({ page_type: 'calls_from_pvo' });
-        }
     })
 </script>
 
-
-
+<!-- Conversion tracking -->
+<script>
+  function gtagConversionEngineerContact(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-973857509/EnzTCJ_yp5McEOXFr9AD',
+      'event_callback': callback
+    });
+    return false;
+  }
+</script>
 
 <style>
   :root {
@@ -68,7 +60,7 @@ function gtag_report_conversion(url) {
   .nav-logo span { color: var(--white); }
   .nav-logo-full { color: var(--white); }
   @media(max-width:480px){.nav-logo-full{display:none}}
-  .nav-cta { background: var(--orange); color: var(--white); border: 2px solid var(--orange); border-radius: 8px; padding: 9px 16px; font-family: 'DM Sans',sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background var(--transition); white-space: nowrap; text-decoration: none; display: inline-block; }
+  .nav-cta { background: var(--orange); color: var(--white); border: 2px solid var(--orange); border-radius: 8px; padding: 9px 16px; font-family: 'DM Sans',sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background var(--transition); white-space: nowrap; }
   .nav-cta:hover { background: var(--orange-light); }
 
   .hero { min-height: 100vh; background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, #2158c4 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 5vw 60px; position: relative; overflow: hidden; }
@@ -126,7 +118,7 @@ function gtag_report_conversion(url) {
   .tool-wrap { max-width:660px; margin:0 auto; }
   .tool-header { text-align:center; margin-bottom:34px; }
 
-  .funnel-card { background:var(--white); border:1.5px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:0 24px 80px rgba(26,35,64,0.16); overflow:hidden; }
+  .funnel-card { background:var(--white); border:2px solid rgba(245,197,24,0.8); border-radius:var(--radius-lg); box-shadow:0 24px 80px rgba(26,35,64,0.16), 0 0 0 6px rgba(245,197,24,0.5), 0 0 80px rgba(245,197,24,0.55); overflow:hidden; }
 
   /* panels */
   .fp { display:none; }
@@ -272,16 +264,17 @@ function gtag_report_conversion(url) {
   .flow-path-arrow { color:rgba(255,255,255,0.3); font-size:1rem; padding:0 6px; flex-shrink:0; }
 
   @media(max-width:700px){
-    .flow-top { gap:6px; }
-    .flow-node { min-width:80px; padding:10px 8px; }
-    .fn-title { font-size:0.78rem; }
-    .fn-sub { display:none; }
-    .flow-arrow { padding:0 3px; font-size:1rem; }
-    .flow-path-steps { gap:4px; }
-    .flow-path-node { min-width:70px; padding:8px 8px; }
-    .fpn-title { font-size:0.74rem; }
+    .flow-top { flex-direction:column; align-items:stretch; gap:0; }
+    .flow-node { min-width:0; padding:12px 14px; flex:none; width:100%; }
+    .flow-arrow { transform:rotate(90deg); align-self:center; padding:4px 0; }
+    .fn-title { font-size:0.88rem; }
+    .fn-sub { display:block; font-size:0.72rem; }
+    .flow-split { gap:12px; }
+    .flow-path-steps { flex-wrap:wrap; gap:6px; }
+    .flow-path-node { min-width:0; flex:1 1 80px; padding:10px 10px; }
+    .fpn-title { font-size:0.78rem; }
     .fpn-sub { display:none; }
-    .flow-path-arrow { padding:0 2px; font-size:0.9rem; }
+    .flow-path-arrow { padding:0 3px; font-size:0.9rem; flex-shrink:0; }
   }
 
   .authority-section { background:var(--off-white); padding:80px 5vw; }
@@ -350,13 +343,13 @@ function gtag_report_conversion(url) {
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-badge">Free Engineer Review — No Obligation</div>
-    <h1>Not Sure What Your Building <em>Actually Requires?</em></h1>
-    <p class="hero-sub">Stop guessing. Find out exactly what's required for your building — free, in under 2 minutes.</p>
+    <div class="hero-badge" style="font-size:clamp(0.72rem,3.5vw,1.05rem);padding:8px 18px;letter-spacing:0.02em;text-transform:none;font-weight:600">Healthy Building. Happy City. Lower Liability.</div>
+    <h1 style="font-size:clamp(1.9rem,6vw,3.7rem)">Start with the Souffront<br><em>Building Action Plan.</em></h1>
+    <p class="hero-sub">It Shows What the City Wants, What the Work May Cost, and How Long It Could Take.</p>
     <div class="vsl-wrap">
       <div class="vsl-inner">
-        <video id="heroVideo" controls playsinline autoplay muted preload="auto">
-          <source src="https://inspectionsouffront1.b-cdn.net/69Ab9e99618c8d4ae6425e64.webm" type="video/webm" />
+        <video id="heroVideo" controls playsinline webkit-playsinline autoplay muted preload="auto">
+          <source src="https://inspectionsouffront1.b-cdn.net/Building%20Recertification%20Essential%20Do%E2%80%99S%20And%20Don%E2%80%99Ts%20-%20John%20Souffront%20(1080P).webm" type="video/webm" />
         </video>
         <div class="unmute-banner" id="unmuteBanner">
           <span class="unmute-icon">🔇</span>
@@ -364,17 +357,10 @@ function gtag_report_conversion(url) {
         </div>
       </div>
     <div class="hero-cta-wrap">
-      <!-- UPDATED: Hero CTA button -->
       <button class="btn-primary" id="heroCta">
         Talk to an Engineer
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
-      <span class="hero-trust">Trusted by property owners, managers &amp; HOAs across Florida &nbsp;&middot;&nbsp; Free &nbsp;&middot;&nbsp; 2 minutes</span>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="hero-stat-num">200+</span><span class="hero-stat-label">Owners, Managers &amp; HOAs</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">15+</span><span class="hero-stat-label">Years in Florida</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">60 Sec</span><span class="hero-stat-label">To Reach an Engineer</span></div>
     </div>
   </div>
 </section>
@@ -390,14 +376,38 @@ function gtag_report_conversion(url) {
 
 <section class="mirror-section">
   <div class="mirror-inner">
-    <div class="section-label">Who This Is For</div>
-    <h2 class="section-title">You don't need more confusion. You need clarity.</h2>
-    <p class="section-sub">Whether you're a property owner, manager, or HOA board member — if any of this sounds familiar, you're in exactly the right place.</p>
-    <div class="mirror-grid">
-      <div class="mirror-card"><span class="mirror-card-icon">📋</span><h3>"I know it needs to get done — I just don't know exactly what."</h3><p>Milestone inspection? Recertification? Structural report? We'll tell you exactly which applies to your building and why.</p></div>
-      <div class="mirror-card"><span class="mirror-card-icon">🔍</span><h3>"I don't want to pick the wrong firm and create more problems."</h3><p>We're a licensed engineering firm — not just an inspection company. That distinction matters when your building's compliance is on the line.</p></div>
-      <div class="mirror-card"><span class="mirror-card-icon">🗂️</span><h3>"I don't want to manage another complicated process."</h3><p>We handle everything — identifying what's required, performing inspections, and submitting to the city. You just get the outcome.</p></div>
-      <div class="mirror-card"><span class="mirror-card-icon">✅</span><h3>"I just want this off my plate and done correctly."</h3><p>That's exactly what we deliver. The hardest part is usually finding the right firm. Once you do, the rest is handled.</p></div>
+    <div class="section-label">What to expect</div>
+    <h2 class="section-title">Everything you need to know before you start.</h2>
+    <p class="section-sub">Whether you're a property owner, manager, or HOA board member — here are the answers to what people ask us most.</p>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:40px">
+      <div class="mirror-card" style="display:flex;gap:20px;align-items:flex-start">
+        <span class="mirror-card-icon" style="flex-shrink:0;font-size:1.8rem">🔍</span>
+        <div>
+          <h3>What does a building assessment or inspection look like?</h3>
+          <p>A licensed engineer visits your property and performs a thorough on-site evaluation of the building's structural and electrical condition. We assess visible deficiencies, signs of deterioration, and anything that could affect compliance or safety. You don't need to prepare anything — we handle the entire site visit and document everything.</p>
+        </div>
+      </div>
+      <div class="mirror-card" style="display:flex;gap:20px;align-items:flex-start">
+        <span class="mirror-card-icon" style="flex-shrink:0;font-size:1.8rem">📋</span>
+        <div>
+          <h3>What's included in the prepared reports?</h3>
+          <p>Our reports are signed and sealed by a licensed Florida engineer and include a full account of the building's observed conditions, any deficiencies identified, and the engineer's professional determination. They're formatted specifically to meet Florida's statutory requirements — ready to submit to your county building department without revisions.</p>
+        </div>
+      </div>
+      <div class="mirror-card" style="display:flex;gap:20px;align-items:flex-start">
+        <span class="mirror-card-icon" style="flex-shrink:0;font-size:1.8rem">✅</span>
+        <div>
+          <h3>What is the average approval rate?</h3>
+          <p>Our reports are accepted by county building departments without revision requests. Because we prepare reports specifically to meet each county's submission requirements — and handle the filing ourselves — the process moves efficiently from inspection to approved recertification.</p>
+        </div>
+      </div>
+      <div class="mirror-card" style="display:flex;gap:20px;align-items:flex-start">
+        <span class="mirror-card-icon" style="flex-shrink:0;font-size:1.8rem">⏱️</span>
+        <div>
+          <h3>How long does it take to complete an inspection for the city?</h3>
+          <p>Most inspections are completed within a few days of scheduling. Report preparation typically follows within one to two weeks. City review timelines vary by county, but because our reports are submitted correctly the first time, you avoid the back-and-forth that causes most delays. We'll give you a specific timeline estimate in your Building Action Plan.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -412,17 +422,21 @@ function gtag_report_conversion(url) {
       <!-- ── PANEL 1: Welcome ───────────────────────────── -->
       <div class="fp active" id="fp1">
         <div class="funnel-header">
-          <h2>Check my building now</h2>
+          <h2>Get My Building Action Plan</h2>
           <p>Free &middot; No obligation &middot; Takes about 2 minutes</p>
         </div>
         <div class="funnel-body" style="text-align:center;padding:44px 44px;min-height:0;display:flex;align-items:center;justify-content:center">
           <div style="display:flex;flex-direction:column;gap:14px;width:100%">
-            <button type="button" class="fbn" id="btnGetStarted" style="width:100%;padding:20px 28px;font-size:1.08rem;justify-content:center">Get started — takes about 2 min &nbsp;→</button>
+            <button type="button" class="fbn" id="btnGetStarted" style="width:100%;padding:20px 28px;font-size:1.08rem;justify-content:center">Start Online &nbsp;→</button>
+            <button type="button" class="fbk" id="btnSpeakPhone" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;font-size:1rem;border:1.5px solid var(--gray-300);color:var(--gray-700)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              I'd Rather Do It Over the Phone
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- ── PANEL call: get them to call ──────────────────── -->
+      <!-- ── PANEL call: get them to call ──────────────── -->
       <div class="fp" id="fpcall">
         <div class="funnel-progress-header" style="padding:20px 24px;"></div>
         <div class="funnel-body" style="text-align:center;padding:36px 32px;">
@@ -437,7 +451,10 @@ function gtag_report_conversion(url) {
 
       <!-- ── PANEL phone: speak to someone ─────────────── -->
       <div class="fp" id="fpphone">
-        <div class="funnel-progress-header" style="padding:20px 24px;"></div>
+        <div class="funnel-header">
+          <h2>We'll have someone call you</h2>
+          <p>Often within 60 seconds</p>
+        </div>
         <div class="funnel-body">
           <h3>What's the best number to reach you?</h3>
           <p class="fdesc">A licensed engineer will call you — often within 60 seconds. No pitch, just straight answers about what your building needs.</p>
@@ -462,7 +479,7 @@ function gtag_report_conversion(url) {
         <div class="funnel-body">
           <div class="step-dots" id="dots2"></div>
           <h3>Which of these sounds most like you?</h3>
-          <p class="fdesc">Don't worry about knowing the right terms — just pick what sounds closest to your situation and we'll figure out the rest together.</p>
+          <p class="fdesc" style="display:none"></p>
           <div class="fcells" id="svcOpts"></div>
           <div class="fbrow" style="margin-top:14px">
             <button class="fbk" onclick="fGoTo(1)">Back</button>
@@ -549,26 +566,8 @@ function gtag_report_conversion(url) {
         </div>
         <div class="funnel-body">
           <div class="step-dots" id="dotsf1"></div>
-          <h3 id="ff1h">What's the best number to reach you?</h3>
-          <p class="fdesc" id="ff1p">We'll follow up with your results here — even if you need to step away.</p>
-          <div id="ff1timing" style="display:none;margin-bottom:16px;">
-            <div class="fopts">
-              <button type="button" class="fopt" id="ff1timeLater" onclick="selectTiming(this,'Later today')">
-                <div class="fopt-check"></div>
-                <div class="fopt-text">
-                  <span class="fopt-label">Later today</span>
-                  <span class="fopt-sub">We'll call you later today when it's more convenient.</span>
-                </div>
-              </button>
-              <button type="button" class="fopt" id="ff1timeDiff" onclick="selectTiming(this,'A different day')">
-                <div class="fopt-check"></div>
-                <div class="fopt-text">
-                  <span class="fopt-label">A different day</span>
-                  <span class="fopt-sub">Leave your number and we'll follow up when works for you.</span>
-                </div>
-              </button>
-            </div>
-          </div>
+          <h3>What's the best number to reach you?</h3>
+          <p class="fdesc">We'll follow up with your results here — even if you need to step away.</p>
           <div class="phone-field-wrap">
             <label for="ff1phone">Your phone number</label>
             <input type="tel" class="phone-input-big" id="ff1phone" placeholder="(561) 000-0000" />
@@ -648,6 +647,15 @@ function gtag_report_conversion(url) {
         </div>
       </div>
 
+      <!-- ── SUCCESS ────────────────────────────────────── -->
+      <div class="fp" id="fsuccess">
+        <div class="funnel-success">
+          <div class="success-icon">✓</div>
+          <h2 id="successH">Request received</h2>
+          <p id="successP">A licensed engineer will call you — often within 60 seconds. They'll tell you exactly what your building requires and answer any questions you have. No pitch, just answers.</p>
+          <p style="margin-top:14px;font-size:0.82rem;color:var(--gray-300)">Prefer to talk now? Call us at <strong style="color:var(--navy)">(561) 728-1106</strong></p>
+        </div>
+      </div>
 
     </div><!-- /funnel-card -->
   </div>
@@ -741,35 +749,11 @@ function gtag_report_conversion(url) {
   </div>
 </section>
 
-<section class="authority-section">
-  <div class="authority-inner">
-    <div class="authority-left">
-      <div class="section-label">Why Souffront</div>
-      <h2 class="section-title">We don't just inspect — we get you compliant.</h2>
-      <p>Most inspection companies hand you a report and leave. You're still left figuring out what it means, what to do next, and how to deal with your county building department.</p>
-      <p style="margin-top:12px">Souffront Construction &amp; Engineering is a licensed engineering firm. We identify what's required, perform the inspections, prepare the reports, and handle submission — start to finish.</p>
-      <div class="differentiator"><p>"If we review your building and you don't need anything yet — we'll tell you. No unnecessary inspections, no pressure."</p></div>
-      <div class="compliance-banner"><h4>Florida Milestone Inspection Law — SB 4-D</h4><p>Florida law requires condominium and cooperative buildings 3 stories or higher to undergo milestone inspections at 25 or 30 years of age (depending on county). Deadlines are active.</p></div>
-    </div>
-    <div>
-      <div class="authority-cards">
-        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">🏛️</div><h4>Licensed Engineering Firm</h4></div><p>Florida-licensed structural and civil engineers on staff. We sign and seal reports that carry real legal weight.</p></div>
-        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">📋</div><h4>Compliance-Ready Reports</h4></div><p>Our reports are formatted to meet Florida's statutory requirements — ready to submit without revisions.</p></div>
-        <div class="auth-card"><div class="auth-card-top"><div class="auth-card-icon">🤝</div><h4>End-to-End Service</h4></div><p>We handle everything: structural evaluations, electrical inspections, infrared scans, and full city submission.</p></div>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card"><div class="proof-stars">★★★★★</div><p class="proof-quote">"They told us exactly what we needed, handled the entire process, and submitted to the county without a single revision."</p><div class="proof-attr">— HOA Board President, Miami-Dade County</div></div>
-        <div class="proof-card"><div class="proof-stars">★★★★★</div><p class="proof-quote">"We didn't even know if we needed a milestone inspection. One call gave us total clarity — no pressure, just straightforward answers."</p><div class="proof-attr">— Property Manager, Broward County</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="faq">
   <div class="faq-inner">
     <div class="faq-header"><div class="section-label">Questions</div><h2 class="section-title">What people ask before they hire us</h2></div>
 
-    <div class="faq-item"><button class="faq-q">What services do you provide? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">We're a full-service structural inspection and engineering firm — so if it involves a building, there's a very good chance we can help. The easiest way to find out what you need is to give us a call. A licensed engineer will answer your questions on the spot, tell you exactly what applies to your building, and there's no obligation whatsoever. Just hit the button in the top right to get started.</div></div></div>
+    <div class="faq-item"><button class="faq-q">What services do you provide? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">We're a full-service structural inspection and engineering firm — so if it involves a building, there's a very good chance we can help. Rather than list every service we offer, the easiest thing to do is run through our quick online tool. It takes about 2 minutes and will point you in the right direction based on your specific situation. If the tool doesn't quite cover what you're dealing with, just hit "I'd rather speak to someone on the phone" and we'll connect you directly with one of our engineers who can answer your questions on the spot.</div></div></div>
 
     <div class="faq-item"><button class="faq-q">What exactly does the city want from me? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">It depends on your building's age, height, and county — but in most cases the city wants two things: a signed and sealed report from a licensed engineer confirming the structural and electrical condition of the building, and a permit application submitted with that report. For Miami-Dade and Broward, this is required at 40 years and every 10 years after. Under Florida's SB 4-D milestone inspection law, condominiums and cooperatives 3 stories or taller must complete a Phase 1 structural inspection at 25 or 30 years depending on their distance from the coast. If repairs are needed, the city also wants documentation that those repairs were completed before they'll close out the recertification. We'll tell you exactly what applies to your specific building — that's part of what we do before anything else.</div></div></div>
 
@@ -779,26 +763,18 @@ function gtag_report_conversion(url) {
 
     <div class="faq-item"><button class="faq-q">How much does this cost? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">The honest answer is that it varies — building size, number of units, height, and the scope of inspection required all affect the price. The inspection and report preparation fee is separate from any repair costs, which depend entirely on what's found. What we can tell you is that the cost of not doing it is almost always higher: cities issue fines for missed deadlines, insurance carriers are increasingly non-renewing policies for buildings without current inspection records, and if a building is ultimately condemned, the financial and legal exposure is significant. We provide a clear proposal before any work begins — no surprises. The initial review to understand what your building needs is always free.</div></div></div>
 
-    <div class="faq-item"><button class="faq-q">What is Florida's Milestone Inspection Law? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">Florida Senate Bill 4-D, passed in 2022 in response to the Surfside collapse, requires all condominium and cooperative buildings 3 stories or taller to undergo a milestone structural inspection. Buildings within 3 miles of the coast must complete Phase 1 by the time they reach 25 years. Buildings further inland have until 30 years. Phase 1 is a visual structural inspection by a licensed engineer. If Phase 1 identifies concerns, a Phase 2 inspection with more detailed analysis is required. Deadlines are active and buildings that miss them face escalating consequences from their county building department.</div></div></div>
-
-    <div class="faq-item"><button class="faq-q">Do I have to hire Souffront after the free review? <span class="faq-arrow">▾</span></button><div class="faq-a"><div class="faq-a-inner">No — there's no obligation at any point. If your building doesn't need anything yet, we'll tell you plainly. We'd rather give you an honest answer now and earn your trust than push unnecessary work. Most people who reach out end up working with us because the clarity we provide in the first conversation is genuinely useful — not because we pressured them into it.</div></div></div>
-
   </div>
 </section>
 
 <section class="final-cta">
   <div class="final-cta-inner">
-    <div class="spike-pill">Takes 2 Minutes &middot; Free &middot; No Obligation</div>
-    <h2>The Easiest Way to Handle This Correctly and Move On</h2>
-    <p>Find out exactly what your building requires — from licensed engineers who handle the entire process, start to finish.</p>
-    <!-- UPDATED: Final CTA button -->
-    <button class="btn-primary" id="finalCta" style="margin:0 auto;display:inline-flex">
+    <a href="tel:5617281106" class="btn-primary" id="finalCta" onclick="gtag_report_conversion('tel:5617281106')" style="margin:0 auto;display:inline-flex;text-decoration:none">
       Talk to an Engineer
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    </a>
     <div class="final-contact">
       <a href="tel:5617281106" onclick="gtag_report_conversion('tel:5617281106')">📞 (561) 728-1106</a>
-      <a href="/cdn-cgi/l/email-protection#11546265787c7065746251427e647777637e7f65623f727e7c">✉ <span class="__cf_email__" data-cfemail="c184b2b5a8aca0b5a4b28192aeb4a7a7b3aeafb5b2efa2aeac">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#c386b0b7aaaea2b7a6b08390acb6a5a5b1acadb7b0eda0acae">✉ <span class="__cf_email__" data-cfemail="bbfec8cfd2d6dacfdec8fbe8d4ceddddc9d4d5cfc895d8d4d6">[email&#160;protected]</span></a>
     </div>
   </div>
 </section>
@@ -809,17 +785,6 @@ function gtag_report_conversion(url) {
   <p style="font-size:0.72rem;color:var(--gray-700)">This tool provides preliminary informational overviews only. It does not constitute engineering advice or a formal inspection.</p>
 </footer>
 
-<div class="modal-overlay" id="getStartedModal">
-  <div class="modal-card" style="padding:32px 28px 28px;">
-    <button class="modal-close" id="gsModalClose">✕</button>
-    <h3 style="font-size:1.35rem;margin-bottom:14px;line-height:1.3;">Let's get you on the phone with a professional who can help.</h3>
-    <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-300);margin-bottom:20px;">Free &nbsp;·&nbsp; No Obligation</p>
-    <div class="modal-btn-row">
-      <button class="fbn" id="gsModalStart" style="margin-top:0;width:100%;padding:15px 24px;">Talk to an Engineer</button>
-    </div>
-  </div>
-</div>
-
 <div class="modal-overlay" id="exitModal">
   <div class="modal-card">
     <button class="modal-close" id="exitModalClose">✕</button>
@@ -827,56 +792,67 @@ function gtag_report_conversion(url) {
     <h3>Don't Leave Without Your Answer</h3>
     <p>You're most of the way there. In under a minute you'll know exactly what your building requires.</p>
     <div class="modal-btn-row">
-      <button class="fbn" id="exitModalResume" style="margin-top:0;width:100%">Talk to an Engineer →</button>
+      <button class="fbn" id="exitModalResume" style="margin-top:0;width:100%">Finish My Building Check →</button>
       <button class="fbk" id="exitModalDismiss" style="margin-top:0">Maybe Later</button>
     </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
 
-
+/* ── GTAG CONVERSION ───────────────────────────────────── */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-973857509/cJyBCMjIs5ocEOXFr9AD',
+    'event_callback': callback
+  });
+  return false;
+}
 
 /* ── DATA ─────────────────────────────────────────────── */
 var SVC = [
-  {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help",         d:"I want someone to tell me what I need."},
-  {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city",             d:"I need to deal with it and don't know where to start."},
-  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection",               d:"Someone told me I might — I'm not sure if I actually do."},
-  {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere",       d:"Leaks, moisture, or something doesn't look right."},
-  {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water",          d:"Something looks wrong or shifting near the seawall."},
-  {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue",        d:"Something with pipes, pressure, or compliance."},
-  {v:'Concrete Pad / Structural',         e:'🧱', c:'#f97316', t:"I'm seeing cracks or damage",              d:"Something looks off structurally and I'm concerned."},
-  {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork",           d:"Insurance, city, or something official requires it."},
-  {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain",            d:"My situation is a little different."}
+  {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help"},
+  {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city"},
+  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection"},
+  {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere"},
+  {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water"},
+  {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue"},
+  {v:'Concrete Pad / Structural',         e:'🧱', c:'#f97316', t:"I'm seeing cracks or damage"},
+  {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork"},
+  {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain"}
 ];
 
 var URG = {
-  'Milestone Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it',d:'No pressure yet — I want to understand what we are dealing with.'},{t:'Deadline is coming up',d:'I know something needs to happen and I want to get ahead of it.'},{t:'I got a notice',d:'The city, HOA, or someone official has already reached out.'},{t:'It may already be overdue',d:'I think we are past the deadline and need help now.'}]},
-  'Threshold Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it',d:'No pressure yet — I want to understand what we are dealing with.'},{t:'Project is coming up soon',d:'Something is starting and I want to be prepared.'},{t:'A permit or requirement flagged this',d:'Someone told me this needs to happen for something official.'},{t:'We need to move quickly',d:'Work is already underway and I need answers fast.'}]},
-  'Water Intrusion':          {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive',d:'Nothing serious yet — I want to get ahead of it.'},{t:'Something looks off',d:'I am noticing signs of moisture or a possible entry point.'},{t:'It is getting worse',d:'The issue is more noticeable and I am concerned.'},{t:'It is actively happening',d:'Water is coming in now and causing damage.'}]},
-  'Seawall':                  {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive',d:'Nothing alarming yet — want to check on it.'},{t:'Something looks off',d:'I am seeing wear, movement, or something that does not look right.'},{t:'Worried about storm season',d:'I want to address it before conditions get worse.'},{t:'There is obvious damage',d:'Something is clearly wrong and may be a safety risk.'}]},
-  'Plumbing / Backflow':      {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into requirements',d:'I want to understand what we may need to do.'},{t:'Something needs attention',d:'There is a known issue or an upcoming requirement.'},{t:'I received a notice',d:'The city or a property manager has flagged this.'},{t:'There is an active problem',d:'Something is wrong right now and I need help.'}]},
-  'Concrete Pad / Structural':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being cautious',d:'I noticed something small and want to get it checked.'},{t:'I can see cracks or damage',d:'There are visible signs something may be wrong.'},{t:'It is getting worse over time',d:'The issue has been growing and I am more concerned.'},{t:'I am genuinely worried',d:'This could be a safety issue and I need answers quickly.'}]},
-  'Third Party / Special Inspection':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just gathering information',d:'I want to understand what is involved before committing.'},{t:'It is needed for a project',d:'Something official requires this as part of a process.'},{t:'Someone else is requesting it',d:'A city, lender, insurer, or other party needs it done.'},{t:'I need it done soon',d:'Timing is tight and I need to move quickly.'}]},
-  'Not Sure':                 {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring',d:'Mainly want clarity — not in a rush yet.'},{t:'Trying to prevent a problem',d:'Want to be proactive before things get worse.'},{t:'Something changed recently',d:'A new issue, notice, or concern came up.'},{t:'Feels urgent',d:'Need help quickly because something seems wrong.'}]},
-  'Something Else':           {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring',d:'No immediate pressure — I want to understand my options.'},{t:'Planning ahead',d:'Something is coming up and I want to be prepared.'},{t:'Need answers soon',d:'I have a specific situation I need clarity on quickly.'},{t:'Feels urgent',d:'I need to speak with someone as soon as possible.'}]}
+  'Milestone Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it'},{t:'Deadline is coming up'},{t:'I got a notice'},{t:'It may already be overdue'}]},
+  'Threshold Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it'},{t:'Project is coming up soon'},{t:'A permit or requirement flagged this'},{t:'We need to move quickly'}]},
+  'Water Intrusion':          {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive'},{t:'Something looks off'},{t:'It is getting worse'},{t:'It is actively happening'}]},
+  'Seawall':                  {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being proactive'},{t:'Something looks off'},{t:'Worried about storm season'},{t:'There is obvious damage'}]},
+  'Plumbing / Backflow':      {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into requirements'},{t:'Something needs attention'},{t:'I received a notice'},{t:'There is an active problem'}]},
+  'Concrete Pad / Structural':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just being cautious'},{t:'I can see cracks or damage'},{t:'It is getting worse over time'},{t:'I am genuinely worried'}]},
+  'Third Party / Special Inspection':{h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just gathering information'},{t:'It is needed for a project'},{t:'Someone else is requesting it'},{t:'I need it done soon'}]},
+  'Not Sure':                 {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring'},{t:'Trying to prevent a problem'},{t:'Something changed recently'},{t:'Feels urgent'}]},
+  'Something Else':           {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring'},{t:'Planning ahead'},{t:'Need answers soon'},{t:'Feels urgent'}]}
 };
 
 var GOALS = [
-  {e:'🏛️', t:'What the city requires',  d:'Understand what the authority expects.'},
-  {e:'💰', t:'Likely cost range',        d:'A realistic idea of pricing.'},
-  {e:'⚙️', t:'How the process works',   d:'Start to finish, explained clearly.'},
-  {e:'💬', t:'Answers to my questions', d:'Clarity before committing to anything.'},
-  {e:'🎯', t:'All of the above',        d:'Full picture — cost, process, and answers.'}
+  {e:'🏛️', t:'What the city requires'},
+  {e:'💰', t:'Likely cost range'},
+  {e:'⚙️', t:'How the process works'},
+  {e:'💬', t:'Answers to my questions'},
+  {e:'🎯', t:'All of the above'}
 ];
 
 var CALLS = [
-  {t:'Yes — call me today', d:'I would like to speak with an engineer on the phone today.'},
-  {t:'Not today',           d:'I would rather keep things online for now.'}
+  {t:'Yes — call me today'},
+  {t:'Another day'}
 ];
 
 /* ── STATE ─────────────────────────────────────────────── */
-var FS = { intent:'', urgency:'', goal:'', call:'', timing:'', phone:'', address:'', building:'', name:'', email:'', role:'', details:'' };
+var FS = { intent:'', urgency:'', goal:'', call:'', phone:'', address:'', building:'', name:'', email:'', role:'', details:'' };
 var CT = null;
 var exitShown = false;
 
@@ -890,7 +866,7 @@ function fGoTo(n) {
 
   if (n === 'reassure') { showReassure(); return; }
 
-  var idMap = { phone:'fpphone', call:'fpcall', ff1:'ff1', ff2:'ff2', ff3:'ff3' };
+  var idMap = { phone:'fpphone', ff1:'ff1', ff2:'ff2', ff3:'ff3', success:'fsuccess' };
   var id = idMap[n] !== undefined ? idMap[n] : 'fp' + n;
   var el = document.getElementById(id);
   if (el) el.classList.add('active');
@@ -967,7 +943,7 @@ function mkOpts(containerId, items, stateKey, nextBtnId, valKey, cb) {
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'fopt' + (FS[stateKey] === val ? ' sel' : '');
-    b.innerHTML = '<div class="fopt-check"></div><div class="fopt-text"><span class="fopt-label">' + item.t + '</span><span class="fopt-sub">' + item.d + '</span></div>';
+    b.innerHTML = '<div class="fopt-check"></div><div class="fopt-text"><span class="fopt-label">' + item.t + '</span>' + (item.d ? '<span class="fopt-sub">' + item.d + '</span>' : '') + '</div>';
     b.onclick = function(){
       FS[stateKey] = val;
       g.querySelectorAll('.fopt').forEach(function(x){ x.classList.remove('sel'); });
@@ -998,7 +974,7 @@ function mkCells(containerId, items, stateKey, valKey, cb) {
     if (isSel) b.style.background = color + '18';
     b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span>'
                 + '<span class="fcell-label">' + item.t + '</span>'
-                + '<span class="fcell-sub">'   + item.d + '</span>';
+                + (item.d ? '<span class="fcell-sub">' + item.d + '</span>' : '');
     b.onmouseenter = function(){ if (!this.classList.contains('sel')) this.style.background = color + '12'; };
     b.onmouseleave = function(){ if (!this.classList.contains('sel')) this.style.background = ''; };
     b.onclick = function(){
@@ -1031,16 +1007,7 @@ function wireOpts() {
         FS.call = '';
         var b = document.getElementById('fb5'); if(b) b.disabled = true;
         document.getElementById('fp5p').textContent = 'You selected "' + FS.goal + '." Would you like to talk with one of our engineers today?';
-        mkOpts('callOpts', CALLS, 'call', 'fb5', 't', function(item){
-          if (item.t === 'Not today') {
-            document.getElementById('ff1h').textContent = "When's a better time to reach you?";
-            document.getElementById('ff1p').textContent = "Leave your number and let us know — we'll call when it works for you.";
-            document.getElementById('ff1timing').style.display = 'block';
-          } else {
-            document.getElementById('ff1h').textContent = "What's the best number to reach you?";
-            document.getElementById('ff1p').textContent = "We'll follow up with your results here — even if you need to step away.";
-            document.getElementById('ff1timing').style.display = 'none';
-          }
+        mkOpts('callOpts', CALLS, 'call', 'fb5', 't', function(){
           setTimeout(function(){ fGoTo('reassure'); }, 220);
         });
         setTimeout(function(){ fGoTo(5); }, 220);
@@ -1079,11 +1046,39 @@ function buildRecap() {
   });
 }
 
+/* ── CONVERSION FIRE ───────────────────────────────────── */
+function fireConversion() {
+  if (typeof gtagConversionEngineerContact === 'function') {
+    gtagConversionEngineerContact();
+  }
+  if (typeof gtag === 'function') {
+    gtag('event', 'phone_lead', { event_category: 'funnel' });
+  }
+  if (typeof posthog !== 'undefined') {
+    posthog.capture('phone_lead_submitted', { intent: FS.intent, urgency: FS.urgency });
+  }
+}
+
+/* ── WEBHOOK ───────────────────────────────────────────── */
+function sendWebhook(payload) {
+  fetch(GHL_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function(e){ console.error('Webhook error:', e); });
+}
+
 /* ── SUBMIT: PHONE ONLY (speak to someone path) ────────── */
 function submitPhone() {
   var v = document.getElementById('phoneNum').value.trim();
   if (!v) { document.getElementById('phoneNum').focus(); return; }
   FS.phone = v;
+
+  // Fire Google Ads conversion — phone submission counts as Engineer Contact
+  fireConversion();
+
+  sendWebhook({ lead_type: 'call_request', phone: v });
+
   document.getElementById('successH').textContent = "We'll give you a call";
   document.getElementById('successP').textContent = "One of our engineers will reach out to " + v + " shortly. We look forward to helping you get clarity.";
   fGoTo('success');
@@ -1094,6 +1089,20 @@ function submitFF1() {
   var v = document.getElementById('ff1phone').value.trim();
   if (!v) { document.getElementById('ff1phone').focus(); return; }
   FS.phone = v;
+
+  // Fire conversion immediately on phone capture — most valuable moment
+  fireConversion();
+
+  // Partial lead webhook so even if they drop off here you have the phone
+  sendWebhook({
+    lead_type: 'funnel_partial',
+    phone: FS.phone,
+    intent: FS.intent,
+    urgency: FS.urgency,
+    goal: FS.goal,
+    call_preference: FS.call
+  });
+
   fGoTo('ff2');
 }
 
@@ -1101,6 +1110,16 @@ function submitFF1() {
 function submitFF2() {
   FS.address  = document.getElementById('ff2addr').value.trim();
   FS.building = document.getElementById('ff2bldg').value.trim();
+
+  // Update webhook with address even if they don't finish
+  sendWebhook({
+    lead_type: 'funnel_partial',
+    phone: FS.phone,
+    address: FS.address,
+    building: FS.building,
+    intent: FS.intent
+  });
+
   fGoTo('ff3');
 }
 
@@ -1110,16 +1129,25 @@ function submitFF3() {
   FS.email   = document.getElementById('ff3email').value.trim();
   FS.role    = document.getElementById('ff3role').value;
   FS.details = document.getElementById('ff3details').value.trim();
+
+  sendWebhook({
+    lead_type: 'funnel_complete',
+    name: FS.name,
+    email: FS.email,
+    phone: FS.phone,
+    role: FS.role,
+    address: FS.address,
+    building: FS.building,
+    intent: FS.intent,
+    urgency: FS.urgency,
+    goal: FS.goal,
+    call_preference: FS.call,
+    details: FS.details
+  });
+
   document.getElementById('successH').textContent = 'Request received';
   document.getElementById('successP').textContent = "A licensed engineer will call you — often within 60 seconds. They'll tell you exactly what your building requires and answer any questions you have. No pitch, just answers.";
   fGoTo('success');
-}
-
-/* ── TIMING SELECTION ──────────────────────────────────── */
-function selectTiming(btn, val) {
-  FS.timing = val;
-  document.querySelectorAll('#ff1timing .fopt').forEach(function(x){ x.classList.remove('sel'); });
-  btn.classList.add('sel');
 }
 
 /* ── SCROLL TO TOOL ────────────────────────────────────── */
@@ -1148,40 +1176,24 @@ document.addEventListener('DOMContentLoaded', function(){
   wireFaq();
   updateDots(2);
 
-  document.getElementById('btnGetStarted').addEventListener('click', function(){
-    fGoTo('call');
-  });
+  // Cover buttons
+  document.getElementById('btnGetStarted').addEventListener('click', function(){ fGoTo(2); });
+  document.getElementById('btnSpeakPhone').addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
 
-  document.getElementById('gsModalStart').addEventListener('click', function(){
-    document.getElementById('getStartedModal').classList.remove('visible');
-    fGoTo('call');
-  });
-  document.getElementById('gsModalClose').addEventListener('click', function(){
-    document.getElementById('getStartedModal').classList.remove('visible');
-  });
-  document.getElementById('getStartedModal').addEventListener('click', function(e){
-    if (e.target === this) this.classList.remove('visible');
-  });
-  
-
-  ['heroCta','finalCta'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(){
-      fGoTo('call');
-      scrollToTool();
-    });
-  });
+  // Hero CTA goes to call panel
+  var heroCta = document.getElementById('heroCta');
+  if (heroCta) heroCta.addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
 
   // Exit modal
   document.getElementById('exitModalClose').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); });
-  document.getElementById('exitModalResume').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); fGoTo('call'); });
+  document.getElementById('exitModalResume').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); fGoTo('call'); scrollToTool(); });
   document.getElementById('exitModalDismiss').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); });
   document.getElementById('exitModal').addEventListener('click', function(e){ if(e.target===this) this.classList.remove('visible'); });
 
   document.addEventListener('mouseleave', function(e){
     if (e.clientY <= 0 && !exitShown) {
       var activePanel = document.querySelector('.fp.active');
-      if (activePanel && activePanel.id !== 'fp1') {
+      if (activePanel && activePanel.id !== 'fp1' && activePanel.id !== 'fsuccess') {
         exitShown = true;
         document.getElementById('exitModal').classList.add('visible');
       }
@@ -1192,10 +1204,24 @@ document.addEventListener('DOMContentLoaded', function(){
   var heroVideo = document.getElementById('heroVideo');
   var unmuteBanner = document.getElementById('unmuteBanner');
   if (heroVideo && unmuteBanner) {
-    unmuteBanner.addEventListener('click', function(){
-      heroVideo.muted = false; heroVideo.play();
+    heroVideo.muted = true;
+    heroVideo.play().catch(function(){});
+    var unmuted = false;
+    function doUnmute(e) {
+      if (unmuted) return;
+      unmuted = true;
+      heroVideo.muted = false;
       unmuteBanner.classList.add('hidden');
-    });
+      heroVideo.play().catch(function(){});
+    }
+    heroVideo.addEventListener('click', function(e) {
+      if (!unmuted) {
+        e.preventDefault();
+        e.stopPropagation();
+        doUnmute();
+      }
+    }, true);
+    unmuteBanner.addEventListener('click', doUnmute);
     heroVideo.addEventListener('volumechange', function(){
       if (!heroVideo.muted) unmuteBanner.classList.add('hidden');
     });
