@@ -432,7 +432,7 @@
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-badge" style="font-size:clamp(0.72rem,3.5vw,1.05rem);padding:8px 18px;letter-spacing:0.02em;text-transform:none;font-weight:600">Healthy Building. Happy City. Lower Liability.</div>
+    <div class="hero-badge" id="heroBadge" style="font-size:clamp(0.72rem,3.5vw,1.05rem);padding:8px 18px;letter-spacing:0.02em;text-transform:none;font-weight:600">Healthy Building. Happy City. Lower Liability.</div>
     <h1 style="font-size:clamp(1.9rem,6vw,3.7rem)">Start with the Souffront<br><em>Building Action Plan.</em></h1>
     <p class="hero-sub">It Shows What the City Wants, What the Work May Cost, and How Long It Could Take.</p>
 
@@ -1000,6 +1000,85 @@ function getGclid() {
   return params.get('gclid') || '';
 }
 var PAGE_GCLID = getGclid();
+
+/* ── BADGE SWAP ────────────────────────────────────────── */
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var s = params.get('s') || '';
+  var kw = (params.get('kw') || '').toLowerCase();
+
+  // s= parameter map (sitelink clicks)
+  var sMap = {
+    'building-recertification': 'Need Building Recertification?',
+    'milestone-inspection':     'Need a Milestone Inspection?',
+    'sirs':                     'Need a SIRS Reserve Study?',
+    'structural-inspection':    'Need a Structural Inspection?',
+    'infrared-inspection':      'Need an Infrared Inspection?',
+    'balcony-inspection':       'Need a Balcony Inspection?',
+    'structural-engineering':   'Need Structural Engineering?',
+    'electrical-engineering':   'Need Electrical Engineering?',
+    'geotechnical-engineering': 'Need Geotechnical Engineering?',
+    'glass-glazing':            'Need Glass & Glazing Engineering?',
+    'concrete-restoration':     'Need Concrete Restoration?',
+    'plumbing':                 'Need Plumbing & Backflow Help?',
+    'electrical-upgrades':      'Need Electrical Upgrades?',
+    'structural-repairs':       'Need Structural Repairs?',
+    'water-intrusion':          'Dealing with Water Intrusion?',
+    'unsafe-structure':         'Do You Have an Unsafe Structure?',
+    'concrete-damage':          'Dealing with Concrete Damage?',
+    'seawall':                  'Need Seawall Inspection or Repair?',
+    '40-year-inspection':       'Need Your 40 Year Inspection?',
+    'hoa-inspection':           'Need an HOA Building Inspection?'
+  };
+
+  // kw= keyword fallback map (headline clicks)
+  var kwMap = [
+    { terms: ['milestone','25 year','25-year'],          badge: 'Need a Milestone Inspection?' },
+    { terms: ['40 year','40-year','recertif'],           badge: 'Need Building Recertification?' },
+    { terms: ['50 year','50-year'],                      badge: 'Need Building Recertification?' },
+    { terms: ['sirs','reserve study','structural integr'],badge: 'Need a SIRS Reserve Study?' },
+    { terms: ['balcony'],                                badge: 'Need a Balcony Inspection?' },
+    { terms: ['infrared','thermal'],                     badge: 'Need an Infrared Inspection?' },
+    { terms: ['concrete','spalling','crack'],            badge: 'Dealing with Concrete Damage?' },
+    { terms: ['water','leak','intrusion','moisture'],    badge: 'Dealing with Water Intrusion?' },
+    { terms: ['seawall','marine','dock'],                badge: 'Need Seawall Inspection or Repair?' },
+    { terms: ['unsafe','violation','condemned'],         badge: 'Do You Have an Unsafe Structure?' },
+    { terms: ['electrical'],                             badge: 'Need Electrical Engineering?' },
+    { terms: ['plumbing','backflow'],                    badge: 'Need Plumbing & Backflow Help?' },
+    { terms: ['structural repair','structural fix'],     badge: 'Need Structural Repairs?' },
+    { terms: ['hoa','condo','association'],              badge: 'Need an HOA Building Inspection?' },
+    { terms: ['geotechnical','soil','foundation'],       badge: 'Need Geotechnical Engineering?' },
+    { terms: ['glass','glazing','window'],               badge: 'Need Glass & Glazing Engineering?' }
+  ];
+
+  var text = null;
+
+  // 1. Try s= parameter first
+  if (s && sMap[s]) {
+    text = sMap[s];
+  }
+
+  // 2. Fall back to keyword matching
+  if (!text && kw) {
+    for (var i = 0; i < kwMap.length; i++) {
+      for (var j = 0; j < kwMap[i].terms.length; j++) {
+        if (kw.indexOf(kwMap[i].terms[j]) !== -1) {
+          text = kwMap[i].badge;
+          break;
+        }
+      }
+      if (text) break;
+    }
+  }
+
+  // 3. Apply if we found a match
+  if (text) {
+    document.addEventListener('DOMContentLoaded', function() {
+      var badge = document.getElementById('heroBadge');
+      if (badge) badge.textContent = text;
+    });
+  }
+})();
 
 /* ── GTAG CONVERSION ───────────────────────────────────── */
 function gtag_report_conversion(url) {
