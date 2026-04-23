@@ -103,27 +103,18 @@
     .services-section::after { width:50px; }
     .services-section::before { background:linear-gradient(90deg, var(--navy) 60%, transparent 100%); }
     .services-section::after  { background:linear-gradient(270deg, var(--navy) 60%, transparent 100%); }
-    /* Switch to single scrolling row on mobile */
-    .services-grid {
-      flex-direction:row;
-      flex-wrap:nowrap;
-      gap:8px;
-      padding:10px 0;
-      width:max-content;
-      animation:svcMobileScroll 35s linear infinite;
-      align-items:center;
-    }
-    .svc-row { display:contents; }
-    .svc-row:nth-child(odd),
-    .svc-row:nth-child(even) { transform:none; }
-    .svc-pill { font-size:0.74rem; padding:7px 12px; flex-shrink:0; }
-    .svc-pill.inflate { transform:scale(1.08); }
-    @keyframes svcMobileScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .services-grid { gap:6px; padding:10px 0; animation:none; }
+    .svc-pill { font-size:0.7rem; padding:6px 10px; flex-shrink:0; }
+    .svc-pill.inflate { transform:none; background:rgba(245,197,24,0.18); border-color:rgba(245,197,24,0.6); color:var(--white); }
+    .svc-row { animation:svcRowScroll 55s linear infinite; gap:6px; }
+    .svc-row:nth-child(odd)  { transform:none; animation-direction:normal; }
+    .svc-row:nth-child(even) { transform:none; animation-direction:reverse; }
+    @keyframes svcRowScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
   }
   @media(max-width:480px) {
     .services-section::before,
     .services-section::after { width:40px; }
-    .svc-pill { font-size:0.7rem; padding:6px 10px; }
+    .svc-pill { font-size:0.65rem; padding:5px 9px; }
   }
   .svc-pill {
     display:inline-flex; align-items:center; flex-shrink:0;
@@ -1031,15 +1022,19 @@ function wireServicesInflate() {
   var grid = document.getElementById('servicesGrid');
   if (!grid) return;
 
-  // On mobile: duplicate rows for seamless scroll loop
+  // On mobile: duplicate pills inside each row for seamless CSS scroll loop
   if (window.innerWidth <= 768) {
-    var rows = Array.from(grid.children);
+    var rows = Array.from(grid.querySelectorAll('.svc-row'));
     rows.forEach(function(row) {
-      grid.appendChild(row.cloneNode(true));
+      var pills = Array.from(row.children);
+      pills.forEach(function(pill) {
+        row.appendChild(pill.cloneNode(true));
+      });
     });
     return; // no inflate on mobile
   }
 
+  // Desktop inflate
   var popularPills = Array.from(document.querySelectorAll('.svc-pill.popular'));
   if (!popularPills.length) return;
 
