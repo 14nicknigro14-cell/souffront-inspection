@@ -103,13 +103,12 @@
     .services-section::after { width:50px; }
     .services-section::before { background:linear-gradient(90deg, var(--navy) 60%, transparent 100%); }
     .services-section::after  { background:linear-gradient(270deg, var(--navy) 60%, transparent 100%); }
-    .services-grid { gap:6px; padding:10px 0; animation:none; align-items:center; overflow:hidden; }
+    .services-grid { gap:6px; padding:10px 0; animation:none; align-items:center; overflow:visible; }
     .svc-pill { font-size:0.7rem; padding:6px 10px; flex-shrink:0; }
     .svc-pill.inflate { transform:none !important; }
     .svc-bleed { opacity:1 !important; }
     .svc-row { gap:6px; animation:svcRowScroll 70s linear infinite; }
-    .svc-row:nth-child(even) { animation-delay:-35s; }
-    @keyframes svcRowScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes svcRowScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-25%)} }
   }
   @media(max-width:480px) {
     .services-section::before,
@@ -1027,9 +1026,12 @@ function wireServicesInflate() {
     var rows = Array.from(grid.querySelectorAll('.svc-row'));
     rows.forEach(function(row) {
       var pills = Array.from(row.children);
-      pills.forEach(function(pill) {
-        row.appendChild(pill.cloneNode(true));
-      });
+      // duplicate 3x to ensure no gaps at any screen width
+      for (var i = 0; i < 3; i++) {
+        pills.forEach(function(pill) {
+          row.appendChild(pill.cloneNode(true));
+        });
+      }
     });
     return; // no inflate on mobile
   }
