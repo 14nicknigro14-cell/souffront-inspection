@@ -73,7 +73,7 @@
   }
   .services-section::before { left:0; background:linear-gradient(90deg, var(--navy) 40%, transparent 100%); }
   .services-section::after  { right:0; background:linear-gradient(270deg, var(--navy) 40%, transparent 100%); }
-  .services-inner { width:100%; }
+  .services-inner { width:100%; display:flex; flex-direction:column; align-items:center; }
   .services-label { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:nowrap; margin-bottom:18px; padding:0 5vw; overflow:hidden; }
   .sl-county { font-size:0.72rem; font-weight:700; color:var(--orange-light); display:flex; align-items:center; gap:5px; letter-spacing:0.04em; text-transform:uppercase; white-space:nowrap; }
   .sl-dot { width:5px; height:5px; border-radius:50%; background:var(--orange); display:inline-block; flex-shrink:0; animation:pulse 2s infinite; }
@@ -85,6 +85,7 @@
     gap:8px;
     overflow:visible;
     padding:10px 0;
+    align-items:center;
   }
   .svc-row {
     display:flex;
