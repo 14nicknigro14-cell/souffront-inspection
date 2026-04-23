@@ -105,7 +105,7 @@
     .services-section::after  { background:linear-gradient(270deg, var(--navy) 60%, transparent 100%); }
     .services-grid { gap:6px; padding:10px 0; animation:none; align-items:center; overflow:visible; }
     .svc-pill { font-size:0.7rem; padding:6px 10px; flex-shrink:0; }
-    .svc-pill.inflate { transform:none !important; }
+    .svc-pill.inflate { transform:none !important; background:rgba(245,197,24,0.25) !important; border-color:var(--orange) !important; color:var(--white) !important; box-shadow:0 0 12px rgba(245,197,24,0.4) !important; font-weight:700 !important; }
     .svc-bleed { opacity:1 !important; }
     .svc-row { gap:6px; animation:svcRowScroll 70s linear infinite; }
     @keyframes svcRowScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-25%)} }
@@ -1026,14 +1026,32 @@ function wireServicesInflate() {
     var rows = Array.from(grid.querySelectorAll('.svc-row'));
     rows.forEach(function(row) {
       var pills = Array.from(row.children);
-      // duplicate 3x to ensure no gaps at any screen width
       for (var i = 0; i < 3; i++) {
         pills.forEach(function(pill) {
           row.appendChild(pill.cloneNode(true));
         });
       }
     });
-    return; // no inflate on mobile
+    // still run inflate on mobile — glow only, no scale
+    var popularPills = Array.from(document.querySelectorAll('.svc-row:first-child .svc-pill.popular'));
+    if (!popularPills.length) return;
+    var index = 0;
+    function inflateNextMobile() {
+      var pill = popularPills[index];
+      pill.classList.add('inflate');
+      setTimeout(function() {
+        pill.classList.remove('inflate');
+        index++;
+        if (index < popularPills.length) {
+          setTimeout(inflateNextMobile, 1200);
+        } else {
+          index = 0;
+          setTimeout(inflateNextMobile, 5000);
+        }
+      }, 2000);
+    }
+    setTimeout(inflateNextMobile, 1500);
+    return;
   }
 
   // Desktop inflate
