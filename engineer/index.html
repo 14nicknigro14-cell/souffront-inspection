@@ -108,7 +108,9 @@
     .svc-pill.inflate { transform:none !important; background:rgba(245,197,24,0.25) !important; border-color:var(--orange) !important; color:var(--white) !important; box-shadow:0 0 12px rgba(245,197,24,0.4) !important; font-weight:700 !important; }
     .svc-bleed { opacity:1 !important; }
     .svc-row { gap:6px; animation:svcRowScroll 70s linear infinite; }
+    .svc-row:nth-child(2) { animation:svcRowScrollReverse 70s linear infinite; }
     @keyframes svcRowScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-25%)} }
+    @keyframes svcRowScrollReverse { 0%{transform:translateX(-25%)} 100%{transform:translateX(0)} }
   }
   @media(max-width:480px) {
     .services-section::before,
