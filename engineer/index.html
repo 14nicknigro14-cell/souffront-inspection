@@ -74,10 +74,11 @@
   .services-section::before { left:0; background:linear-gradient(90deg, var(--navy) 40%, transparent 100%); }
   .services-section::after  { right:0; background:linear-gradient(270deg, var(--navy) 40%, transparent 100%); }
   .services-inner { width:100%; }
-  .services-label { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:18px; padding:0 5vw; }
-  .sl-county { font-size:0.78rem; font-weight:700; color:var(--orange-light); display:flex; align-items:center; gap:6px; letter-spacing:0.04em; text-transform:uppercase; }
-  .sl-dot { width:6px; height:6px; border-radius:50%; background:var(--orange); display:inline-block; flex-shrink:0; animation:pulse 2s infinite; }
-  .sl-sep { color:rgba(255,255,255,0.15); font-size:0.9rem; }
+  .services-label { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:nowrap; margin-bottom:18px; padding:0 5vw; overflow:hidden; }
+  .sl-county { font-size:0.72rem; font-weight:700; color:var(--orange-light); display:flex; align-items:center; gap:5px; letter-spacing:0.04em; text-transform:uppercase; white-space:nowrap; }
+  .sl-dot { width:5px; height:5px; border-radius:50%; background:var(--orange); display:inline-block; flex-shrink:0; animation:pulse 2s infinite; }
+  .sl-sep { color:rgba(255,255,255,0.15); font-size:0.9rem; flex-shrink:0; }
+  @media(max-width:480px){ .sl-county { font-size:0.62rem; } .sl-sep { font-size:0.7rem; } }
   .services-grid {
     display:flex;
     flex-direction:column;
@@ -91,30 +92,32 @@
     flex-wrap:nowrap;
     width:max-content;
   }
-  .svc-row:nth-child(odd)  { transform:translateX(-40px); }
-  .svc-row:nth-child(even) { transform:translateX(40px); }
+  .svc-row:nth-child(odd)  { transform:translateX(-50px); }
+  .svc-row:nth-child(even) { transform:translateX(50px); }
 
   /* ── SERVICES RESPONSIVE ── */
   @media(max-width:768px) {
     .services-section { padding:22px 0 28px; }
     .services-section::before,
-    .services-section::after { width:60px; }
-    .services-section::before { background:linear-gradient(90deg, var(--navy) 50%, transparent 100%); }
-    .services-section::after  { background:linear-gradient(270deg, var(--navy) 50%, transparent 100%); }
-    .svc-pill { font-size:0.74rem; padding:7px 12px; }
-    .svc-row:nth-child(odd)  { transform:translateX(-28px); }
-    .svc-row:nth-child(even) { transform:translateX(28px); }
-    .svc-pill.inflate { transform:scale(1.10); }
+    .services-section::after { width:50px; }
+    .services-section::before { background:linear-gradient(90deg, var(--navy) 60%, transparent 100%); }
+    .services-section::after  { background:linear-gradient(270deg, var(--navy) 60%, transparent 100%); }
+    .svc-pill { font-size:0.7rem; padding:6px 10px; }
+    .svc-row { gap:6px; }
+    .services-grid { gap:6px; }
+    .svc-row:nth-child(odd)  { transform:translateX(-30px); }
+    .svc-row:nth-child(even) { transform:translateX(30px); }
+    .svc-pill.inflate { transform:scale(1.08); }
   }
   @media(max-width:480px) {
     .services-section::before,
     .services-section::after { width:40px; }
-    .svc-pill { font-size:0.7rem; padding:6px 11px; }
-    .svc-row { gap:6px; }
-    .services-grid { gap:6px; }
-    .svc-row:nth-child(odd)  { transform:translateX(-20px); }
-    .svc-row:nth-child(even) { transform:translateX(20px); }
-    .svc-pill.inflate { transform:scale(1.08); }
+    .svc-pill { font-size:0.65rem; padding:5px 9px; }
+    .svc-row { gap:5px; }
+    .services-grid { gap:5px; }
+    .svc-row:nth-child(odd)  { transform:translateX(-24px); }
+    .svc-row:nth-child(even) { transform:translateX(24px); }
+    .svc-pill.inflate { transform:scale(1.06); }
   }
   .svc-pill {
     display:inline-flex; align-items:center; flex-shrink:0;
@@ -419,15 +422,6 @@
 
   footer { background:#07152b; padding:26px 5vw; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   footer p { font-size:0.77rem; color:var(--gray-500); }
-
-  .modal-overlay { position:fixed; inset:0; z-index:999; background:rgba(11,30,61,0.72); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity var(--transition); }
-  .modal-overlay.visible { opacity:1; pointer-events:all; }
-  .modal-card { background:var(--white); border-radius:var(--radius-lg); padding:38px 34px; max-width:430px; width:100%; text-align:center; box-shadow:var(--shadow-lg); transform:translateY(20px); transition:transform var(--transition); position:relative; }
-  .modal-overlay.visible .modal-card { transform:translateY(0); }
-  .modal-close { position:absolute; top:14px; right:16px; background:none; border:none; cursor:pointer; font-size:1.2rem; color:var(--gray-300); line-height:1; }
-  .modal-card h3 { font-family:'DM Serif Display',serif; font-size:1.55rem; color:var(--navy); margin-bottom:10px; }
-  .modal-card p { color:var(--gray-500); font-size:0.9rem; line-height:1.65; margin-bottom:24px; }
-  .modal-btn-row { display:flex; flex-direction:column; gap:10px; }
 </style>
 </head>
 <body>
@@ -999,17 +993,9 @@
   <p>© 2026 Souffront Construction &amp; Engineering. Licensed in Florida. All rights reserved.</p>
   <p style="font-size:0.72rem;color:var(--gray-700)">This tool provides preliminary informational overviews only. It does not constitute engineering advice or a formal inspection.</p>
 </footer>
-
-<div class="modal-overlay" id="exitModal">
-  <div class="modal-card">
-    <button class="modal-close" id="exitModalClose">✕</button>
-    <div style="font-size:2rem;margin-bottom:12px">🏢</div>
     <h3>Don't Leave Without Your Answer</h3>
     <p>You're most of the way there. In under a minute you'll know exactly what your building requires.</p>
-    <div class="modal-btn-row">
-      <button class="fbn" id="exitModalResume" style="margin-top:0;width:100%">Finish My Building Check →</button>
-      <button class="fbk" id="exitModalDismiss" style="margin-top:0">Maybe Later</button>
-    </div>
+
   </div>
 </div>
 
@@ -1414,20 +1400,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   document.getElementById('btnGetStarted').addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
 
-  document.getElementById('exitModalClose').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); });
-  document.getElementById('exitModalResume').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); fGoTo('call'); scrollToTool(); });
-  document.getElementById('exitModalDismiss').addEventListener('click', function(){ document.getElementById('exitModal').classList.remove('visible'); });
-  document.getElementById('exitModal').addEventListener('click', function(e){ if(e.target===this) this.classList.remove('visible'); });
 
-  document.addEventListener('mouseleave', function(e){
-    if (e.clientY <= 0 && !exitShown) {
-      var activePanel = document.querySelector('.fp.active');
-      if (activePanel && activePanel.id !== 'fp1' && activePanel.id !== 'fsuccess') {
-        exitShown = true;
-        document.getElementById('exitModal').classList.add('visible');
-      }
-    }
-  });
+
 
   var heroVideo = document.getElementById('heroVideo');
   var unmuteBanner = document.getElementById('unmuteBanner');
