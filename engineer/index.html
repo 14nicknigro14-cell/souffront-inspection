@@ -57,8 +57,18 @@
   .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(245,197,24,0.05) 0%,transparent 70%); pointer-events:none; }
   .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
   .hero-inner { position:relative; max-width:780px; }
-  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(245,197,24,0.07); border:1px solid rgba(245,197,24,0.09); border-radius:100px; padding:6px 16px; color:var(--orange-light); font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:28px; }
-  .hero-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:pulse 2s infinite; }
+  .hero-badge {
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(245,197,24,0.15);
+    border:2px solid #f5c518;
+    border-radius:10px;
+    padding:10px 24px;
+    color:#f7d145;
+    font-size:clamp(0.88rem,2vw,1.05rem);
+    font-weight:700;
+    margin-bottom:28px;
+    letter-spacing:0.01em;
+  }
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
   .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(2.1rem,5.5vw,3.7rem); color:var(--white); line-height:1.12; letter-spacing:-0.02em; margin-bottom:18px; }
   .hero h1 em { font-style:italic; color:var(--orange-light); }
@@ -432,7 +442,7 @@
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-badge" id="heroBadge" style="font-size:clamp(0.72rem,3.5vw,1.05rem);padding:8px 18px;letter-spacing:0.02em;text-transform:none;font-weight:600">Healthy Building. Happy City. Lower Liability.</div>
+    <div class="hero-badge" id="heroBadge" style="font-size:clamp(0.88rem,2vw,1.05rem);padding:10px 24px;letter-spacing:0.01em;font-weight:700;">✓ Healthy Building. Happy City. Lower Liability.</div>
     <h1 style="font-size:clamp(1.9rem,6vw,3.7rem)">Start with the Souffront<br><em>Building Action Plan.</em></h1>
     <p class="hero-sub">It Shows What the City Wants, What the Work May Cost, and How Long It Could Take.</p>
 
@@ -520,16 +530,16 @@
   <div class="mirror-inner">
     <div style="display:flex;flex-direction:column;gap:12px;">
 
-      <div class="mirror-card mc-accordion open">
+      <div class="mirror-card mc-accordion open" id="firstAccordion">
         <button class="mc-trigger" aria-expanded="true">
           <span class="mc-trigger-left">
-            <span class="mc-icon">🔍</span>
-            <span class="mc-question">What does a building assessment or inspection look like?</span>
+            <span class="mc-icon" id="firstAccordionIcon">🔍</span>
+            <span class="mc-question" id="firstAccordionQ">What does a building assessment or inspection look like?</span>
           </span>
           <span class="mc-arrow">▾</span>
         </button>
         <div class="mc-answer">
-          <p>A licensed engineer visits your property and performs a thorough on-site evaluation of the building's structural and electrical condition. We assess visible deficiencies, signs of deterioration, and anything that could affect compliance or safety. You don't need to prepare anything — we handle the entire site visit and document everything.</p>
+          <p id="firstAccordionA">A licensed engineer visits your property and performs a thorough on-site evaluation of the building's structural and electrical condition. We assess visible deficiencies, signs of deterioration, and anything that could affect compliance or safety. You don't need to prepare anything — we handle the entire site visit and document everything.</p>
         </div>
       </div>
 
@@ -1075,7 +1085,110 @@ var PAGE_GCLID = getGclid();
   if (text) {
     document.addEventListener('DOMContentLoaded', function() {
       var badge = document.getElementById('heroBadge');
-      if (badge) badge.textContent = text;
+      if (badge) badge.textContent = '✓ ' + text;
+    });
+  }
+
+  // 4. Accordion swap map
+  var accordionMap = {
+    'milestone-inspection': {
+      icon: '📬',
+      q: 'What does a milestone inspection look like?',
+      a: 'A milestone inspection is a Phase 1 structural inspection required under Florida\'s SB 4-D law for condominium and cooperative buildings three stories or taller. A licensed structural engineer visits your property and performs a thorough on-site evaluation of the building\'s structural components — including the foundation, load-bearing walls, roof structure, balconies, and any visible signs of deterioration or distress. We document everything, prepare a signed and sealed Phase 1 report, and file it with your county building department. If the Phase 1 identifies substantial structural deterioration, a Phase 2 report with repair recommendations is required. We handle the entire process from site visit to city submission so you don\'t have to manage any of it directly.'
+    },
+    'sirs': {
+      icon: '📊',
+      q: 'What does a SIRS reserve study involve?',
+      a: 'A Structural Integrity Reserve Study is a two-part requirement under Florida law for condominium and cooperative associations in buildings three stories or taller. The first part is a visual inspection of the building\'s structural components performed by a licensed engineer — we assess the condition of the load-bearing elements, balconies, roof, waterproofing, and other systems. The second part is a reserve funding analysis that determines how much the association needs to set aside annually to fund future repairs and maintenance. The completed study must be certified by a licensed engineer and submitted to the association, which is then required to fund the reserves accordingly. We handle both parts and prepare the report in the format required for compliance.'
+    },
+    'concrete-restoration': {
+      icon: '🧱',
+      q: 'What does concrete restoration actually involve?',
+      a: 'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code. Our reports are formatted to satisfy city requirements so the permit closes cleanly. From the initial inspection through to the final sign-off, we manage the entire process.'
+    },
+    'concrete-damage': {
+      icon: '🧱',
+      q: 'What does concrete restoration actually involve?',
+      a: 'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code. Our reports are formatted to satisfy city requirements so the permit closes cleanly. From the initial inspection through to the final sign-off, we manage the entire process.'
+    },
+    'water-intrusion': {
+      icon: '💧',
+      q: 'How do you find and fix a water intrusion problem?',
+      a: 'Water intrusion is rarely straightforward — water travels, so where it\'s showing up inside a building is often not where it\'s actually entering. Our engineers perform a thorough on-site investigation to trace the source, which may involve examining the building envelope, windows, roofing, balconies, waterproofing membranes, or penetrations through the structure. Once the source is identified, we prepare a scope of repairs with engineering documentation, coordinate with qualified contractors, and ensure the work is permitted and completed correctly. If you\'ve been dealing with recurring leaks that previous repairs haven\'t resolved, that\'s exactly the kind of situation we\'re built for.'
+    },
+    'structural-inspection': {
+      icon: '🏗️',
+      q: 'What does a structural inspection or engineering engagement look like?',
+      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
+    },
+    'structural-engineering': {
+      icon: '🏗️',
+      q: 'What does a structural inspection or engineering engagement look like?',
+      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
+    },
+    'structural-repairs': {
+      icon: '🏗️',
+      q: 'What does a structural inspection or engineering engagement look like?',
+      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
+    },
+    'unsafe-structure': {
+      icon: '🏚️',
+      q: 'What happens when a building is flagged as unsafe?',
+      a: 'An unsafe structure designation is serious and time-sensitive — cities typically issue a notice requiring the owner to either repair or demolish within a specific timeframe, and fines accumulate quickly. Our first step is an immediate site visit to assess what the city has identified and determine the actual scope of the structural concern. We prepare the engineering documentation required to respond to the violation, work directly with the building department on your behalf, and scope the repairs needed to bring the structure back into compliance. If the situation requires expedited permitting or emergency engineering support, we\'re equipped to move quickly. You don\'t have to navigate the city process alone — we handle that communication directly.'
+    },
+    'infrared-inspection': {
+      icon: '🌡️',
+      q: 'What does an infrared thermal inspection involve?',
+      a: 'An infrared thermal inspection uses specialized imaging equipment to detect heat signatures that reveal conditions invisible to the naked eye — moisture trapped inside walls, failing insulation, electrical hot spots, air leakage, and areas of potential water intrusion. Our licensed engineers perform the scan on-site and interpret the results in the context of the building\'s construction and condition. The findings are documented in a detailed report that identifies problem areas, explains what the thermal anomalies indicate, and recommends next steps. It\'s a non-invasive way to get a clear picture of what\'s happening inside a building before committing to more extensive investigation or repairs.'
+    },
+    'balcony-inspection': {
+      icon: '🏢',
+      q: 'What does a balcony inspection involve?',
+      a: 'Florida\'s balcony inspection requirements under Form HR-7020 apply to residential buildings and require a licensed engineer to visually assess the condition of elevated walkways, balconies, and their structural attachments. Our engineer visits the property, inspects each balcony for signs of deterioration — including concrete spalling, corrosion of structural connections, waterproofing failures, and any movement or deflection that could indicate a structural concern. We prepare the HR-7020 compliant report, sign and seal it, and file it with the appropriate authority. If deficiencies are found, we can scope the repairs and provide the engineering documentation needed to get them permitted and completed.'
+    },
+    'geotechnical-engineering': {
+      icon: '🪨',
+      q: 'What does a geotechnical engineering engagement look like?',
+      a: 'Geotechnical engineering deals with the soil and subsurface conditions that support your building or proposed construction. Our geotechnical engineers perform subsurface investigations — which typically involve soil borings or test pits at the site — to characterize the underlying conditions and determine bearing capacity, settlement potential, and any site-specific concerns like expansive soils or groundwater. The findings are documented in a geotechnical report that provides the foundation design recommendations your structural engineer and contractor need to build correctly. Whether you\'re planning new construction, investigating foundation concerns, or responding to differential settlement, we provide the subsurface data and engineering judgment to move forward with confidence.'
+    },
+    'glass-glazing': {
+      icon: '🪟',
+      q: 'What does a glass and glazing engineering engagement involve?',
+      a: 'Glass and glazing engineering covers the structural design, analysis, and code compliance review of windows, curtain walls, storefronts, skylights, and other glazing systems in buildings. Our engineers evaluate existing installations for structural adequacy — particularly important in South Florida where wind load requirements are strict — and prepare the documentation needed for permits or code compliance. For new installations or replacements, we provide the engineering of record to ensure the system is designed correctly for the applicable wind speeds, impact resistance requirements, and Florida Building Code provisions. If you\'ve received a notice related to glazing compliance or are planning a window replacement project, we can provide the engineering support needed to get it done right.'
+    },
+    'electrical-engineering': {
+      icon: '⚡',
+      q: 'What does electrical engineering or an electrical upgrade look like?',
+      a: 'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system — panels, distribution, wiring, grounding, and compliance with current code — and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors to ensure the work is completed correctly and inspected. Whether you\'re dealing with an aging electrical system, a code violation, a panel replacement, or a full building electrical upgrade, we handle the engineering side from assessment through permit closeout.'
+    },
+    'electrical-upgrades': {
+      icon: '⚡',
+      q: 'What does electrical engineering or an electrical upgrade look like?',
+      a: 'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system — panels, distribution, wiring, grounding, and compliance with current code — and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors to ensure the work is completed correctly and inspected. Whether you\'re dealing with an aging electrical system, a code violation, a panel replacement, or a full building electrical upgrade, we handle the engineering side from assessment through permit closeout.'
+    },
+    'plumbing': {
+      icon: '🚰',
+      q: 'What does a plumbing or backflow engagement look like?',
+      a: 'Plumbing engagements typically involve assessing existing systems for code compliance, capacity, or condition concerns — as well as designing or specifying upgrades when existing systems are failing or undersized. Backflow prevention is a specific requirement for many commercial and multifamily properties, where the water supply must be protected from contamination through certified backflow prevention devices that require regular testing and maintenance. Our team handles the inspection, testing, engineering documentation, and permitting associated with both plumbing upgrades and backflow compliance so you meet your local requirements without having to coordinate multiple contractors and engineers separately.'
+    },
+    'seawall': {
+      icon: '🌊',
+      q: 'What does a seawall inspection or engineering engagement look like?',
+      a: 'Seawall inspections assess the condition and structural integrity of the retaining wall that protects your waterfront property from erosion and water intrusion. Our engineers evaluate the seawall for signs of deterioration — including cracking, displacement, undermining, voids behind the wall, and failing cap or tie-back systems. We document the findings in a signed and sealed report and, where repairs are needed, prepare the engineering scope and permit documents to get the work done correctly. South Florida\'s marine environment is particularly aggressive on seawall structures, so regular assessment is important to catch deterioration before it becomes an emergency. We work with qualified marine contractors and can manage the repair process from engineering through final inspection.'
+    }
+  };
+
+  // Apply accordion swap on DOMContentLoaded
+  var accordionKey = s || null;
+  if (accordionKey && accordionMap[accordionKey]) {
+    document.addEventListener('DOMContentLoaded', function() {
+      var data = accordionMap[accordionKey];
+      var icon = document.getElementById('firstAccordionIcon');
+      var q    = document.getElementById('firstAccordionQ');
+      var a    = document.getElementById('firstAccordionA');
+      if (icon) icon.textContent = data.icon;
+      if (q)    q.textContent    = data.q;
+      if (a)    a.textContent    = data.a;
     });
   }
 })();
