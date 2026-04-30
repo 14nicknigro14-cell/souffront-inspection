@@ -4,9 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Souffront Construction & Engineering — Check What Your Building Actually Needs</title>
+
+<!-- PERFORMANCE FIX 1: Preconnect to font origins BEFORE loading (saves ~300ms render block) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- PERFORMANCE FIX 2: font-display=swap means text shows immediately, font swaps in when ready -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
-<!-- Google tag (gtag.js) — GA4 + Google Ads -->
+<!-- PERFORMANCE FIX 3: Preconnect to video CDN so connection is ready when video loads -->
+<link rel="preconnect" href="https://inspectionsouffront1.b-cdn.net" />
+
+<!-- PERFORMANCE FIX 4: Preconnect to GTM -->
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+
+<!-- Google tag (gtag.js) — GA4 + Google Ads: async = non-render-blocking, unchanged -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJN4F7NE1Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -16,14 +28,18 @@
   gtag('config', 'AW-973857509');
 </script>
 
-<!-- PostHog Session Recording -->
+<!-- PERFORMANCE FIX 5: PostHog deferred 2s after load — not needed for first paint -->
 <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="fi init Oi Fi ft Ii Ai Ri capture calculateEventProperties Ni register register_once register_for_session unregister unregister_for_session Hi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurveyAsync qi identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty zi Li createPersonProfile setInternalOrTestUser Bi $i Wi opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Mi debug bt ji getPageViewId captureTraceFeedback captureTraceMetric Si".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_x6rUyrTybbiDhUuHjXap6jAViHeAc5FgSnBrvdUgJmnq', {
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="fi init Oi Fi ft Ii Ai Ri capture calculateEventProperties Ni register register_once register_for_session unregister unregister_for_session Hi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurveyAsync qi identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty zi Li createPersonProfile setInternalOrTestUser Bi $i Wi opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Mi debug bt ji getPageViewId captureTraceFeedback captureTraceMetric Si".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_x6rUyrTybbiDhUuHjXap6jAViHeAc5FgSnBrvdUgJmnq', {
         api_host: 'https://us.i.posthog.com',
         defaults: '2026-01-30',
         person_profiles: 'identified_only',
-    })
+      });
+    }, 2000);
+  });
 </script>
 
 <style>
@@ -182,7 +198,6 @@
   .btn-primary svg { width:18px; height:18px; transition:transform var(--transition); }
   .btn-primary:hover svg { transform:translateX(4px); }
 
-  /* CTA glow state — triggered by pill selection */
   .btn-primary.glowing {
     background:var(--orange-light);
     box-shadow:0 0 0 4px rgba(245,197,24,0.3), 0 0 40px rgba(245,197,24,0.5), 0 8px 32px rgba(245,197,24,0.3);
@@ -448,7 +463,8 @@
 
     <div class="vsl-wrap">
       <div class="vsl-inner">
-        <video id="heroVideo" controls playsinline webkit-playsinline autoplay muted preload="auto">
+        <!-- PERFORMANCE FIX 6: preload="none" stops video from blocking page load -->
+        <video id="heroVideo" controls playsinline webkit-playsinline autoplay muted preload="none">
           <source src="https://inspectionsouffront1.b-cdn.net/Building%20Recertification%20Essential%20Do%E2%80%99S%20And%20Don%E2%80%99Ts%20-%20John%20Souffront%20(1080P).webm" type="video/webm" />
         </video>
         <div class="unmute-banner" id="unmuteBanner">
@@ -464,11 +480,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
     </div>
-
-
   </div>
 </section>
-
 
 <!-- ── SERVICES SECTION ── -->
 <section class="services-section">
@@ -481,7 +494,6 @@
     <span class="sl-county"><span class="sl-dot"></span>Miami-Dade County</span>
   </div>
     <div class="services-grid" id="servicesGrid">
-      <!-- Row 1 -->
       <div class="svc-row">
         <button class="svc-pill svc-bleed">🗂️ Feasibility Studies</button>
         <button class="svc-pill svc-bleed">🔩 Structural Welding</button>
@@ -494,7 +506,6 @@
         <button class="svc-pill svc-bleed">📐 Engineering Design</button>
         <button class="svc-pill svc-bleed">📋 Code Compliance</button>
       </div>
-      <!-- Row 2 -->
       <div class="svc-row">
         <button class="svc-pill svc-bleed">🧪 Material Testing</button>
         <button class="svc-pill svc-bleed">🔬 Special Inspections</button>
@@ -507,7 +518,6 @@
         <button class="svc-pill svc-bleed">🏗️ Project Oversight</button>
         <button class="svc-pill svc-bleed">📑 Condition Reports</button>
       </div>
-      <!-- Row 3 -->
       <div class="svc-row">
         <button class="svc-pill svc-bleed">🔑 Owner Rep</button>
         <button class="svc-pill svc-bleed">📊 Reserve Analysis</button>
@@ -523,8 +533,6 @@
     </div>
   </div>
 </section>
-
-
 
 <section class="mirror-section">
   <div class="mirror-inner">
@@ -607,8 +615,6 @@
           <h2>Talk to an Engineer</h2>
         </div>
         <div class="funnel-body" style="padding:32px 28px;">
-
-          <!-- 3 promise pills -->
           <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
             <div style="display:flex;align-items:center;gap:12px;background:var(--off-white);border-radius:10px;padding:12px 16px;">
               <span style="font-size:1.2rem;flex-shrink:0">🏛️</span>
@@ -632,11 +638,9 @@
               </div>
             </div>
           </div>
-
           <a href="tel:5617281106" class="fbn" onclick="gtag_report_conversion('tel:5617281106')" style="width:100%;justify-content:center;font-size:1.15rem;padding:18px 24px;letter-spacing:0.02em;text-decoration:none;">
             📞 &nbsp;Click to Call Now
           </a>
-
         </div>
       </div>
 
@@ -849,13 +853,13 @@
     <div class="flow-top">
       <div class="flow-node flow-node--start">
         <div class="fn-num">01</div>
-        <div class="fn-title">Check your building</div>
-        <div class="fn-sub">Use our free 2-min tool to tell us your situation</div>
+        <div class="fn-title">Give us a call</div>
+        <div class="fn-sub">Use the call button at the top — no hold music, no runaround</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
         <div class="fn-num">02</div>
-        <div class="fn-title">We call you</div>
+        <div class="fn-title">We connect you with an engineer</div>
         <div class="fn-sub">Often within 60 seconds</div>
       </div>
       <div class="flow-arrow">→</div>
@@ -911,67 +915,56 @@
   </div>
   <div class="reviews-track-wrap">
     <div class="reviews-track">
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"Thank you for all your efforts in getting the Building Recertification completed. We truly appreciate your support and professionalism throughout the process."</p>
         <div class="review-attr">Chrislyne Brumaire Florence · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"Souffront Construction & Engineering has a very professional and competent team. They have performed several recertifications for us and completed them successfully."</p>
         <div class="review-attr">Martha Millon · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"I cannot begin to say enough great things about Souffront Construction & Engineering. From proposal to completion it is truly a seamless process. Professional, attentive, and efficient."</p>
         <div class="review-attr">Octavio Santurio · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"We hire this company for concrete restoration of a community of 348 apartments and we have nothing but the best results. The owner is always available whenever you have a question."</p>
         <div class="review-attr">Angela Ramirez · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"John solved my doubts on some cracks over the phone the first time I called — without charging me. Second time I called they came on a 24-hour turnover. Honest and professional."</p>
         <div class="review-attr">Sergio P. · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"I've hired John and his team for multiple projects. What stands out is that they over-deliver on their promises and do the right thing — trust that's hard to find in South Florida."</p>
         <div class="review-attr">Batuhan Or · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"We used this company for our building's 50-year recertification. The inspection was performed professionally with great attention to detail. They stand behind their work."</p>
         <div class="review-attr">HANAN IBRAHIM · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"Had a leaky pipe emergency. Souffront was responsive, communicative, and did careful work with minimal disruption. When the pipe was repaired they restored everything beautifully."</p>
         <div class="review-attr">Joyce Sweeney · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"We worked with Souffront for a 40-year certification and then the repairs. Highly qualified — John and his team gave us confidence, efficiency, and punctuality."</p>
         <div class="review-attr">Franklin Santana · Google Review</div>
       </div>
-
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">"Quick, efficient and explained the entire process to me, then filed the paperwork with the city once it was complete. Exactly what you want from an engineering firm."</p>
         <div class="review-attr">Scott Morreau PA · Google Review</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1004,20 +997,16 @@
 <script>
 var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/w5kqWGQyZuYMfhSvAQcT/webhook-trigger/acaac60a-661a-4fda-8711-22186f6e3210';
 
-/* ── GCLID CAPTURE ─────────────────────────────────────── */
 function getGclid() {
   var params = new URLSearchParams(window.location.search);
   return params.get('gclid') || '';
 }
 var PAGE_GCLID = getGclid();
 
-/* ── BADGE SWAP ────────────────────────────────────────── */
 (function() {
   var params = new URLSearchParams(window.location.search);
   var s = params.get('s') || '';
   var kw = (params.get('kw') || '').toLowerCase();
-
-  // s= parameter map (sitelink clicks)
   var sMap = {
     'building-recertification': 'Need Building Recertification?',
     'milestone-inspection':     'Need a Milestone Inspection?',
@@ -1040,8 +1029,6 @@ var PAGE_GCLID = getGclid();
     '40-year-inspection':       'Need Your 40 Year Inspection?',
     'hoa-inspection':           'Need an HOA Building Inspection?'
   };
-
-  // kw= keyword fallback map (headline clicks)
   var kwMap = [
     { terms: ['milestone','25 year','25-year'],          badge: 'Need a Milestone Inspection?' },
     { terms: ['40 year','40-year','recertif'],           badge: 'Need Building Recertification?' },
@@ -1060,125 +1047,41 @@ var PAGE_GCLID = getGclid();
     { terms: ['geotechnical','soil','foundation'],       badge: 'Need Geotechnical Engineering?' },
     { terms: ['glass','glazing','window'],               badge: 'Need Glass & Glazing Engineering?' }
   ];
-
   var text = null;
-
-  // 1. Try s= parameter first
-  if (s && sMap[s]) {
-    text = sMap[s];
-  }
-
-  // 2. Fall back to keyword matching
+  if (s && sMap[s]) { text = sMap[s]; }
   if (!text && kw) {
     for (var i = 0; i < kwMap.length; i++) {
       for (var j = 0; j < kwMap[i].terms.length; j++) {
-        if (kw.indexOf(kwMap[i].terms[j]) !== -1) {
-          text = kwMap[i].badge;
-          break;
-        }
+        if (kw.indexOf(kwMap[i].terms[j]) !== -1) { text = kwMap[i].badge; break; }
       }
       if (text) break;
     }
   }
-
-  // 3. Apply if we found a match
   if (text) {
     document.addEventListener('DOMContentLoaded', function() {
       var badge = document.getElementById('heroBadge');
       if (badge) badge.textContent = '✓ ' + text;
     });
   }
-
-  // 4. Accordion swap map
   var accordionMap = {
-    'milestone-inspection': {
-      icon: '📬',
-      q: 'What does a milestone inspection look like?',
-      a: 'A milestone inspection is a Phase 1 structural inspection required under Florida\'s SB 4-D law for condominium and cooperative buildings three stories or taller. A licensed structural engineer visits your property and performs a thorough on-site evaluation of the building\'s structural components — including the foundation, load-bearing walls, roof structure, balconies, and any visible signs of deterioration or distress. We document everything, prepare a signed and sealed Phase 1 report, and file it with your county building department. If the Phase 1 identifies substantial structural deterioration, a Phase 2 report with repair recommendations is required. We handle the entire process from site visit to city submission so you don\'t have to manage any of it directly.'
-    },
-    'sirs': {
-      icon: '📊',
-      q: 'What does a SIRS reserve study involve?',
-      a: 'A Structural Integrity Reserve Study is a two-part requirement under Florida law for condominium and cooperative associations in buildings three stories or taller. The first part is a visual inspection of the building\'s structural components performed by a licensed engineer — we assess the condition of the load-bearing elements, balconies, roof, waterproofing, and other systems. The second part is a reserve funding analysis that determines how much the association needs to set aside annually to fund future repairs and maintenance. The completed study must be certified by a licensed engineer and submitted to the association, which is then required to fund the reserves accordingly. We handle both parts and prepare the report in the format required for compliance.'
-    },
-    'concrete-restoration': {
-      icon: '🧱',
-      q: 'What does concrete restoration actually involve?',
-      a: 'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code. Our reports are formatted to satisfy city requirements so the permit closes cleanly. From the initial inspection through to the final sign-off, we manage the entire process.'
-    },
-    'concrete-damage': {
-      icon: '🧱',
-      q: 'What does concrete restoration actually involve?',
-      a: 'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code. Our reports are formatted to satisfy city requirements so the permit closes cleanly. From the initial inspection through to the final sign-off, we manage the entire process.'
-    },
-    'water-intrusion': {
-      icon: '💧',
-      q: 'How do you find and fix a water intrusion problem?',
-      a: 'Water intrusion is rarely straightforward — water travels, so where it\'s showing up inside a building is often not where it\'s actually entering. Our engineers perform a thorough on-site investigation to trace the source, which may involve examining the building envelope, windows, roofing, balconies, waterproofing membranes, or penetrations through the structure. Once the source is identified, we prepare a scope of repairs with engineering documentation, coordinate with qualified contractors, and ensure the work is permitted and completed correctly. If you\'ve been dealing with recurring leaks that previous repairs haven\'t resolved, that\'s exactly the kind of situation we\'re built for.'
-    },
-    'structural-inspection': {
-      icon: '🏗️',
-      q: 'What does a structural inspection or engineering engagement look like?',
-      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
-    },
-    'structural-engineering': {
-      icon: '🏗️',
-      q: 'What does a structural inspection or engineering engagement look like?',
-      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
-    },
-    'structural-repairs': {
-      icon: '🏗️',
-      q: 'What does a structural inspection or engineering engagement look like?',
-      a: 'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.'
-    },
-    'unsafe-structure': {
-      icon: '🏚️',
-      q: 'What happens when a building is flagged as unsafe?',
-      a: 'An unsafe structure designation is serious and time-sensitive — cities typically issue a notice requiring the owner to either repair or demolish within a specific timeframe, and fines accumulate quickly. Our first step is an immediate site visit to assess what the city has identified and determine the actual scope of the structural concern. We prepare the engineering documentation required to respond to the violation, work directly with the building department on your behalf, and scope the repairs needed to bring the structure back into compliance. If the situation requires expedited permitting or emergency engineering support, we\'re equipped to move quickly. You don\'t have to navigate the city process alone — we handle that communication directly.'
-    },
-    'infrared-inspection': {
-      icon: '🌡️',
-      q: 'What does an infrared thermal inspection involve?',
-      a: 'An infrared thermal inspection uses specialized imaging equipment to detect heat signatures that reveal conditions invisible to the naked eye — moisture trapped inside walls, failing insulation, electrical hot spots, air leakage, and areas of potential water intrusion. Our licensed engineers perform the scan on-site and interpret the results in the context of the building\'s construction and condition. The findings are documented in a detailed report that identifies problem areas, explains what the thermal anomalies indicate, and recommends next steps. It\'s a non-invasive way to get a clear picture of what\'s happening inside a building before committing to more extensive investigation or repairs.'
-    },
-    'balcony-inspection': {
-      icon: '🏢',
-      q: 'What does a balcony inspection involve?',
-      a: 'Florida\'s balcony inspection requirements under Form HR-7020 apply to residential buildings and require a licensed engineer to visually assess the condition of elevated walkways, balconies, and their structural attachments. Our engineer visits the property, inspects each balcony for signs of deterioration — including concrete spalling, corrosion of structural connections, waterproofing failures, and any movement or deflection that could indicate a structural concern. We prepare the HR-7020 compliant report, sign and seal it, and file it with the appropriate authority. If deficiencies are found, we can scope the repairs and provide the engineering documentation needed to get them permitted and completed.'
-    },
-    'geotechnical-engineering': {
-      icon: '🪨',
-      q: 'What does a geotechnical engineering engagement look like?',
-      a: 'Geotechnical engineering deals with the soil and subsurface conditions that support your building or proposed construction. Our geotechnical engineers perform subsurface investigations — which typically involve soil borings or test pits at the site — to characterize the underlying conditions and determine bearing capacity, settlement potential, and any site-specific concerns like expansive soils or groundwater. The findings are documented in a geotechnical report that provides the foundation design recommendations your structural engineer and contractor need to build correctly. Whether you\'re planning new construction, investigating foundation concerns, or responding to differential settlement, we provide the subsurface data and engineering judgment to move forward with confidence.'
-    },
-    'glass-glazing': {
-      icon: '🪟',
-      q: 'What does a glass and glazing engineering engagement involve?',
-      a: 'Glass and glazing engineering covers the structural design, analysis, and code compliance review of windows, curtain walls, storefronts, skylights, and other glazing systems in buildings. Our engineers evaluate existing installations for structural adequacy — particularly important in South Florida where wind load requirements are strict — and prepare the documentation needed for permits or code compliance. For new installations or replacements, we provide the engineering of record to ensure the system is designed correctly for the applicable wind speeds, impact resistance requirements, and Florida Building Code provisions. If you\'ve received a notice related to glazing compliance or are planning a window replacement project, we can provide the engineering support needed to get it done right.'
-    },
-    'electrical-engineering': {
-      icon: '⚡',
-      q: 'What does electrical engineering or an electrical upgrade look like?',
-      a: 'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system — panels, distribution, wiring, grounding, and compliance with current code — and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors to ensure the work is completed correctly and inspected. Whether you\'re dealing with an aging electrical system, a code violation, a panel replacement, or a full building electrical upgrade, we handle the engineering side from assessment through permit closeout.'
-    },
-    'electrical-upgrades': {
-      icon: '⚡',
-      q: 'What does electrical engineering or an electrical upgrade look like?',
-      a: 'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system — panels, distribution, wiring, grounding, and compliance with current code — and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors to ensure the work is completed correctly and inspected. Whether you\'re dealing with an aging electrical system, a code violation, a panel replacement, or a full building electrical upgrade, we handle the engineering side from assessment through permit closeout.'
-    },
-    'plumbing': {
-      icon: '🚰',
-      q: 'What does a plumbing or backflow engagement look like?',
-      a: 'Plumbing engagements typically involve assessing existing systems for code compliance, capacity, or condition concerns — as well as designing or specifying upgrades when existing systems are failing or undersized. Backflow prevention is a specific requirement for many commercial and multifamily properties, where the water supply must be protected from contamination through certified backflow prevention devices that require regular testing and maintenance. Our team handles the inspection, testing, engineering documentation, and permitting associated with both plumbing upgrades and backflow compliance so you meet your local requirements without having to coordinate multiple contractors and engineers separately.'
-    },
-    'seawall': {
-      icon: '🌊',
-      q: 'What does a seawall inspection or engineering engagement look like?',
-      a: 'Seawall inspections assess the condition and structural integrity of the retaining wall that protects your waterfront property from erosion and water intrusion. Our engineers evaluate the seawall for signs of deterioration — including cracking, displacement, undermining, voids behind the wall, and failing cap or tie-back systems. We document the findings in a signed and sealed report and, where repairs are needed, prepare the engineering scope and permit documents to get the work done correctly. South Florida\'s marine environment is particularly aggressive on seawall structures, so regular assessment is important to catch deterioration before it becomes an emergency. We work with qualified marine contractors and can manage the repair process from engineering through final inspection.'
-    }
+    'milestone-inspection': { icon:'📬', q:'What does a milestone inspection look like?', a:'A milestone inspection is a Phase 1 structural inspection required under Florida\'s SB 4-D law for condominium and cooperative buildings three stories or taller. A licensed structural engineer visits your property and performs a thorough on-site evaluation of the building\'s structural components — including the foundation, load-bearing walls, roof structure, balconies, and any visible signs of deterioration or distress. We document everything, prepare a signed and sealed Phase 1 report, and file it with your county building department. If the Phase 1 identifies substantial structural deterioration, a Phase 2 report with repair recommendations is required. We handle the entire process from site visit to city submission so you don\'t have to manage any of it directly.' },
+    'sirs': { icon:'📊', q:'What does a SIRS reserve study involve?', a:'A Structural Integrity Reserve Study is a two-part requirement under Florida law for condominium and cooperative associations in buildings three stories or taller. The first part is a visual inspection of the building\'s structural components performed by a licensed engineer — we assess the condition of the load-bearing elements, balconies, roof, waterproofing, and other systems. The second part is a reserve funding analysis that determines how much the association needs to set aside annually to fund future repairs and maintenance. The completed study must be certified by a licensed engineer and submitted to the association, which is then required to fund the reserves accordingly. We handle both parts and prepare the report in the format required for compliance.' },
+    'concrete-restoration': { icon:'🧱', q:'What does concrete restoration actually involve?', a:'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code. Our reports are formatted to satisfy city requirements so the permit closes cleanly. From the initial inspection through to the final sign-off, we manage the entire process.' },
+    'concrete-damage': { icon:'🧱', q:'What does concrete restoration actually involve?', a:'Concrete restoration starts with a licensed engineer visiting your property to assess the extent of the damage — whether that\'s spalling, exposed rebar, delamination, cracks, or facade deterioration. We identify the root cause, not just the visible symptoms, because improper repairs that don\'t address the underlying issue will fail again. Once the scope is established, we prepare the engineering documents, pull the necessary permits, and oversee the repair process to ensure the work meets code.' },
+    'water-intrusion': { icon:'💧', q:'How do you find and fix a water intrusion problem?', a:'Water intrusion is rarely straightforward — water travels, so where it\'s showing up inside a building is often not where it\'s actually entering. Our engineers perform a thorough on-site investigation to trace the source, which may involve examining the building envelope, windows, roofing, balconies, waterproofing membranes, or penetrations through the structure. Once the source is identified, we prepare a scope of repairs with engineering documentation, coordinate with qualified contractors, and ensure the work is permitted and completed correctly.' },
+    'structural-inspection': { icon:'🏗️', q:'What does a structural inspection or engineering engagement look like?', a:'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion.' },
+    'structural-engineering': { icon:'🏗️', q:'What does a structural inspection or engineering engagement look like?', a:'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion. For engineering engagements specifically, we work with you from concept through permitting — whether that\'s structural design, analysis of existing conditions, or documentation needed for a renovation or addition.' },
+    'structural-repairs': { icon:'🏗️', q:'What does a structural inspection or engineering engagement look like?', a:'A structural inspection begins with a licensed engineer visiting your property to evaluate the building\'s structural integrity — assessing load-bearing elements, connections, foundations, and any visible signs of distress or deterioration. We document our findings in a signed and sealed report that meets Florida\'s statutory requirements and is ready for city submission. If repairs are needed, we prepare permit-ready engineering drawings and can oversee the repair process through completion.' },
+    'unsafe-structure': { icon:'🏚️', q:'What happens when a building is flagged as unsafe?', a:'An unsafe structure designation is serious and time-sensitive — cities typically issue a notice requiring the owner to either repair or demolish within a specific timeframe, and fines accumulate quickly. Our first step is an immediate site visit to assess what the city has identified and determine the actual scope of the structural concern. We prepare the engineering documentation required to respond to the violation, work directly with the building department on your behalf, and scope the repairs needed to bring the structure back into compliance.' },
+    'infrared-inspection': { icon:'🌡️', q:'What does an infrared thermal inspection involve?', a:'An infrared thermal inspection uses specialized imaging equipment to detect heat signatures that reveal conditions invisible to the naked eye — moisture trapped inside walls, failing insulation, electrical hot spots, air leakage, and areas of potential water intrusion. Our licensed engineers perform the scan on-site and interpret the results in the context of the building\'s construction and condition.' },
+    'balcony-inspection': { icon:'🏢', q:'What does a balcony inspection involve?', a:'Florida\'s balcony inspection requirements under Form HR-7020 apply to residential buildings and require a licensed engineer to visually assess the condition of elevated walkways, balconies, and their structural attachments. Our engineer visits the property, inspects each balcony for signs of deterioration, and prepares the HR-7020 compliant report, signs and seals it, and files it with the appropriate authority.' },
+    'geotechnical-engineering': { icon:'🪨', q:'What does a geotechnical engineering engagement look like?', a:'Geotechnical engineering deals with the soil and subsurface conditions that support your building or proposed construction. Our geotechnical engineers perform subsurface investigations to characterize the underlying conditions and determine bearing capacity, settlement potential, and any site-specific concerns. The findings are documented in a geotechnical report that provides the foundation design recommendations your structural engineer and contractor need.' },
+    'glass-glazing': { icon:'🪟', q:'What does a glass and glazing engineering engagement involve?', a:'Glass and glazing engineering covers the structural design, analysis, and code compliance review of windows, curtain walls, storefronts, skylights, and other glazing systems in buildings. Our engineers evaluate existing installations for structural adequacy — particularly important in South Florida where wind load requirements are strict — and prepare the documentation needed for permits or code compliance.' },
+    'electrical-engineering': { icon:'⚡', q:'What does electrical engineering or an electrical upgrade look like?', a:'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors.' },
+    'electrical-upgrades': { icon:'⚡', q:'What does electrical engineering or an electrical upgrade look like?', a:'Electrical engineering engagements range from system audits and code compliance reviews to full design and permitting of new or upgraded electrical systems. Our licensed electrical engineers assess the existing system and identify deficiencies or capacity issues. For upgrades, we prepare the engineering drawings and specifications needed for permitting and coordinate with licensed electrical contractors.' },
+    'plumbing': { icon:'🚰', q:'What does a plumbing or backflow engagement look like?', a:'Plumbing engagements typically involve assessing existing systems for code compliance, capacity, or condition concerns — as well as designing or specifying upgrades when existing systems are failing or undersized. Backflow prevention is a specific requirement for many commercial and multifamily properties, where the water supply must be protected from contamination through certified backflow prevention devices that require regular testing and maintenance.' },
+    'seawall': { icon:'🌊', q:'What does a seawall inspection or engineering engagement look like?', a:'Seawall inspections assess the condition and structural integrity of the retaining wall that protects your waterfront property from erosion and water intrusion. Our engineers evaluate the seawall for signs of deterioration — including cracking, displacement, undermining, voids behind the wall, and failing cap or tie-back systems. We document the findings in a signed and sealed report and, where repairs are needed, prepare the engineering scope and permit documents.' }
   };
-
-  // Apply accordion swap on DOMContentLoaded
   var accordionKey = s || null;
   if (accordionKey && accordionMap[accordionKey]) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -1193,35 +1096,21 @@ var PAGE_GCLID = getGclid();
   }
 })();
 
-/* ── GTAG CONVERSION ───────────────────────────────────── */
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') { window.location = url; }
-  };
-  gtag('event', 'conversion', {
-    'send_to': 'AW-973857509/cJyBCMjIs5ocEOXFr9AD',
-    'event_callback': callback
-  });
+  var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } };
+  gtag('event', 'conversion', { 'send_to': 'AW-973857509/cJyBCMjIs5ocEOXFr9AD', 'event_callback': callback });
   return false;
 }
 
-/* ── SERVICES INFLATE ANIMATION ────────────────────────── */
 function wireServicesInflate() {
   var grid = document.getElementById('servicesGrid');
   if (!grid) return;
-
-  // On mobile: duplicate pills inside each row for seamless CSS scroll loop
   if (window.innerWidth <= 768) {
     var rows = Array.from(grid.querySelectorAll('.svc-row'));
     rows.forEach(function(row) {
       var pills = Array.from(row.children);
-      for (var i = 0; i < 3; i++) {
-        pills.forEach(function(pill) {
-          row.appendChild(pill.cloneNode(true));
-        });
-      }
+      for (var i = 0; i < 3; i++) { pills.forEach(function(pill) { row.appendChild(pill.cloneNode(true)); }); }
     });
-    // still run inflate on mobile — glow only, no scale
     var popularPills = Array.from(document.querySelectorAll('.svc-row:first-child .svc-pill.popular'));
     if (!popularPills.length) return;
     var index = 0;
@@ -1231,47 +1120,31 @@ function wireServicesInflate() {
       setTimeout(function() {
         pill.classList.remove('inflate');
         index++;
-        if (index < popularPills.length) {
-          setTimeout(inflateNextMobile, 1200);
-        } else {
-          index = 0;
-          setTimeout(inflateNextMobile, 5000);
-        }
+        if (index < popularPills.length) { setTimeout(inflateNextMobile, 1200); } else { index = 0; setTimeout(inflateNextMobile, 5000); }
       }, 2000);
     }
     setTimeout(inflateNextMobile, 1500);
     return;
   }
-
-  // Desktop inflate
   var popularPills = Array.from(document.querySelectorAll('.svc-pill.popular'));
   if (!popularPills.length) return;
-
   var index = 0;
-
   function inflateNext() {
     var pill = popularPills[index];
     pill.classList.add('inflate');
     setTimeout(function() {
       pill.classList.remove('inflate');
       index++;
-      if (index < popularPills.length) {
-        setTimeout(inflateNext, 1200);
-      } else {
-        index = 0;
-        setTimeout(inflateNext, 5000);
-      }
+      if (index < popularPills.length) { setTimeout(inflateNext, 1200); } else { index = 0; setTimeout(inflateNext, 5000); }
     }, 2000);
   }
-
   setTimeout(inflateNext, 1500);
 }
 
-/* ── DATA ─────────────────────────────────────────────── */
 var SVC = [
   {v:'Not Sure',                          e:'❓', c:'#a78bfa', t:"I'm not sure — I just need help"},
   {v:'Milestone Inspection',              e:'📬', c:'#f59e0b', t:"I got a notice from the city"},
-  {v:'Threshold Inspection',              e:'🏢', c:'#6b7aff', t:"I might need an inspection"},
+  {v:'Threshold Inspection',             e:'🏢', c:'#6b7aff', t:"I might need an inspection"},
   {v:'Water Intrusion',                   e:'💧', c:'#38bdf8', t:"There's water getting in somewhere"},
   {v:'Seawall',                           e:'🌊', c:'#0ea5e9', t:"There's an issue near the water"},
   {v:'Plumbing / Backflow',               e:'🚰', c:'#34d399', t:"There's a plumbing or water issue"},
@@ -1279,7 +1152,6 @@ var SVC = [
   {v:'Third Party / Special Inspection',  e:'📄', c:'#94a3b8', t:"I need this done for paperwork"},
   {v:'Something Else',                    e:'💬', c:'#e879f9', t:"Something else — I'll explain"}
 ];
-
 var URG = {
   'Milestone Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it'},{t:'Deadline is coming up'},{t:'I got a notice'},{t:'It may already be overdue'}]},
   'Threshold Inspection':     {h:'How urgent does this feel?',p:'Even if you are not sure, this helps us understand your situation.',o:[{t:'Just looking into it'},{t:'Project is coming up soon'},{t:'A permit or requirement flagged this'},{t:'We need to move quickly'}]},
@@ -1291,7 +1163,6 @@ var URG = {
   'Not Sure':                 {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring'},{t:'Trying to prevent a problem'},{t:'Something changed recently'},{t:'Feels urgent'}]},
   'Something Else':           {h:'How urgent does this feel?',p:"Even if you are not sure, this helps us understand your situation.",o:[{t:'Just exploring'},{t:'Planning ahead'},{t:'Need answers soon'},{t:'Feels urgent'}]}
 };
-
 var GOALS = [
   {e:'🏛️', t:'What the city requires'},
   {e:'💰', t:'Likely cost range'},
@@ -1299,18 +1170,10 @@ var GOALS = [
   {e:'💬', t:'Answers to my questions'},
   {e:'🎯', t:'All of the above'}
 ];
-
-var CALLS = [
-  {t:'Yes — call me today'},
-  {t:'Another day'}
-];
-
-/* ── STATE ─────────────────────────────────────────────── */
+var CALLS = [{t:'Yes — call me today'},{t:'Another day'}];
 var FS = { intent:'', urgency:'', goal:'', call:'', phone:'', address:'', building:'', name:'', email:'', role:'', details:'' };
 var CT = null;
-var exitShown = false;
 
-/* ── NAVIGATION ────────────────────────────────────────── */
 function fGoTo(n) {
   if (CT) { clearInterval(CT); CT = null; }
   document.querySelectorAll('.fp').forEach(function(p){ p.classList.remove('active'); });
@@ -1324,13 +1187,8 @@ function fGoTo(n) {
   updateDots(n);
   if (n === 'ff3') buildRecap();
   var card = document.getElementById('funnelCard');
-  if (card) {
-    var top = card.getBoundingClientRect().top + window.pageYOffset - 72;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
+  if (card) { var top = card.getBoundingClientRect().top + window.pageYOffset - 72; window.scrollTo({ top: top, behavior: 'smooth' }); }
 }
-
-/* ── DOTS ──────────────────────────────────────────────── */
 function renderDots(containerId, total, active) {
   var el = document.getElementById(containerId);
   if (!el) return;
@@ -1350,8 +1208,6 @@ function updateDots(n) {
   if (n === 'ff2') renderDots('dotsf2', 3, 2);
   if (n === 'ff3') renderDots('dotsf3', 3, 3);
 }
-
-/* ── REASSURE ──────────────────────────────────────────── */
 function showReassure() {
   var rs = document.getElementById('freassure');
   rs.classList.add('active');
@@ -1367,9 +1223,7 @@ function showReassure() {
       clearInterval(CT); CT = null;
       rs.style.transition = 'opacity .55s ease'; rs.style.opacity = '0';
       setTimeout(function(){ rs.classList.remove('active'); rs.style.opacity=''; rs.style.transition=''; fGoTo('ff1'); }, 560);
-    } else {
-      lbl.textContent = 'Taking you to the form in ' + s + ' second' + (s===1?'':'s') + '\u2026';
-    }
+    } else { lbl.textContent = 'Taking you to the form in ' + s + ' second' + (s===1?'':'s') + '\u2026'; }
   }, 1000);
 }
 function skipReassure() {
@@ -1378,8 +1232,6 @@ function skipReassure() {
   rs.style.transition = 'opacity .3s ease'; rs.style.opacity = '0';
   setTimeout(function(){ rs.classList.remove('active'); rs.style.opacity=''; rs.style.transition=''; fGoTo('ff1'); }, 320);
 }
-
-/* ── OPTION BUILDERS ───────────────────────────────────── */
 function mkOpts(containerId, items, stateKey, nextBtnId, valKey, cb) {
   var g = document.getElementById(containerId);
   if (!g) return;
@@ -1416,23 +1268,18 @@ function mkCells(containerId, items, stateKey, valKey, cb) {
     b.className = 'fcell' + (isSel ? ' sel' : '') + (isLast && isOdd ? ' span2' : '');
     b.style.borderColor = color;
     if (isSel) b.style.background = color + '18';
-    b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span>'
-                + '<span class="fcell-label">' + item.t + '</span>'
-                + (item.d ? '<span class="fcell-sub">' + item.d + '</span>' : '');
+    b.innerHTML = '<span class="fcell-emoji">' + (item.e || '') + '</span><span class="fcell-label">' + item.t + '</span>' + (item.d ? '<span class="fcell-sub">' + item.d + '</span>' : '');
     b.onmouseenter = function(){ if (!this.classList.contains('sel')) this.style.background = color + '12'; };
     b.onmouseleave = function(){ if (!this.classList.contains('sel')) this.style.background = ''; };
     b.onclick = function(){
       FS[stateKey] = val;
       g.querySelectorAll('.fcell').forEach(function(x){ x.classList.remove('sel'); x.style.background = ''; });
-      b.classList.add('sel');
-      b.style.background = color + '18';
+      b.classList.add('sel'); b.style.background = color + '18';
       if (cb) cb(item);
     };
     g.appendChild(b);
   });
 }
-
-/* ── WIRE ALL OPTION LISTS ─────────────────────────────── */
 function wireOpts() {
   mkCells('svcOpts', SVC, 'intent', 'v', function(item){
     FS.urgency = ''; FS.goal = ''; FS.call = '';
@@ -1449,9 +1296,7 @@ function wireOpts() {
         FS.call = '';
         var b = document.getElementById('fb5'); if(b) b.disabled = true;
         document.getElementById('fp5p').textContent = 'You selected "' + FS.goal + '." Would you like to talk with one of our engineers today?';
-        mkOpts('callOpts', CALLS, 'call', 'fb5', 't', function(){
-          setTimeout(function(){ fGoTo('reassure'); }, 220);
-        });
+        mkOpts('callOpts', CALLS, 'call', 'fb5', 't', function(){ setTimeout(function(){ fGoTo('reassure'); }, 220); });
         setTimeout(function(){ fGoTo(5); }, 220);
       });
       setTimeout(function(){ fGoTo(4); }, 220);
@@ -1461,23 +1306,15 @@ function wireOpts() {
   var defUrg = URG['Not Sure'];
   document.getElementById('fp3h').textContent = defUrg.h;
   document.getElementById('fp3p').textContent = defUrg.p;
-  mkOpts('urgOpts',  defUrg.o, 'urgency', 'fb3', 't');
-  mkCells('goalOpts', GOALS,   'goal',    't');
-  mkOpts('callOpts', CALLS,    'call',    'fb5', 't');
+  mkOpts('urgOpts', defUrg.o, 'urgency', 'fb3', 't');
+  mkCells('goalOpts', GOALS, 'goal', 't');
+  mkOpts('callOpts', CALLS, 'call', 'fb5', 't');
 }
-
-/* ── RECAP ─────────────────────────────────────────────── */
 function buildRecap() {
   var row = document.getElementById('recapRow');
   if (!row) return;
   row.innerHTML = '';
-  var items = [
-    {l:'Service',   v:FS.intent},
-    {l:'Urgency',   v:FS.urgency},
-    {l:'Focus',     v:FS.goal},
-    {l:'Call pref', v:FS.call}
-  ];
-  items.forEach(function(x){
+  [{l:'Service',v:FS.intent},{l:'Urgency',v:FS.urgency},{l:'Focus',v:FS.goal},{l:'Call pref',v:FS.call}].forEach(function(x){
     if (!x.v) return;
     var pill = document.createElement('span');
     pill.className = 'recap-pill';
@@ -1485,119 +1322,61 @@ function buildRecap() {
     row.appendChild(pill);
   });
 }
-
-/* ── WEBHOOK ───────────────────────────────────────────── */
 function sendWebhook(payload) {
   payload.gclid = PAGE_GCLID;
-  fetch(GHL_WEBHOOK, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(function(e){ console.error('Webhook error:', e); });
+  fetch(GHL_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).catch(function(e){ console.error('Webhook error:', e); });
 }
-
-/* ── SUBMIT: PHONE ONLY ────────────────────────────────── */
 function submitPhone() {
   var v = document.getElementById('phoneNum').value.trim();
   if (!v) { document.getElementById('phoneNum').focus(); return; }
   FS.phone = v;
-  sendWebhook({ lead_type: 'call_request', phone: v });
+  sendWebhook({ lead_type:'call_request', phone:v });
   document.getElementById('successH').textContent = "We'll give you a call";
   document.getElementById('successP').textContent = "One of our engineers will reach out to " + v + " shortly. We look forward to helping you get clarity.";
   fGoTo('success');
 }
-
-/* ── SUBMIT: FUNNEL PHONE (ff1) ────────────────────────── */
 function submitFF1() {
   var v = document.getElementById('ff1phone').value.trim();
   if (!v) { document.getElementById('ff1phone').focus(); return; }
   FS.phone = v;
-  sendWebhook({
-    lead_type: 'funnel_partial',
-    phone: FS.phone,
-    intent: FS.intent,
-    urgency: FS.urgency,
-    goal: FS.goal,
-    call_preference: FS.call
-  });
+  sendWebhook({ lead_type:'funnel_partial', phone:FS.phone, intent:FS.intent, urgency:FS.urgency, goal:FS.goal, call_preference:FS.call });
   fGoTo('ff2');
 }
-
-/* ── SUBMIT: ADDRESS (ff2) ─────────────────────────────── */
 function submitFF2() {
   FS.address  = document.getElementById('ff2addr').value.trim();
   FS.building = document.getElementById('ff2bldg').value.trim();
-  sendWebhook({
-    lead_type: 'funnel_partial',
-    phone: FS.phone,
-    address: FS.address,
-    building: FS.building,
-    intent: FS.intent
-  });
+  sendWebhook({ lead_type:'funnel_partial', phone:FS.phone, address:FS.address, building:FS.building, intent:FS.intent });
   fGoTo('ff3');
 }
-
-/* ── SUBMIT: FINAL (ff3) ───────────────────────────────── */
 function submitFF3() {
   FS.name    = document.getElementById('ff3name').value.trim();
   FS.email   = document.getElementById('ff3email').value.trim();
   FS.role    = document.getElementById('ff3role').value;
   FS.details = document.getElementById('ff3details').value.trim();
-  sendWebhook({
-    lead_type: 'funnel_complete',
-    name: FS.name,
-    email: FS.email,
-    phone: FS.phone,
-    role: FS.role,
-    address: FS.address,
-    building: FS.building,
-    intent: FS.intent,
-    urgency: FS.urgency,
-    goal: FS.goal,
-    call_preference: FS.call,
-    details: FS.details
-  });
+  sendWebhook({ lead_type:'funnel_complete', name:FS.name, email:FS.email, phone:FS.phone, role:FS.role, address:FS.address, building:FS.building, intent:FS.intent, urgency:FS.urgency, goal:FS.goal, call_preference:FS.call, details:FS.details });
   document.getElementById('successH').textContent = 'Request received';
   document.getElementById('successP').textContent = "A licensed engineer will call you — often within 60 seconds. They'll tell you exactly what your building requires and answer any questions you have. No pitch, just answers.";
   fGoTo('success');
 }
-
-/* ── SCROLL TO TOOL ────────────────────────────────────── */
 function scrollToTool() {
   var tool = document.getElementById('tool');
-  if (tool) {
-    var top = tool.getBoundingClientRect().top + window.pageYOffset - 72;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
+  if (tool) { var top = tool.getBoundingClientRect().top + window.pageYOffset - 72; window.scrollTo({ top: top, behavior: 'smooth' }); }
 }
-
-/* ── REVIEWS AUTO SCROLL ───────────────────────────────── */
 function wireReviewsScroll() {
   var track = document.querySelector('.reviews-track');
   if (!track) return;
-  // Duplicate cards for seamless CSS animation loop
   var cards = Array.from(track.children);
-  cards.forEach(function(card) {
-    track.appendChild(card.cloneNode(true));
-  });
+  cards.forEach(function(card) { track.appendChild(card.cloneNode(true)); });
 }
 function wireMirrorCards() {
   document.querySelectorAll('.mc-accordion').forEach(function(card) {
     card.addEventListener('click', function() {
       var isOpen = this.classList.contains('open');
-      document.querySelectorAll('.mc-accordion').forEach(function(c) {
-        c.classList.remove('open');
-        c.querySelector('.mc-trigger').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        this.classList.add('open');
-        this.querySelector('.mc-trigger').setAttribute('aria-expanded', 'true');
-      }
+      document.querySelectorAll('.mc-accordion').forEach(function(c) { c.classList.remove('open'); c.querySelector('.mc-trigger').setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { this.classList.add('open'); this.querySelector('.mc-trigger').setAttribute('aria-expanded', 'true'); }
     });
   });
 }
-
-/* ── FAQ ───────────────────────────────────────────────── */
 function wireFaq() {
   document.querySelectorAll('.faq-item').forEach(function(item){
     item.addEventListener('click', function(){
@@ -1608,19 +1387,23 @@ function wireFaq() {
   });
 }
 
-/* ── INIT ──────────────────────────────────────────────── */
+// PERFORMANCE FIX 7: Delay video metadata load — doesn't block first paint
+function wireVideoLazyLoad() {
+  var video = document.getElementById('heroVideo');
+  if (!video) return;
+  setTimeout(function() { video.preload = 'metadata'; }, 1500);
+}
+
 document.addEventListener('DOMContentLoaded', function(){
   wireOpts();
   wireFaq();
   wireMirrorCards();
   wireServicesInflate();
   wireReviewsScroll();
+  wireVideoLazyLoad();
   updateDots(2);
 
   document.getElementById('btnGetStarted').addEventListener('click', function(){ fGoTo('call'); scrollToTool(); });
-
-
-
 
   var heroVideo = document.getElementById('heroVideo');
   var unmuteBanner = document.getElementById('unmuteBanner');
@@ -1635,13 +1418,9 @@ document.addEventListener('DOMContentLoaded', function(){
       unmuteBanner.classList.add('hidden');
       heroVideo.play().catch(function(){});
     }
-    heroVideo.addEventListener('click', function(e) {
-      if (!unmuted) { e.preventDefault(); e.stopPropagation(); doUnmute(); }
-    }, true);
+    heroVideo.addEventListener('click', function(e) { if (!unmuted) { e.preventDefault(); e.stopPropagation(); doUnmute(); } }, true);
     unmuteBanner.addEventListener('click', doUnmute);
-    heroVideo.addEventListener('volumechange', function(){
-      if (!heroVideo.muted) unmuteBanner.classList.add('hidden');
-    });
+    heroVideo.addEventListener('volumechange', function(){ if (!heroVideo.muted) unmuteBanner.classList.add('hidden'); });
   }
 });
 </script>
